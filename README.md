@@ -1,2 +1,2 @@
-# rc
-List of rc files I use
+# My dotfiles
+List of rc and dotfiles I use
