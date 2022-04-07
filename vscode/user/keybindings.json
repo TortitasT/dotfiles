@@ -1,0 +1,37 @@
+// Coloque sus atajos de teclado en este archivo para sobreescribir los valores predeterminados
+[
+  {
+    "key": "ctrl+b",
+    "scope": "html",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && editorLangId == 'html'",
+    "args": {
+      "snippet": "<strong>$TM_SELECTED_TEXT</strong>$0"
+    }
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-cursorLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift shift",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "eslint.format.enable": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  {
+    "key": "alt+f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  }
+]

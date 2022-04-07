@@ -99,7 +99,26 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Misc
 alias q="exit"
+alias ll="ls -lh"
+alias la="ls -lah"
+
+# Git
+alias gg="cd ~/Documents/Git"
+alias g="git"
+alias gs="git status"
+alias gd="git diff"
+alias ga="git add --all"
+alias gc="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+alias gco="git checkout"
+alias gb="git checkout -b"
+
+# Laravel
+alias art="php artisan"
 
 # NVM EXPORT
 export NVM_DIR=~/.nvm
