@@ -1,55 +1,95 @@
 {
-  "editor.fontSize": 14,
-  "editor.fontFamily": "Fira Code", // May have to install font in system
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
+	"editor.fontSize": 14,
+	"editor.fontFamily": "Comic Code", // May have to install font in system
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": "active",
+	"terminal.integrated.fontSize": 14,
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"terminal.external.osxExec": "iTerm.app",
+	"terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
 
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "eslint.alwaysShowStatus": true,
-  "eslint.packageManager": "yarn",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "redhat.telemetry.enabled": true,
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "tabnine.experimentalAutoImports": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.inlineSuggest.enabled": true,
-  "workbench.colorTheme": "GitHub Dark",
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[php]": {
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-  },
-  "workbench.iconTheme": "vscode-icons",
-  "editor.cursorStyle": "block",
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": true,
-  "csharp.suppressDotnetInstallWarning": true,
-  "git.autofetch": true,
-  "workbench.startupEditor": "none",
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-  "github.copilot.advanced": {},
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
-    "plaintext": true,
-    "markdown": false
-  },
-  "sync.gist": "e4a1568ce933cbd670b0dcc93649bcc3"
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"eslint.alwaysShowStatus": true,
+	"eslint.packageManager": "yarn",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"redhat.telemetry.enabled": true,
+	"[yaml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"tabnine.experimentalAutoImports": true,
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.inlineSuggest.enabled": true,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[php]": {
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+	},
+	"workbench.iconTheme": "vscode-icons",
+	"editor.cursorStyle": "block",
+	"editor.cursorBlinking": "smooth",
+	"editor.cursorSmoothCaretAnimation": true,
+	"csharp.suppressDotnetInstallWarning": true,
+	"git.autofetch": true,
+	"workbench.startupEditor": "none",
+	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+	"github.copilot.advanced": {},
+	"github.copilot.enable": {
+		"*": true,
+		"yaml": false,
+		"plaintext": true,
+		"markdown": false
+	},
+	"sync.gist": "e4a1568ce933cbd670b0dcc93649bcc3",
+	"cSpell.userWords": ["Behaviour", "laravel", "Mathf"],
+	"gitlens.hovers.currentLine.over": "line",
+	"rpc.buttonEnabled": true,
+	"rpc.detailsIdling": "secreto... 🤫",
+	"rpc.showProblems": false,
+	"rpc.ignoreRepositories":[ ],
+	"[csharp]": {
+		"editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+	},
+	"latex-utilities.message.update.show": false,
+	"latex-workshop.view.pdf.viewer": "tab",
+	"workbench.editorAssociations": {
+		"*.pdf": "latex-workshop-pdf-hook"
+	},
+	"vsicons.dontShowNewVersionMessage": true,
+	"prettier.singleQuote": true,
+	"prettier.semi": false,
+	"prettier.useTabs": true,
+	"workbench.colorTheme": "GitHub Dark Dimmed",
+	"workbench.sideBar.location": "right",
+	"restoreTerminals.terminals": [
+		{
+			"splitTerminals": [
+				{
+					"name": "term1"
+				},
+				{
+					"name": "term2"
+				}
+			]
+		}
+	],
+	"workbench.panel.defaultLocation": "left",
+	"rpc.ignoreWorkspaces": [],
+	"terminal.integrated.tabs.enabled": false,
+	"cmake.configureOnOpen": true
 }
+
