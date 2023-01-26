@@ -17,6 +17,9 @@ Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 function artisan { php artisan @args }
 Set-Alias art artisan
 
+function gitFolder { cd $HOME\Documents\Git }
+Set-Alias gg gitFolder
+
 function gitStatus { git status }
 Set-Alias gs gitStatus
 
