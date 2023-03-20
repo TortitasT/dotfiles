@@ -1,18 +1,15 @@
-"Disable compatibility with vi or whatever
+" Disable compatibility with vi
 set nocompatible
 
-"Enable syntax highlight by default
+" Enable syntax highlight by default
 syntax on
 
-"Enable plugins
+" Enable plugins
 filetype plugin on
 
-"Fuzzy file finding
+" Fuzzy file finding
 set path+=**
 set wildmenu
-"	use :find to find files
-
-let g:prettier#autoformat = 1
 
 call plug#begin()
 
@@ -30,6 +27,27 @@ Plug 'dyng/ctrlsf.vim'
 call plug#end()
 
 " Config
+
+"   Autoformat prettier
+let g:prettier#autoformat = 1
+
+"   Line numbers
+set number
+
+"   Font
+if has("gui_running")
+  if has("gui_gtk2")
+  elseif has("gui_macvim")
+  elseif has("gui_win32")
+    set guifont=Fira\ Code:h14
+  endif
+endif
+
+"   Backspace windows fix
+if has("win32")
+  set backspace=indent,eol,start
+endif
+
 "	  Mouse
 set mouse+=a
 
