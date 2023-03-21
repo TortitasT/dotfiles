@@ -18,7 +18,7 @@ endif
 call plug#begin()
 
 Plug 'scrooloose/nerdtree'
-Plug 'valloric/youcompleteme' " Requires going to plugin folder and running install.py
+" Plug 'valloric/youcompleteme' " Requires going to plugin folder and running install.py
 Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
@@ -28,12 +28,18 @@ Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
 Plug 'dyng/ctrlsf.vim'
 Plug 'mattn/emmet-vim'
+Plug 'github/copilot.vim' " Requires to sign up
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 " Config
+
+"   Coc TAB to complete
+inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
+inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 
 "   NERDCommenter
 filetype plugin on
@@ -99,10 +105,13 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 "   NERDTree show hidden
 let NERDTreeShowHidden=1
 
+"   NERDTree right
+let g:NERDTreeWinPos = "right"
+
 "   Mappings
 map <F8> :tabp<CR>
 map <F9> :tabn<CR>
 cnoreabbrev ser :CtrlSF
-nmap b :NERDTree<CR>
+nmap B :NERDTree<CR>
 tnoremap <F8> <C-W>:tabp<CR>
 tnoremap <F9> <C-W>:tabn<CR>
