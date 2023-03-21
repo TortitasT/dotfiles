@@ -28,7 +28,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
-Plug 'kassio/neoterm'
+Plug 'Shougo/denite.nvim'
+Plug 'rstacruz/vim-closer'
+Plug 'mhinz/vim-signify'
 
 call plug#end()
 
