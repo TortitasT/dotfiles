@@ -18,11 +18,6 @@ endif
 call plug#begin()
 
 Plug 'scrooloose/nerdtree'
-" Plug 'valloric/youcompleteme' " Requires going to plugin folder and running install.py
-Plug 'posva/vim-vue'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
@@ -33,6 +28,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
+Plug 'kassio/neoterm'
 
 call plug#end()
 
