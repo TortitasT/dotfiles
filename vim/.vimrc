@@ -29,10 +29,18 @@ Plug 'w0rp/ale'
 Plug 'dyng/ctrlsf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
 " Config
+
+"   NERDCommenter
+filetype plugin on
+
+"   Leader key
+let mapleader=","
+
 "   Emmet
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,vue,scss EmmetInstall
@@ -87,6 +95,9 @@ set autoindent
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+
+"   NERDTree show hidden
+let NERDTreeShowHidden=1
 
 "   Mappings
 map <F8> :tabp<CR>
