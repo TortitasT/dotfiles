@@ -1,15 +1,19 @@
+if !has("nvim")
+
 " Disable compatibility with vi
-set nocompatible
+  set nocompatible
 
 " Enable syntax highlight by default
-syntax on
+  syntax on
 
 " Enable plugins
-filetype plugin on
+  filetype plugin on
 
 " Fuzzy file finding
-set path+=**
-set wildmenu
+  set path+=**
+  set wildmenu
+
+endif
 
 call plug#begin()
 
@@ -24,6 +28,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
 Plug 'dyng/ctrlsf.vim'
 Plug 'mattn/emmet-vim'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
