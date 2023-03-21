@@ -12,3 +12,4 @@
 - F9 Next tab
 - :tabe <filename> Open file in new tab
 - :tab ter Open terminal in new tab
+- :%s/<search_word>/<replace_word>/g Replace in current file
