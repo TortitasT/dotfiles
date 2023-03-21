@@ -26,10 +26,16 @@ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
 Plug 'dyng/ctrlsf.vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
 " Config
+"   Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,vue,scss EmmetInstall
+let g:user_emmet_leader_key=','
+
 "	  Mouse
 set mouse+=a
 
