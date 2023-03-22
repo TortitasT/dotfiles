@@ -31,20 +31,59 @@ Plug 'tpope/vim-fugitive'
 Plug 'Shougo/denite.nvim'
 Plug 'rstacruz/vim-closer'
 Plug 'mhinz/vim-signify'
+"Plug 'posva/vim-vue'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 
 call plug#end()
 
+" Session management
+"fu! SaveSess()
+    "execute 'mksession! ' . getcwd() . '/Session.vim'
+"endfunction
+
+"fu! RestoreSess()
+"if filereadable(getcwd() . '/Session.vim')
+    "execute 'so ' . getcwd() . '/Session.vim'
+    "if bufexists(1)
+        "for l in range(1, bufnr('$'))
+            "if bufwinnr(l) == -1
+                "exec 'sbuffer ' . l
+            "endif
+        "endfor
+    "endif
+"endif
+"endfunction
+
+"autocmd VimLeave * call SaveSess()
+"autocmd VimEnter * nested call RestoreSess()
+
+"set sessionoptions-=blank " Dont save blank windows on session save
+
 " Config
+
+"   Leader key
+let mapleader=","
+
+"   Close NERDTree if last window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"   ff to use telescope
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
+
+"   fg to use telescope
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
 "   Coc TAB to complete
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 
+"   Copilot map C-e to accept
+imap <silent><script><expr> <C-e> copilot#Accept('\<CR>')
+let g:copilot_no_tab_map = v:true
+
 "   NERDCommenter
 filetype plugin on
-
-"   Leader key
-let mapleader=","
 
 "   Emmet
 let g:user_emmet_install_global = 0
