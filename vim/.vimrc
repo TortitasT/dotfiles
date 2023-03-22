@@ -34,6 +34,7 @@ Plug 'mhinz/vim-signify'
 "Plug 'posva/vim-vue'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -59,6 +60,9 @@ call plug#end()
 "autocmd VimEnter * nested call RestoreSess()
 
 "set sessionoptions-=blank " Dont save blank windows on session save
+
+" Dashboard
+
 
 " Config
 
