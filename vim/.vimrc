@@ -111,6 +111,10 @@ let g:NERDTreeWinPos = "right"
 map <F8> :tabp<CR>
 map <F9> :tabn<CR>
 cnoreabbrev ser :CtrlSF
+cnoreabbrev gco :Git checkout
+cnoreabbrev ga :Git add --all
+cnoreabbrev gc :Git commit -m
+cnoreabbrev gs :Git status
 nmap B :NERDTree<CR>
 tnoremap <F8> <C-W>:tabp<CR>
 tnoremap <F9> <C-W>:tabn<CR>

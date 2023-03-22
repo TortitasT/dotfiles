@@ -7,4 +7,4 @@ Invoke-Expression "pip3 install --user pynvim"
 
 Write-Host "Run the following command to install coc extensions:"
 Write-Host ":PlugInstall"
-Write-Host ":CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-java"
+Write-Host ":CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-java coc-vetur"
