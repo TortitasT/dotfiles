@@ -74,6 +74,15 @@ nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 "   fg to use telescope
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
+"   telescope ignore files
+lua << EOF
+require('telescope').setup{
+  defaults = {
+    file_ignore_patterns = { "node_modules/*" },
+  }
+}
+EOF
+
 "   Coc TAB to complete
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
