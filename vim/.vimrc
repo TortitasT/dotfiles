@@ -126,7 +126,7 @@ endif
 set mouse+=a
 
 "   Theme
-colorscheme catppuccin_macchiato
+colorscheme catppuccin_mocha
 
 "   Airline
 let g:airline_theme = 'catppuccin_mocha'
