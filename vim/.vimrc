@@ -44,6 +44,12 @@ call plug#end()
 "   Leader key
 let mapleader=","
 
+"   Shell
+"   Doesn't work
+"if has("win32")
+  "set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
+"endif
+
 "   Center cursor
 set scrolloff=8
 
@@ -170,3 +176,5 @@ cnoreabbrev term :FloatermNew<CR>
 nmap B :NERDTree<CR>
 tnoremap <F8> <C-W>:tabp<CR>
 tnoremap <F9> <C-W>:tabn<CR>
+tnoremap <Esc> <C-\><C-n>
+nmap º :FloatermToggle<CR>
