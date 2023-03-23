@@ -1,4 +1,6 @@
 {
   "java.jdt.ls.java.home": "C:\\Program Files\\RedHat\\java-17-openjdk-17.0.6.0.10-1",
-  "coc.preferences.formatOnSave": true
+  "coc.preferences.formatOnSave": true,
+  "prettier.formatterPriority": -1,
+  "eslint.autoFixOnSave": true
 }

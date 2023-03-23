@@ -35,39 +35,38 @@ Plug 'mhinz/vim-signify'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'mhinz/vim-startify'
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
-
-" Session management
-"fu! SaveSess()
-    "execute 'mksession! ' . getcwd() . '/Session.vim'
-"endfunction
-
-"fu! RestoreSess()
-"if filereadable(getcwd() . '/Session.vim')
-    "execute 'so ' . getcwd() . '/Session.vim'
-    "if bufexists(1)
-        "for l in range(1, bufnr('$'))
-            "if bufwinnr(l) == -1
-                "exec 'sbuffer ' . l
-            "endif
-        "endfor
-    "endif
-"endif
-"endfunction
-
-"autocmd VimLeave * call SaveSess()
-"autocmd VimEnter * nested call RestoreSess()
-
-"set sessionoptions-=blank " Dont save blank windows on session save
-
-" Dashboard
-
 
 " Config
 
 "   Leader key
 let mapleader=","
+
+"   Center cursor
+set scrolloff=8
+
+"   Neovide
+if exists("g:neovide")
+  set guifont=Fira\ Code:h14
+
+  let g:neovide_scale_factor = 1.2
+  let g:neovide_padding_top = 25
+  let g:neovide_padding_bottom = 25
+  let g:neovide_padding_left = 25
+  let g:neovide_padding_right = 25
+
+  if has("mac")
+    let g:coc_node_path = "~/.nvm/versions/node/v16.19.1/bin/node" 
+  endif
+endif
+
+"   Startify config
+let g:startify_bookmarks = [
+\ { 'y': '~/Documents/Git/descommarket/yapayoo' },
+\ { 'c': '~/Documents/Git/misc/dotfiles/vim' },
+\ ]
 
 "   Close NERDTree if last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -167,6 +166,7 @@ cnoreabbrev gco :Git checkout
 cnoreabbrev ga :Git add --all
 cnoreabbrev gc :Git commit -m
 cnoreabbrev gs :Git status
+cnoreabbrev term :FloatermNew<CR>
 nmap B :NERDTree<CR>
 tnoremap <F8> <C-W>:tabp<CR>
 tnoremap <F9> <C-W>:tabn<CR>
