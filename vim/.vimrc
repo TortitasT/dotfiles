@@ -36,6 +36,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'mhinz/vim-startify'
 Plug 'voldikss/vim-floaterm'
+Plug 'wakatime/vim-wakatime', { 'branch': 'master' }
 
 call plug#end()
 
