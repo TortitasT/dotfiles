@@ -38,6 +38,7 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'mhinz/vim-startify'
 Plug 'voldikss/vim-floaterm'
 Plug 'wakatime/vim-wakatime', { 'branch': 'master' }
+Plug 'ap/vim-css-color'
 
 call plug#end()
 
