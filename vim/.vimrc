@@ -17,7 +17,8 @@ endif
 
 call plug#begin()
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree' |
+      \ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
