@@ -18,7 +18,7 @@ endif
 call plug#begin()
 
 Plug 'scrooloose/nerdtree' |
-      \ Plug 'Xuyuanp/nerdtree-git-plugin'
+  \ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
@@ -38,6 +38,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'wakatime/vim-wakatime', { 'branch': 'master' }
 Plug 'ap/vim-css-color'
 Plug 'yggdroot/indentline'
+Plug 'APZelos/blamer.nvim'
 
 call plug#end()
 
