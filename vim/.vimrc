@@ -54,13 +54,14 @@ set scrolloff=8
 if exists("g:neovide")
   set guifont=Fira\ Code:h14
 
-  let g:neovide_scale_factor = 1.2
+  let g:neovide_scale_factor = 1
   let g:neovide_padding_top = 25
   let g:neovide_padding_bottom = 25
   let g:neovide_padding_left = 25
   let g:neovide_padding_right = 25
 
   if has("mac")
+    let g:neovide_scale_factor = 1.2
     let g:coc_node_path = "~/.nvm/versions/node/v16.19.1/bin/node" 
   endif
 endif
