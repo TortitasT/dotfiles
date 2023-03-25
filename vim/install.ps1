@@ -1,27 +1,7 @@
-function Write-Color([String[]]$Text, [ConsoleColor[]]$Color) {
-  for ($i = 0; $i -lt $Text.Length; $i++) {
-    Write-Host $Text[$i] -Foreground $Color[$i] -NoNewLine
-  }
-  Write-Host
-}
+$OriginalDirectory = Get-Location
+Set-Location $PSScriptRoot
 
-enum PrintLevels {
-  Info = 1
-  Warn = 6
-  Error = 4
-  Success = 2
-}
-function Print([String] $Text, [PrintLevels] $Level = [PrintLevels]::Info) {
-  $Prefix = switch ($Level) {
-    Info { "[ INFO ] " }
-    Warn { "[ WARN ] " }
-    Error { "[ ERROR ] " }
-    Success { "[ OK ] " }
-  }
-
-  Write-Color -Text $Prefix, $Text -Color $Level, White
-}
-
+. .\..\utils.ps1
 
 function Vim-Ensure-Directories {
   $directories = @(
@@ -115,9 +95,6 @@ function Vim-Install-Nvim {
 function Vim-Install {
   Print "Configuring neovim" -Level Info
 
-  $OriginalDirectory = Get-Location
-  Set-Location $PSScriptRoot
-
   Vim-Install-Nvim
   Vim-Ensure-Directories
   Vim-Install-Plug
@@ -127,9 +104,9 @@ function Vim-Install {
   Vim-Install-Coc-Plugs
   Vim-Fix-Wakatime
 
-  Set-Location $OriginalDirectory
-
   Print "Neovim configured" -Level Info
 }
 
 Vim-Install
+
+Set-Location $OriginalDirectory

@@ -2,9 +2,11 @@
 # $THEME="$env:POSH_THEMES_PATH\bubblesextra.omp.json"
 # $THEME="$env:POSH_THEMES_PATH\catppuccin_mocha.omp.json"
 # $THEME="$env:POSH_THEMES_PATH\hotstick.minimal.omp.json"
-$THEME="$env:POSH_THEMES_PATH\wopian.omp.json"
+$THEME = "$env:POSH_THEMES_PATH\wopian.omp.json"
 
 oh-my-posh init pwsh --config $THEME | Invoke-Expression
+
+function bg() { Start-Process -NoNewWindow @args }
 
 # MODULES
 Import-Module -Name Terminal-Icons
