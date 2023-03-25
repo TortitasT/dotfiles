@@ -67,6 +67,9 @@ function Vim-Install-Coc-Plugs {
     "coc-css"
     "coc-java"
     "coc-vetur"
+    "coc-powershell"
+    "coc-lua"
+    "coc-deno"
   )
 
   foreach ($cocplug in $cocplugs) {

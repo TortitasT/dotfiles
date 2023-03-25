@@ -22,7 +22,6 @@ Plug 'scrooloose/nerdtree' |
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
-Plug 'dyng/ctrlsf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'github/copilot.vim' " Requires to sign up
 Plug 'ryanoasis/vim-devicons'
@@ -32,13 +31,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'Shougo/denite.nvim'
 Plug 'rstacruz/vim-closer'
 Plug 'mhinz/vim-signify'
-"Plug 'posva/vim-vue'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'mhinz/vim-startify'
 Plug 'voldikss/vim-floaterm'
 Plug 'wakatime/vim-wakatime', { 'branch': 'master' }
 Plug 'ap/vim-css-color'
+Plug 'yggdroot/indentline'
 
 call plug#end()
 
@@ -46,12 +45,6 @@ call plug#end()
 
 "   Leader key
 let mapleader=","
-
-"   Shell
-"   Doesn't work
-"if has("win32")
-  "set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
-"endif
 
 "   Center cursor
 set scrolloff=8
@@ -85,15 +78,6 @@ nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 
 "   fg to use telescope
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-
-"   telescope ignore files
-lua << EOF
-require('telescope').setup{
-  defaults = {
-    file_ignore_patterns = { "node_modules/*" },
-  }
-}
-EOF
 
 "   Coc TAB to complete
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
@@ -142,13 +126,13 @@ let g:airline_theme = 'catppuccin_mocha'
 set laststatus=2
 
 "   Ale
-let g:ale_fixers = {
- \ 'javascript': ['eslint'],
- \ 'vue': ['eslint']
- \ }
+"let g:ale_fixers = {
+ "\ 'javascript': ['eslint'],
+ "\ 'vue': ['eslint']
+ "\ }
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
-let g:ale_fix_on_save = 1
+"let g:ale_fix_on_save = 1
 
 "	  Tabs
 set expandtab
@@ -170,7 +154,6 @@ let g:NERDTreeWinPos = "right"
 "   Mappings
 map <F8> :tabp<CR>
 map <F9> :tabn<CR>
-cnoreabbrev ser :CtrlSF
 cnoreabbrev gco :Git checkout
 cnoreabbrev ga :Git add --all
 cnoreabbrev gc :Git commit -m
@@ -181,3 +164,12 @@ tnoremap <F8> <C-W>:tabp<CR>
 tnoremap <F9> <C-W>:tabn<CR>
 tnoremap <Esc> <C-\><C-n>
 nmap º :FloatermToggle<CR>
+
+"   telescope ignore files
+lua << EOF
+require('telescope').setup{
+  defaults = {
+    file_ignore_patterns = { "node_modules/*" },
+  }
+}
+EOF
