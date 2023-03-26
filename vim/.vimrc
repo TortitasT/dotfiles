@@ -15,35 +15,62 @@ if !has("nvim")
 
 endif
 
+function! PlugLoaded(name)
+    return (
+        \ has_key(g:plugs, a:name) &&
+        \ isdirectory(g:plugs[a:name].dir) &&
+        \ stridx(&rtp, g:plugs[a:name].dir) >= 0)
+endfunction
+
 call plug#begin()
 
 Plug 'scrooloose/nerdtree' |
   \ Plug 'Xuyuanp/nerdtree-git-plugin'
+
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-Plug 'itchyny/lightline.vim'
+
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+
 Plug 'w0rp/ale'
+
 Plug 'mattn/emmet-vim'
+
 Plug 'github/copilot.vim' " Requires to sign up
+
 Plug 'ryanoasis/vim-devicons'
+
 Plug 'scrooloose/nerdcommenter'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'tpope/vim-fugitive'
+
 Plug 'Shougo/denite.nvim'
+
 Plug 'rstacruz/vim-closer'
+
 Plug 'mhinz/vim-signify'
+
 Plug 'nvim-lua/plenary.nvim'
+
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+
 Plug 'mhinz/vim-startify'
+
 Plug 'voldikss/vim-floaterm'
+
 Plug 'wakatime/vim-wakatime', { 'branch': 'master' }
+
 Plug 'ap/vim-css-color'
+
 Plug 'yggdroot/indentline'
+
 Plug 'APZelos/blamer.nvim'
 
 call plug#end()
 
 " Config
-
 "   Leader key
 let mapleader=","
 
@@ -124,8 +151,11 @@ set mouse+=a
 colorscheme catppuccin_mocha
 
 "   Airline
-let g:airline_theme = 'catppuccin_mocha'
-set laststatus=2
+if PlugLoaded('vim-airline')
+  let g:airline_theme = 'catppuccin_mocha'
+  set laststatus=2
+  set noshowmode
+endif
 
 "   Ale
 "let g:ale_fixers = {
