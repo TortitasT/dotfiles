@@ -68,6 +68,8 @@ Plug 'yggdroot/indentline'
 
 Plug 'APZelos/blamer.nvim'
 
+Plug 'vim-scripts/TeTrIs.vim'
+
 call plug#end()
 
 " Config
@@ -201,7 +203,16 @@ nmap º :FloatermToggle<CR>
 lua << EOF
 require('telescope').setup{
   defaults = {
-    file_ignore_patterns = { "node_modules/*" },
+    file_ignore_patterns = { 
+      "node_modules/*",
+      "build/*",
+      "bin/*",
+      ".git/*",
+      ".idea/*",
+      "dist/*",
+      "gradlew*",
+      "desktop.ini"
+    },
   }
 }
 EOF

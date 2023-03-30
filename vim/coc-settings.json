@@ -1,6 +1,12 @@
 {
   "java.jdt.ls.java.home": "C:\\Program Files\\RedHat\\java-17-openjdk-17.0.6.0.10-1",
   "coc.preferences.formatOnSave": true,
+  "prettier.enable": false,
   "prettier.formatterPriority": -1,
-  "eslint.autoFixOnSave": true
+  "deno.enable": false,
+  "eslint.autoFixOnSave": false,
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.format.semicolons": "remove",
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
