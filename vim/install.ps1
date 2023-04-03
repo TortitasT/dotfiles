@@ -70,6 +70,7 @@ function Vim-Install-Coc-Plugs {
     "coc-powershell"
     "coc-lua"
     "coc-deno"
+    "coc-phpls"
   )
 
   foreach ($cocplug in $cocplugs) {

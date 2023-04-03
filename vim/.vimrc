@@ -68,7 +68,7 @@ Plug 'yggdroot/indentline'
 
 Plug 'APZelos/blamer.nvim'
 
-Plug 'vim-scripts/TeTrIs.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 call plug#end()
 
@@ -78,6 +78,14 @@ let mapleader=","
 
 "   Center cursor
 set scrolloff=8
+
+"   Cursor effects
+set cursorline
+"set cursorcolumn
+
+"   Spell check
+set spell
+set spell spelllang=es,en_us
 
 "   Neovide
 if exists("g:neovide")
