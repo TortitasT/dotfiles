@@ -70,6 +70,8 @@ Plug 'APZelos/blamer.nvim'
 
 Plug 'vim-scripts/TeTrIs.vim'
 
+Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
+
 call plug#end()
 
 " Config
