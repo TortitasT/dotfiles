@@ -120,6 +120,9 @@ alias gb="git checkout -b"
 # Laravel
 alias art="php artisan"
 
+# Notes
+alias note="vim -y"
+
 # NVM EXPORT
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
