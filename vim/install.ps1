@@ -70,14 +70,18 @@ function Vim-Install-Coc-Plugs {
     "coc-powershell"
     "coc-lua"
     "coc-deno"
-    "coc-phpls"
+    "@yaegassy/coc-intelephense"
   )
 
-  foreach ($cocplug in $cocplugs) {
-    Start-Job -ScriptBlock { Invoke-Expression "nvim +CocInstall $cocplug +qall" } | Wait-Job 1> $null
+  #foreach ($cocplug in $cocplugs) {
+    #Start-Job -ScriptBlock { Invoke-Expression "nvim +CocInstall $cocplug +qall" } | Wait-Job 1> $null
 
-    Print "$cocplug installed" -Level Success
-  }
+    #Print "$cocplug installed" -Level Success
+  #}
+
+  $joinedCocPlugs = $cocplugs -join " "
+
+  Start-Job -ScriptBlock { Invoke-Expression "nvim -c '$joinedCocPlugs' +qall" } | Wait-Job 1> $null
 
   Print "Coc plugins installed" -Level Success
 }
