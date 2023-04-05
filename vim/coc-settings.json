@@ -4,6 +4,7 @@
   "prettier.enable": false,
   "prettier.formatterPriority": -1,
   "deno.enable": false,
+  "codeLens.enable": true,
   "eslint.autoFixOnSave": true,
   "javascript.format.enable": false,
   "javascript.preferences.quoteStyle": "single",

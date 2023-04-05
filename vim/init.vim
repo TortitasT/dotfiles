@@ -122,6 +122,9 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 
+"   intelephense lens
+nmap <silent> gl <Plug>(coc-codelens-action)
+
 "   Copilot map C-e to accept
 imap <silent><script><expr> <C-e> copilot#Accept('\<CR>')
 let g:copilot_no_tab_map = v:true
