@@ -31,7 +31,7 @@ function Vim-Install-Plug {
 
 function Vim-Copy-Config {
   # Nvim
-  Copy-Item ".\.vimrc" "$HOME\AppData\Local\nvim\init.vim" -Force 1> $null
+  Copy-Item ".\init.vim" "$HOME\AppData\Local\nvim\init.vim" -Force 1> $null
   Copy-Item ".\coc-settings.json" "$HOME\AppData\Local\nvim\coc-settings.json" -Force 1> $null
 
   # Vim
