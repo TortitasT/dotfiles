@@ -1,0 +1,61 @@
+:root {
+  --bg-color: #181926;
+  --fg-color: #CAD3F6;
+  --accent-color: #23273A;
+  --highlight-color: #F7F7F7;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+body a {
+  color: var(--fg-color);
+  text-decoration: none;
+}
+body p,
+body h1 {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.quote {
+  max-width: 400px;
+  color: var(--highlight-color);
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.links > a {
+  display: block;
+  padding: 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 0.2em;
+  transition: background-color 0.2s ease-in-out;
+}
+.links > a:hover {
+  background-color: var(--accent-color);
+}
+
+/*# sourceMappingURL=style.css.map */
