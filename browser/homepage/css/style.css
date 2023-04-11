@@ -2,6 +2,7 @@
   --bg-color: #181926;
   --fg-color: #CAD3F6;
   --accent-color: #23273A;
+  --highlight-color: #F7F7F7;
 }
 
 body {
@@ -31,6 +32,13 @@ main {
 h1 {
   font-size: 4rem;
   font-weight: 700;
+}
+
+.quote {
+  max-width: 400px;
+  color: var(--highlight-color);
+  font-size: 1.5rem;
+  text-align: justify;
 }
 
 .links {

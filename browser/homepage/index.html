@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <title>Homepage</title>
   <link rel="stylesheet" href="./css/style.css">
+  <script defer>
+    fetch('https://api.quotable.io/random?tags=technology')
+      .then(response => response.json())
+      .then(data => {
+        const quote = document.querySelector('.quote');
+        quote.textContent = data.content;
+      })
+      .catch(err => console.error(err));
+  </script>
 </head>
 <body>
   <main>
@@ -11,8 +20,8 @@
       l'Internet
     </h1>
 
-    <p>
-      L'Internet est un réseau de réseaux qui relie des ordinateurs entre eux.
+    <p class="quote">
+      Loading...
     </p>
 
     <div class="links">
