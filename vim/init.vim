@@ -87,6 +87,13 @@ set cursorline
 set spell
 set spell spelllang=es,en_us
 
+"   Save when not root
+if has("bsd")
+  command WriteRoot :w !doas tee %
+elseif has("linux")
+  command WriteRoot :w !sudo tee %
+endif
+
 "   Neovide
 if exists("g:neovide")
   set guifont=Fira\ Code:h14
@@ -209,6 +216,14 @@ tnoremap <F8> <C-W>:tabp<CR>
 tnoremap <F9> <C-W>:tabn<CR>
 tnoremap <Esc> <C-\><C-n>
 nmap º :FloatermToggle<CR>
+
+vnoremap  <leader>y  "+y
+nnoremap  <leader>y  "+y
+
+vnoremap  <leader>p  "+p
+nnoremap  <leader>p  "+p
+vnoremap  <leader>P  "+P
+nnoremap  <leader>P  "+P
 
 "   telescope ignore files
 lua << EOF
