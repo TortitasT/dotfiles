@@ -6,7 +6,6 @@ cp ./init.vim ~/.config/nvim/init.vim
 cp ./coc-settings.json ~/.config/nvim/coc-settings.json
 cp -rf ./ftplugin ~/.config/nvim/
 
-# Ask to continue
 read -p "Continue (y/n)? " choice
 if [[ $choice != "y" ]]; then
     echo "Exiting..."

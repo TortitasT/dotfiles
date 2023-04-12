@@ -148,7 +148,8 @@ let g:user_emmet_leader_key=','
 let g:prettier#autoformat = 1
 
 "   Line numbers
-set number
+set number relativenumber
+lua vim.opt.statuscolumn = "%l %r"
 
 "   Font
 if has("gui_running")
