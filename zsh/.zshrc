@@ -59,19 +59,7 @@ ZSH_THEME="dst" # set by `omz`
 # You can set one of the optional three formats:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-
+# see 'man strftime' for details.  # HIST_STAMPS="mm/dd/yyyy" # Would you like to use another custom folder than $ZSH/custom?  # ZSH_CUSTOM=/path/to/new-custom-folder # Which plugins would you like to load?  # Standard plugins can be found in $ZSH/plugins/ # Custom plugins may be added to $ZSH_CUSTOM/plugins/ # Example format: plugins=(rails git textmate ruby lighthouse) # Add wisely, as too many plugins slow down shell startup.  plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -104,6 +92,7 @@ source $ZSH/oh-my-zsh.sh
 alias q="exit"
 alias ll="ls -lh"
 alias la="ls -lah"
+alias doo="chmod 700 ./do.sh && ./do.sh"
 
 # Git
 alias gg="cd ~/Documents/Git"
@@ -119,13 +108,14 @@ alias gb="git checkout -b"
 
 # Laravel
 alias art="php artisan"
+alias artest="vendor/bin/phpunit --testdox"
 
 # Notes
 alias note="vim -y"
 
 # NVM EXPORT
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+source ~/.nvm/nvm.sh
 
 # AUTOSUGGESTION
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -133,9 +123,32 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # LaTeX
 export PATH="/Library/TeX/texbin/:$PATH"
 
+# Prot
+export PATH="/Users/vgf/.deno/bin:$PATH"
+
 # NVM SET DEFAULT VERSION
-nvm use 14
+nvm use 16
 
 # starship prompt
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
+# git identity manager
+export PATH="~/bin/git-idm:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+#neofetch
+# neofetch
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun completions
+[ -s "/Users/vgf/.bun/_bun" ] && source "/Users/vgf/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
