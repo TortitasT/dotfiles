@@ -11,7 +11,7 @@
   "vetur.format.enable": true,
   "vetur.format.defaultFormatter.scss": "prettier",
   "vetur.format.defaultFormatter.js": "none",
-  vetur.format.defaultFormatter.html: "none",
+  "vetur.format.defaultFormatter.html": "none",
   "deno.enable": false,
   "codeLens.enable": true,
   "eslint.autoFixOnSave": true,
