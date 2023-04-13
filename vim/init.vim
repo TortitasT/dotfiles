@@ -22,6 +22,8 @@ function! PlugLoaded(name)
         \ stridx(&rtp, g:plugs[a:name].dir) >= 0)
 endfunction
 
+let g:plugs_disabled = ['ale', 'vim-vue']
+
 call plug#begin()
 
 Plug 'scrooloose/nerdtree' |
@@ -32,11 +34,13 @@ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 
 Plug 'mattn/emmet-vim'
 
 Plug 'github/copilot.vim' " Requires to sign up
+
+Plug 'posva/vim-vue'
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -69,6 +73,8 @@ Plug 'yggdroot/indentline'
 Plug 'APZelos/blamer.nvim'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
+Plug 'folke/zen-mode.nvim'
 
 call plug#end()
 
@@ -179,13 +185,13 @@ if PlugLoaded('vim-airline')
 endif
 
 "   Ale
-"let g:ale_fixers = {
- "\ 'javascript': ['eslint'],
- "\ 'vue': ['eslint']
- "\ }
+let g:ale_fixers = {
+ \ 'javascript': ['eslint'],
+ \ 'vue': ['eslint']
+ \ }
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
-"let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
 
 "	  Tabs
 set expandtab
