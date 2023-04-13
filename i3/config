@@ -105,9 +105,13 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# Map the print key to gnome-screenshot.
+# Map the print key to xclip screenshot.
 bindsym $mod+Print exec "maim | xclip -selection clipboard -t image/png"
 bindsym $mod+Shift+s exec "maim --select | xclip -selection clipboard -t image/png"
+
+# Map CMD+Shift+c to select color with xcolor
+#bindsym $mod+Shift+c exec "xcolor" | notify-send "Color copied to clipboard"
+bindsym $mod+Shift+c exec "xcolor"
 
 # Reload the configuration file.
 bindsym $mod+Shift+r restart
