@@ -110,8 +110,7 @@ bindsym $mod+Print exec "maim | xclip -selection clipboard -t image/png"
 bindsym $mod+Shift+s exec "maim --select | xclip -selection clipboard -t image/png"
 
 # Map CMD+Shift+c to select color with xcolor
-#bindsym $mod+Shift+c exec "xcolor" | notify-send "Color copied to clipboard"
-bindsym $mod+Shift+c exec "xcolor"
+bindsym --release $mod+Shift+c exec "xcolor -s clipboard"
 
 # Reload the configuration file.
 bindsym $mod+Shift+r restart
