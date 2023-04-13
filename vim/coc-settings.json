@@ -20,5 +20,7 @@
   "javascript.preferences.quoteStyle": "single",
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.format.semicolons": "remove",
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "phpactor.enable": true,
+  "phpactor.path": "/home/tortitas/.local/bin/phpactor"
 }

@@ -14,7 +14,7 @@ fi
 
 nvim +PlugInstall +qall
 
-cocExtensions="coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-java coc-vetur @yaegassy/coc-intelephense coc-sh coc-blade @yaegassy/coc-phpstan coc-pyright"
+cocExtensions="coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-java coc-vetur @yaegassy/coc-intelephense coc-sh coc-phpactor @yaegassy/coc-phpstan coc-pyright"
 
 nvim -c "CocInstall $cocExtensions"
 

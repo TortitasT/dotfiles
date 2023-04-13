@@ -76,6 +76,10 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 Plug 'folke/zen-mode.nvim'
 
+Plug 'adalessa/laravel.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 
 " Config
@@ -131,6 +135,9 @@ nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 "   fg to use telescope
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
+"   Ctrl + p to use telescope
+nnoremap <C-p> <cmd>Telescope commands<cr>
+
 "   Coc TAB to complete
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
@@ -149,9 +156,6 @@ filetype plugin on
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,vue,scss EmmetInstall
 let g:user_emmet_leader_key=','
-
-"   Autoformat prettier
-let g:prettier#autoformat = 1
 
 "   Line numbers
 set number relativenumber
