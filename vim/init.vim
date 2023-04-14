@@ -1,20 +1,3 @@
-if !has("nvim")
-
-" Disable compatibility with vi
-  set nocompatible
-
-" Enable syntax highlight by default
-  syntax on
-
-" Enable plugins
-  filetype plugin on
-
-" Fuzzy file finding
-  set path+=**
-  set wildmenu
-
-endif
-
 function! PlugLoaded(name)
     return (
         \ has_key(g:plugs, a:name) &&
@@ -96,6 +79,11 @@ set cursorline
 "   Spell check
 set spell
 set spell spelllang=es,en_us
+
+"   go file, don't work too well with nuxt
+"set path+=**
+"set suffixesadd+=.js,.vue,.php,.html,.css,.scss,.json,.md,.txt
+":map gf :e <cfile><CR>
 
 "   Save when not root
 if has("bsd")
