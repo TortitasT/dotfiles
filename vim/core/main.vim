@@ -1,74 +1,4 @@
-function! PlugLoaded(name)
-    return (
-        \ has_key(g:plugs, a:name) &&
-        \ isdirectory(g:plugs[a:name].dir) &&
-        \ stridx(&rtp, g:plugs[a:name].dir) >= 0)
-endfunction
-
-"let g:plugs_disabled = ['ale', 'vim-vue']
-
-call plug#begin()
-
-Plug 'scrooloose/nerdtree' |
-  \ Plug 'Xuyuanp/nerdtree-git-plugin'
-
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-
-"Plug 'w0rp/ale'
-
-Plug 'mattn/emmet-vim'
-
-Plug 'github/copilot.vim' " Requires to sign up
-
-Plug 'posva/vim-vue'
-
-Plug 'ryanoasis/vim-devicons'
-
-Plug 'scrooloose/nerdcommenter'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'tpope/vim-fugitive'
-
-Plug 'Shougo/denite.nvim'
-
-Plug 'rstacruz/vim-closer'
-
-Plug 'mhinz/vim-signify'
-
-Plug 'nvim-lua/plenary.nvim'
-
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
-
-Plug 'mhinz/vim-startify'
-
-Plug 'voldikss/vim-floaterm'
-
-Plug 'wakatime/vim-wakatime', { 'branch': 'master' }
-
-Plug 'ap/vim-css-color'
-
-Plug 'yggdroot/indentline'
-
-Plug 'APZelos/blamer.nvim'
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-
-Plug 'folke/zen-mode.nvim'
-
-Plug 'adalessa/laravel.nvim'
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-call plug#end()
-
 " Config
-"   Leader key
-let mapleader=","
-
 "   Center cursor
 set scrolloff=8
 
@@ -117,25 +47,6 @@ let g:startify_bookmarks = [
 "   Close NERDTree if last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-"   ff to use telescope
-nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
-
-"   fg to use telescope
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-
-"   Ctrl + p to use telescope
-nnoremap <C-p> <cmd>Telescope commands<cr>
-
-"   Coc TAB to complete
-inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
-inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
-
-"   intelephense lens
-nmap <silent> gl <Plug>(coc-codelens-action)
-
-"   Copilot map C-e to accept
-imap <silent><script><expr> <C-e> copilot#Accept('\<CR>')
-let g:copilot_no_tab_map = v:true
 
 "   NERDCommenter
 filetype plugin on
@@ -143,7 +54,6 @@ filetype plugin on
 "   Emmet
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,vue,scss EmmetInstall
-let g:user_emmet_leader_key=','
 
 "   Line numbers
 set number relativenumber
@@ -203,28 +113,6 @@ let NERDTreeShowHidden=1
 
 "   NERDTree right
 let g:NERDTreeWinPos = "right"
-
-"   Mappings
-map <F8> :tabp<CR>
-map <F9> :tabn<CR>
-cnoreabbrev gco :Git checkout
-cnoreabbrev ga :Git add --all
-cnoreabbrev gc :Git commit -m
-cnoreabbrev gs :Git status
-cnoreabbrev term :FloatermNew<CR>
-nmap B :NERDTree<CR>
-tnoremap <F8> <C-W>:tabp<CR>
-tnoremap <F9> <C-W>:tabn<CR>
-tnoremap <Esc> <C-\><C-n>
-nmap º :FloatermToggle<CR>
-
-vnoremap  <leader>y  "+y
-nnoremap  <leader>y  "+y
-
-vnoremap  <leader>p  "+p
-nnoremap  <leader>p  "+p
-vnoremap  <leader>P  "+P
-nnoremap  <leader>P  "+P
 
 "   telescope ignore files
 lua << EOF

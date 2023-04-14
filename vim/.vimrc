@@ -1,15 +1,15 @@
 " Disable compatibility with vi
-  set nocompatible
+set nocompatible
 
 " Enable syntax highlight by default
-  syntax on
+syntax on
 
 " Enable plugins
-  filetype plugin on
+filetype plugin on
 
 " Fuzzy file finding
-  set path+=**
-  set wildmenu
+set path+=**
+set wildmenu
 
 " Config
 "   Leader key

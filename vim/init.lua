@@ -16,7 +16,9 @@ if version.cmp(ev, actual_ver) ~= 0 then
 end
 
 local core_conf_files = {
-  "main.vim"
+  "plugins.vim",
+  "main.vim",
+  "mappings.vim",
 }
 
 -- source all the core config files
