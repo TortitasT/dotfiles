@@ -2,7 +2,8 @@
 # I am lazy I know
 
 cp ./.vimrc ~/.vimrc
-cp ./init.vim ~/.config/nvim/init.vim
+cp ./init.lua ~/.config/nvim/init.lua
+cp -rf ./core ~/.config/nvim/core
 cp ./coc-settings.json ~/.config/nvim/coc-settings.json
 cp -rf ./ftplugin ~/.config/nvim/
 
