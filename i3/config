@@ -115,6 +115,9 @@ bindsym --release $mod+Shift+c exec "xcolor -s clipboard"
 # Reload the configuration file.
 bindsym $mod+Shift+r restart
 
+# Alt Tab
+bindsym $mod+Tab workspace back_and_forth
+
 # gaps
 gaps inner 10
 gaps outer 10
