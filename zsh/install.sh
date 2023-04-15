@@ -1,10 +1,61 @@
 #!/bin/bash
 
-# Install .zshrc
+# Ensure directories exist.
+#
+# $@ - The directories to ensure exist.
+function ensureDirs() {
+  local dirs=("$@")
+
+  for dir in "${dirs[@]}"; do
+    if [ ! -d $dir ]; then
+      mkdir -p $dir
+    fi
+  done
+}
+
+# Install a plugin on .zsh/plugins if it doesn't exist.
+#
+# $1 - The name of the plugin. This is the name of the repo on GitHub. (including the author name)
+function installPlugin() {
+  local name=$1
+
+  if [ ! -d ~/.zsh/plugins/$name ]; then # TODO: name includes author name so this won't work
+    local og_path=$PWD
+    cd ~/.zsh/plugins
+    
+    git clone git@github.com:$name.git
+
+    cd $og_path
+  fi
+}
+
+# Install a theme on .zsh/themes if it doesn't exist.
+#
+# $1 - The name of the theme. This is the name of the repo on GitHub. (including the author name)
+function installTheme() {
+  local name=$1
+
+  if [ ! -d ~/.zsh/themes/$name ]; then # TODO: name includes author name so this won't work
+    local og_path=$PWD
+    cd ~/.zsh/themes
+
+    git clone git@github.com:$name.git
+
+    cd $og_path
+  fi
+}
+
+# Ensure dirs
+ensureDirs ~/.zsh ~/.zsh/plugins ~/.zsh/themes
+
+# Install plugins
+installPlugin "zdharma-zmirror/fast-syntax-highlighting"
+installPlugin "zsh-users/zsh-autosuggestions"
+installPlugin "zsh-users/zsh-completions"
+
+# Install themes
+installTheme "spaceship-prompt/spaceship-prompt"
+
+# Copy config
 cp .zshrc ~/.zshrc
 
-# Install zsh-autosuggestions
-if [ -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-  echo "zsh-autosuggestions installed, please add it to your plugins in .zshrc"
-fi
