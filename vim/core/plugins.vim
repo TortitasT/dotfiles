@@ -9,8 +9,8 @@ endfunction
 
 call plug#begin()
 
-Plug 'scrooloose/nerdtree' |
-  \ Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'scrooloose/nerdtree' |
+  "\ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 

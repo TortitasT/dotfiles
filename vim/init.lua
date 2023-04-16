@@ -15,8 +15,9 @@ if version.cmp(ev, actual_ver) ~= 0 then
   return
 end
 
+require("tortitas/lazy")
+
 local core_conf_files = {
-  "plugins.vim",
   "main.vim",
   "mappings.vim",
 }

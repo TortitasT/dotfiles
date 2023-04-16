@@ -4,6 +4,7 @@
 cp ./.vimrc ~/.vimrc
 cp ./init.lua ~/.config/nvim/init.lua
 cp -rf ./core ~/.config/nvim
+cp -rf ./lua ~/.config/nvim
 cp ./coc-settings.json ~/.config/nvim/coc-settings.json
 cp -rf ./ftplugin ~/.config/nvim/
 
@@ -13,9 +14,7 @@ if [[ $choice != "y" ]]; then
     exit 1
 fi
 
-nvim +PlugInstall +qall
-
-cocExtensions="coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-java coc-vetur @yaegassy/coc-intelephense coc-sh coc-phpactor @yaegassy/coc-phpstan coc-pyright"
+cocExtensions="coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-java coc-vetur @yaegassy/coc-intelephense coc-sh @yaegassy/coc-phpstan coc-pyright"
 
 nvim -c "CocInstall $cocExtensions"
 

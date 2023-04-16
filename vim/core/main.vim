@@ -1,3 +1,7 @@
+function! PlugLoaded(name)
+    return 0
+endfunction 
+
 " Config
 "   Center cursor
 set scrolloff=8
@@ -8,12 +12,42 @@ set cursorline
 
 "   Spell check
 set spell
-set spell spelllang=es,en_us
+set spell spelllang=es_es,en_us
 
-"   go file, don't work too well with nuxt
-"set path+=**
-"set suffixesadd+=.js,.vue,.php,.html,.css,.scss,.json,.md,.txt
-":map gf :e <cfile><CR>
+"   Treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "vue" },
+
+  auto_install = true,
+
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
+"   LSP
+lua <<EOF
+--local lsp = require('lsp-zero').preset({})
+
+--lsp.on_attach(function(client, bufnr)
+--  lsp.default_keymaps({buffer = bufnr})
+--end)
+--
+--lsp.ensure_installed({
+--  'clangd',
+--  'volar',
+--  'eslint',
+--  'rust_analyzer',
+--  'intelephense'
+--})
+
+--require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+--lsp.setup()
+EOF
 
 "   Save when not root
 if has("bsd")
@@ -44,16 +78,9 @@ let g:startify_bookmarks = [
 \ { 'c': '~/Documents/Git/misc/dotfiles/vim' },
 \ ]
 
-"   Close NERDTree if last window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-
-"   NERDCommenter
-filetype plugin on
-
 "   Emmet
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,vue,scss EmmetInstall
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css,vue,scss EmmetInstall
 
 "   Line numbers
 set number relativenumber

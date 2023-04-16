@@ -9,7 +9,10 @@ cnoreabbrev gc :Git commit -m
 cnoreabbrev gs :Git status
 
 "   NERDTree
-nmap B :NERDTree<CR>
+"map B :NERDTree<CR>
+
+"   NeoTree
+map B :NeoTreeShowToggle<CR>
 
 "   Tabs
 map <F8> :tabp<CR>
