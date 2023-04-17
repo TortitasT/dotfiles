@@ -31,8 +31,11 @@ function Vim-Install-Plug {
 
 function Vim-Copy-Config {
   # Nvim
-  Copy-Item ".\init.vim" "$HOME\AppData\Local\nvim\init.vim" -Force 1> $null
+  Copy-Item ".\init.lua" "$HOME\AppData\Local\nvim\init.lua" -Force 1> $null
   Copy-Item ".\coc-settings.json" "$HOME\AppData\Local\nvim\coc-settings.json" -Force 1> $null
+  Copy-Item -Path ".\ftplugin" -Destination "$HOME\AppData\Local\nvim\ftplugin" -Recurse
+  Copy-Item -Path ".\core" -Destination "$HOME\AppData\Local\nvim\core" -Recurse
+  Copy-Item -Path ".\lua" -Destination "$HOME\AppData\Local\nvim\lua" -Recurse
 
   # Vim
   Copy-Item ".\.vimrc" "$HOME\.vimrc" -Force 1> $null
@@ -53,7 +56,7 @@ function Vim-Install-Python-Deps {
 }
 
 function Vim-Install-Plugs {
-  Start-Job -ScriptBlock { Invoke-Expression "nvim +PlugInstall +qall" } | Wait-Job 1> $null
+  #Start-Job -ScriptBlock { Invoke-Expression "nvim +PlugInstall +qall" } | Wait-Job 1> $null
 
   Print "Plugins installed" -Level Success
 }
@@ -73,15 +76,15 @@ function Vim-Install-Coc-Plugs {
     "@yaegassy/coc-intelephense"
   )
 
-  #foreach ($cocplug in $cocplugs) {
-    #Start-Job -ScriptBlock { Invoke-Expression "nvim +CocInstall $cocplug +qall" } | Wait-Job 1> $null
+  foreach ($cocplug in $cocplugs) {
+    Start-Job -ScriptBlock { Invoke-Expression "nvim +CocInstall $cocplug +qall" } | Wait-Job 1> $null
 
-    #Print "$cocplug installed" -Level Success
-  #}
+    Print "$cocplug installed" -Level Success
+  }
 
-  $joinedCocPlugs = $cocplugs -join " "
-
-  Start-Job -ScriptBlock { Invoke-Expression "nvim -c '$joinedCocPlugs' +qall" } | Wait-Job 1> $null
+  #$joinedCocPlugs = $cocplugs -join " "
+  #Start-Job -ScriptBlock { Invoke-Expression "nvim -c 'CocInstall $joinedCocPlugs' +qall" } | Wait-Job 1> $null
+  #Invoke-Expression "nvim -c 'CocInstall $joinedCocPlugs' +qall"
 
   Print "Coc plugins installed" -Level Success
 }
