@@ -22,5 +22,6 @@
   "javascript.format.semicolons": "remove",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "phpactor.enable": true,
-  "phpactor.path": "/home/tortitas/.local/bin/phpactor"
+  "phpactor.path": "/home/tortitas/.local/bin/phpactor",
+  "clangd.path": "/usr/local/bin/clangd15"
 }
