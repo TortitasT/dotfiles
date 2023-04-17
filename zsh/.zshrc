@@ -91,6 +91,7 @@ alias :q="exit"
 alias .q="exit"
 if [[ "$OSTYPE" == "freebsd"* ]]; then alias poweroff="doas poweroff"; fi
 alias doo="chmod 700 ./do.sh && ./do.sh"
+if [[ "$OSTYPE" == "freebsd"* ]]; then alias ii="pcmanfm ."; fi
 # Git
 alias g="git"
 if [[ "$OSTYPE" == "darwin"* ]]; then alias gg="cd ~/Documents/Git"; fi
