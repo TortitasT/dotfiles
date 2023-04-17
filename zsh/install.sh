@@ -23,7 +23,7 @@ function installPlugin() {
     local og_path=$PWD
     cd ~/.zsh/plugins
     
-    git clone git@github.com:$name.git
+    git clone https://github.com/$name.git
 
     cd $og_path
   fi
@@ -39,7 +39,7 @@ function installTheme() {
     local og_path=$PWD
     cd ~/.zsh/themes
 
-    git clone git@github.com:$name.git
+    git clone https://github.com/$name.git
 
     cd $og_path
   fi
