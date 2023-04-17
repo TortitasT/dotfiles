@@ -127,9 +127,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Deno bin
   export PATH="$HOME/.deno/bin:$PATH"
 
-  # Node default version
-  nvm use 16
-
   # Git identity manager
   export PATH="$HOME/bin/git-idm:$PATH"
 
