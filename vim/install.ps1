@@ -33,9 +33,14 @@ function Vim-Copy-Config {
   # Nvim
   Copy-Item ".\init.lua" "$HOME\AppData\Local\nvim\init.lua" -Force 1> $null
   Copy-Item ".\coc-settings.json" "$HOME\AppData\Local\nvim\coc-settings.json" -Force 1> $null
-  Copy-Item -Path ".\ftplugin" -Destination "$HOME\AppData\Local\nvim\ftplugin" -Recurse
-  Copy-Item -Path ".\core" -Destination "$HOME\AppData\Local\nvim\core" -Recurse
-  Copy-Item -Path ".\lua" -Destination "$HOME\AppData\Local\nvim\lua" -Recurse
+
+  Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\ftplugin"
+  Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\core"
+  Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\lua"
+
+  Copy-Item -Path ".\ftplugin\" -Destination "$HOME\AppData\Local\nvim\ftplugin" -Recurse
+  Copy-Item -Path ".\core\" -Destination "$HOME\AppData\Local\nvim\core" -Recurse
+  Copy-Item -Path ".\lua\" -Destination "$HOME\AppData\Local\nvim\lua" -Recurse
 
   # Vim
   Copy-Item ".\.vimrc" "$HOME\.vimrc" -Force 1> $null
@@ -110,6 +115,14 @@ function Vim-Install {
   Vim-Ensure-Directories
   Vim-Install-Plug
   Vim-Copy-Config
+
+  $confirmation = Read-Host "Skip coc plugins? (y/n)"
+  if ($confirmation -eq 'y') {
+    Print "Skipping coc plugins" -Level Warn
+    return  
+  }
+
+
   Vim-Install-Python-Deps
   Vim-Install-Plugs
   Vim-Install-Coc-Plugs

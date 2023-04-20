@@ -50,5 +50,8 @@ nmap <silent> gl <Plug>(coc-codelens-action)
 imap <silent><script><expr> <C-e> copilot#Accept('\<CR>')
 let g:copilot_no_tab_map = v:true
 
+"   :Q to quit too since I can't stop pressing shift
+:command Q q
+
 "   Emmet leader key
 let g:user_emmet_leader_key=','
