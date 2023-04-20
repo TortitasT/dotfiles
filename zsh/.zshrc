@@ -107,6 +107,8 @@ alias artest="vendor/bin/phpunit --testdox"
 # Python
 alias py="python3"
 alias pip="pip3"
+# Java
+alias gradlew="./gradlew"
 #
 # // ALIAS END ////////////////////////////
 
