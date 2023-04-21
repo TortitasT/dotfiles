@@ -5,7 +5,7 @@ cp ./.vimrc ~/.vimrc
 cp ./init.lua ~/.config/nvim/init.lua
 cp -rf ./core ~/.config/nvim
 cp -rf ./lua ~/.config/nvim
-cp ./coc-settings.json ~/.config/nvim/coc-settings.json
+cp ./coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
 cp -rf ./ftplugin ~/.config/nvim/
 
 read -p "Continue (y/n)? " choice

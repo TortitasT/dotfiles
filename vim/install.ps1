@@ -32,7 +32,7 @@ function Vim-Install-Plug {
 function Vim-Copy-Config {
   # Nvim
   Copy-Item ".\init.lua" "$HOME\AppData\Local\nvim\init.lua" -Force 1> $null
-  Copy-Item ".\coc-settings.json" "$HOME\AppData\Local\nvim\coc-settings.json" -Force 1> $null
+  Copy-Item ".\coc\coc-settings-windows.json" "$HOME\AppData\Local\nvim\coc-settings.json" -Force 1> $null
 
   Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\ftplugin"
   Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\core"
