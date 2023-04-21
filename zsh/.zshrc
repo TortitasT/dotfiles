@@ -1,6 +1,9 @@
 # ZSH Home
 export ZSH="$HOME/.zsh"
 
+# Environment
+source $ZSH/env.sh 2>/dev/null
+
 # History config
 export HISTFILE=$ZSH/.zsh_history
 export HISTSIZE=10000
