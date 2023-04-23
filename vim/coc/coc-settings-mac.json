@@ -3,6 +3,7 @@
   "prettier.enable": true,
   "prettier.formatterPriority": -1,
   "prettier.disableLanguages": [
+    "javascript",
     "vue"
   ],
   "tsserver.enable": true,
