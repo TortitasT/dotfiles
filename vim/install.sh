@@ -5,7 +5,13 @@ cp ./.vimrc ~/.vimrc
 cp ./init.lua ~/.config/nvim/init.lua
 cp -rf ./core ~/.config/nvim
 cp -rf ./lua ~/.config/nvim
-cp ./coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  cp ./coc/coc-settings-mac.json ~/.config/nvim/coc-settings.json
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+  cp ./coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
+fi
+
 cp -rf ./ftplugin ~/.config/nvim/
 
 read -p "Continue (y/n)? " choice

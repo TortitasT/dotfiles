@@ -1,9 +1,10 @@
 {
-  "java.jdt.ls.java.home": "/usr/local/openjdk17",
   "coc.preferences.formatOnSave": true,
   "prettier.enable": true,
   "prettier.formatterPriority": -1,
-  "prettier.disableLanguages": ["vue"],
+  "prettier.disableLanguages": [
+    "vue"
+  ],
   "tsserver.enable": true,
   "vetur.format.enable": true,
   "vetur.format.defaultFormatter.scss": "prettier",
