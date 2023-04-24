@@ -62,9 +62,9 @@ exec --no-startup-id alacritty
 exec --no-startup-id firefox
 exec --no-startup-id spotify
 
-assign [class="Alacritty"] 1
+# assign [class="Alacritty"] 1
 assign [instance="Navigator"] 2
-assign [class="Spotify"] 3
+assign [class="Spotify"] 5 
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
