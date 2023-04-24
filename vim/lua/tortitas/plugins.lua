@@ -84,7 +84,11 @@ return {
   { 'ap/vim-css-color' },
 
   -- { 'yggdroot/indentline' },
-  { "lukas-reineke/indent-blankline.nvim" },
+  { 
+    "lukas-reineke/indent-blankline.nvim", 
+    config = function()
+    end
+  },
   
   { 'APZelos/blamer.nvim' },
 
