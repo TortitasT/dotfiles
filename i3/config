@@ -57,6 +57,15 @@ for_window [class="Spotify"] floating disable
 # for_window [window_role="Preferences"] floating enable
 # for_window [window_type="dialog"] floating enable
 
+# STARTUP APPLICATIONS
+exec --no-startup-id alacritty
+exec --no-startup-id firefox
+exec --no-startup-id spotify
+
+assign [class="Alacritty"] 1
+assign [instance="Navigator"] 2
+assign [class="Spotify"] 3
+
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar

@@ -2,7 +2,7 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
-    dependencies = { 
+    dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
@@ -54,7 +54,8 @@ return {
   },
 
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
 
@@ -89,16 +90,16 @@ return {
 
   { 'voldikss/vim-floaterm' },
 
-  { 
+  {
     'wakatime/vim-wakatime',
-    branch = 'master' 
+    branch = 'master'
   },
 
   { 'ap/vim-css-color' },
 
   -- { 'yggdroot/indentline' },
-  { 
-    "lukas-reineke/indent-blankline.nvim", 
+  {
+    "lukas-reineke/indent-blankline.nvim",
     config = function()
     end
   },
@@ -113,6 +114,7 @@ return {
   { 'folke/zen-mode.nvim' },
 
   { 'adalessa/laravel.nvim' },
+
   --{
   --  'VonHeikemen/lsp-zero.nvim',
   --  branch = 'v2.x',
