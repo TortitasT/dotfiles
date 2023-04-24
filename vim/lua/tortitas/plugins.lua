@@ -35,9 +35,13 @@ return {
     end
   },
   
+  -- {
+  --   "catppuccin/vim",
+  --   name = catppuccin
+  -- },
+  
   {
-    "catppuccin/vim",
-    name = catppuccin
+    "kvrohit/mellow.nvim"
   },
   
   {

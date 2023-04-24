@@ -107,7 +107,11 @@ endif
 set mouse+=a
 
 "   Theme
-colorscheme catppuccin_mocha
+" colorscheme catppuccin_mocha
+colorscheme mellow
+let g:mellow_italic_functions = 1
+let g:mellow_bold_functions = 1
+let g:mellow_transparent = 1
 
 "   Airline
 if PlugLoaded('vim-airline')
