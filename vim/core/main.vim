@@ -3,6 +3,9 @@ function! PlugLoaded(name)
 endfunction 
 
 " Config
+"   Colors
+set termguicolors
+
 "   Center cursor
 set scrolloff=8
 
