@@ -115,6 +115,8 @@ return {
 
   { 'adalessa/laravel.nvim' },
 
+  { 'mfussenegger/nvim-dap' },
+
   --{
   --  'VonHeikemen/lsp-zero.nvim',
   --  branch = 'v2.x',
