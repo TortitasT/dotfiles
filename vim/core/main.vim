@@ -1,5 +1,5 @@
 function! PlugLoaded(name)
-    return 0
+  return 0
 endfunction 
 
 " Config
@@ -74,9 +74,9 @@ endif
 
 "   Startify config
 let g:startify_bookmarks = [
-\ { 'y': '~/Documents/Git/descommarket/yapayoo' },
-\ { 'c': '~/Documents/Git/misc/dotfiles/vim' },
-\ ]
+      \ { 'y': '~/Documents/Git/descommarket/yapayoo' },
+      \ { 'c': '~/Documents/Git/misc/dotfiles/vim' },
+      \ ]
 
 "   Emmet
 " let g:user_emmet_install_global = 0
@@ -116,9 +116,9 @@ endif
 "   Ale
 if PlugLoaded('ale')
   let g:ale_fixers = {
-   \ 'javascript': ['eslint'],
-   \ 'vue': ['eslint']
-   \ }
+        \ 'javascript': ['eslint'],
+        \ 'vue': ['eslint']
+        \ }
   let g:ale_sign_error = '❌'
   let g:ale_sign_warning = '⚠️'
   let g:ale_fix_on_save = 1
@@ -133,7 +133,7 @@ set autoindent
 "   Auto enter NERDTree
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-    "\ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+      "\ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
 "   NERDTree show hidden
 let NERDTreeShowHidden=1
@@ -144,18 +144,18 @@ let g:NERDTreeWinPos = "right"
 "   telescope ignore files
 lua << EOF
 require('telescope').setup{
-  defaults = {
-    file_ignore_patterns = { 
-      "node_modules/*",
-      "vendor/*",
-      "build/*",
-      "bin/*",
-      ".git/*",
-      ".idea/*",
-      "dist/*",
-      "gradlew*",
-      "desktop.ini"
-    },
-  }
+defaults = {
+  file_ignore_patterns = { 
+    "node_modules/*",
+    "vendor/*",
+    "build/*",
+    "bin/*",
+    ".git/*",
+    ".idea/*",
+    "dist/*",
+    "gradlew*",
+    "desktop.ini"
+  },
+}
 }
 EOF
