@@ -55,3 +55,7 @@ let g:copilot_no_tab_map = v:true
 
 "   Emmet leader key
 let g:user_emmet_leader_key=','
+
+"   CokeLine
+nmap <leader>7 <Plug>(cokeline-focus-prev)
+nmap <leader>8 <Plug>(cokeline-focus-next)

@@ -21,63 +21,72 @@ return {
             hide_gitignored = false,
           },
         },
+        event_handlers = {
+          {
+            event = "file_opened",
+            handler = function(file_path)
+              --auto close
+              require("neo-tree").close_all()
+            end
+          },
+        }
       })
     end
   },
 
   {
     'willothy/nvim-cokeline',
---    dependencies = {
---      'kyazdani42/nvim-web-devicons',
---    },
+    --    dependencies = {
+    --      'kyazdani42/nvim-web-devicons',
+    --    },
     config = function()
       require('cokeline').setup()
     end
   },
-  
+
   -- {
   --   "catppuccin/vim",
   --   name = catppuccin
   -- },
-  
+
   {
     "kvrohit/mellow.nvim"
   },
-  
+
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  
+
   {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end
   },
-  
+
   { 'github/copilot.vim' },
-  
+
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate"
   },
-  
+
   {
     'neoclide/coc.nvim',
     branch = "release"
   },
-  
+
   { 'mattn/emmet-vim' },
-  
+
   { 'tpope/vim-fugitive' },
-  
+
   { 'rstacruz/vim-closer' },
-  
+
   { 'mhinz/vim-signify' },
-  
+
   { 'mhinz/vim-startify' },
-  
+
   { 'voldikss/vim-floaterm' },
 
   { 
@@ -93,7 +102,7 @@ return {
     config = function()
     end
   },
-  
+
   { 'APZelos/blamer.nvim' },
 
   {
