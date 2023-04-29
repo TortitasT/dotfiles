@@ -97,6 +97,7 @@ alias doo="chmod 700 ./do.sh && ./do.sh"
 if [[ "$OSTYPE" == "freebsd"* ]]; then alias ii="nohup pcmanfm > /dev/null 2>&1&"; fi
 alias gitzip="git archive HEAD -o " # gitzip <filename>.zip to create a zip file using gitignore
 alias ed="nvim"
+alias emacs="emacs -nw"
 # Git
 alias g="git"
 if [[ "$OSTYPE" == "darwin"* ]]; then alias gg="cd ~/Documents/Git"; fi
