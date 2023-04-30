@@ -78,7 +78,10 @@ return {
     branch = "release"
   },
 
-  { 'mattn/emmet-vim' },
+  { 
+    'mattn/emmet-vim',
+    lazy = false
+  },
 
   { 'tpope/vim-fugitive' },
 
