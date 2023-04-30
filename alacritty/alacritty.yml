@@ -5,3 +5,14 @@ window:
     y: 15
 font:
   size: 12
+  normal:
+    family: FiraCode NF
+
+  bold:
+    family: FiraCode NF
+
+  italic:
+    family: FiraCode NF
+
+  bold_italic:
+    family: FiraCode NF
