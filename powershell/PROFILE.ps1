@@ -41,3 +41,6 @@ Set-Alias gco gitCheckout
 
 function qAlias { exit }
 Set-Alias q qAlias
+
+# function emacsAlias { emacs -nw @args }
+# Set-Alias emacs emacsAlias
