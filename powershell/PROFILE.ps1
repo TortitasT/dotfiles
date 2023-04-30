@@ -30,6 +30,7 @@ function gitAdd { git add --all }
 Set-Alias ga gitAdd
 
 function gitCommit { git commit -m @args }
+del alias:gc -ErrorAction SilentlyContinue -Force
 Set-Alias gc gitCommit
 
 function gitPull { git pull @args }
@@ -38,4 +39,5 @@ Set-Alias gpl gitPull
 function gitCheckout { git checkout @args }
 Set-Alias gco gitCheckout
 
-Set-Alias q exit
+function qAlias { exit }
+Set-Alias q qAlias

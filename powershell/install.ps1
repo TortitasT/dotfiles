@@ -25,8 +25,8 @@ function Powershell-Copy-Profile {
 function Powershell-Install {
   Print "Configuring Powershell..." Info
 
-  Powershell-Install-OhMyPosh
-  Powershell-Install-TerminalIcons
+  # Powershell-Install-OhMyPosh
+  # Powershell-Install-TerminalIcons
   Powershell-Copy-Profile
 
   Print "Powershell configured!" Success
