@@ -17,6 +17,9 @@ set cursorline
 set spell
 set spell spelllang=es_es,en_us
 
+"   Paste images md
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+
 "   Treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {

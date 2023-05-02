@@ -113,7 +113,7 @@ function Vim-Install {
 
   Vim-Install-Nvim
   Vim-Ensure-Directories
-  Vim-Install-Plug
+  # Vim-Install-Plug
   Vim-Copy-Config
 
   $confirmation = Read-Host "Skip coc plugins? (y/n)"
