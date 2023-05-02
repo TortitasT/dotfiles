@@ -120,7 +120,7 @@ return {
 
   { 'mfussenegger/nvim-dap' },
 
-  { 'img-paste-devs/img-paste.vim },
+  { 'img-paste-devs/img-paste.vim' },
 
   --{
   --  'VonHeikemen/lsp-zero.nvim',
