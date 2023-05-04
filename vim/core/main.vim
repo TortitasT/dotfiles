@@ -1,24 +1,20 @@
-function! PlugLoaded(name)
-  return 0
-endfunction 
-
 " Config
 "   Colors
-" set termguicolors
+set termguicolors
 
 "   Center cursor
 set scrolloff=8
 
 "   Cursor effects
 set cursorline
-"set cursorcolumn
+" set cursorcolumn
 
 "   Spell check
 set spell
 set spell spelllang=es_es,en_us
 
-"   Paste images md
-autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+"   Paste images md with img-paste-devs/img-paste.vim
+autocmd FileType markdown nmap <buffer><silent> <leader>P :call mdip#MarkdownClipboardImage()<CR>
 
 "   Treesitter
 lua << EOF
@@ -35,24 +31,82 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 "   LSP
-lua <<EOF
---local lsp = require('lsp-zero').preset({})
+lua << EOF
 
---lsp.on_attach(function(client, bufnr)
---  lsp.default_keymaps({buffer = bufnr})
---end)
---
---lsp.ensure_installed({
---  'clangd',
---  'volar',
---  'eslint',
---  'rust_analyzer',
---  'intelephense'
---})
+-- https://blog.pabuisson.com/2022/08/neovim-modern-features-treesitter-and-lsp/
+require("mason").setup()
+require("mason-lspconfig").setup {
+  ensure_installed = { "lua_ls", "vimls", "tsserver", "volar", "intelephense", "cssls" },
+  automatic_installation = true
+}
 
---require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+-- add new lsp servers here
+-- :help lspconfig-all to list all options
+local nvim_lsp = require('lspconfig')
 
---lsp.setup()
+nvim_lsp.lua_ls.setup{}
+nvim_lsp.vimls.setup{}
+nvim_lsp.tsserver.setup{}
+nvim_lsp.volar.setup{
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+  on_attach = function(client)
+        client.resolved_capabilities.document_formatting = true
+        client.resolved_capabilities.document_range_formatting = true
+  end
+}
+nvim_lsp.intelephense.setup{}
+nvim_lsp.cssls.setup{}
+
+-- luasnip setup
+local luasnip = require 'luasnip'
+
+-- nvim-cmp setup
+local cmp = require 'cmp'
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
+    ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<Tab>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    -- ['<CR>'] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_next_item()
+    --   elseif luasnip.expand_or_jumpable() then
+    --     luasnip.expand_or_jump()
+    --   else
+    --     fallback()
+    --   end
+    -- end, { 'i', 's' }),
+    -- ['<S-Tab>'] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_prev_item()
+    --   elseif luasnip.jumpable(-1) then
+    --     luasnip.jump(-1)
+    --   else
+    --     fallback()
+    --   end
+    -- end, { 'i', 's' }),
+  }),
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  },
+}
+
+-- Format on save
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+-- Copilot tabmap
+vim.g.copilot_assume_mapped = true
+
 EOF
 
 "   Save when not root
@@ -112,28 +166,10 @@ set mouse+=a
 "   Theme
 " colorscheme catppuccin_mocha
 " colorscheme mellow
-colorscheme lunaperche
+colorscheme habamax
 " let g:mellow_italic_functions = 1
 " let g:mellow_bold_functions = 1
 " let g:mellow_transparent = 1
-
-"   Airline
-if PlugLoaded('vim-airline')
-  let g:airline_theme = 'catppuccin_mocha'
-  set laststatus=2
-  set noshowmode
-endif
-
-"   Ale
-if PlugLoaded('ale')
-  let g:ale_fixers = {
-        \ 'javascript': ['eslint'],
-        \ 'vue': ['eslint']
-        \ }
-  let g:ale_sign_error = '❌'
-  let g:ale_sign_warning = '⚠️'
-  let g:ale_fix_on_save = 1
-endif
 
 "	  Tabs
 set expandtab
@@ -155,18 +191,18 @@ let g:NERDTreeWinPos = "right"
 "   telescope ignore files
 lua << EOF
 require('telescope').setup{
-defaults = {
-  file_ignore_patterns = { 
-    "node_modules/*",
-    "vendor/*",
-    "build/*",
-    "bin/*",
-    ".git/*",
-    ".idea/*",
-    "dist/*",
-    "gradlew*",
-    "desktop.ini"
-  },
-}
+  defaults = {
+    file_ignore_patterns = { 
+      "node_modules/*",
+      "vendor/*",
+      "build/*",
+      "bin/*",
+      ".git/*",
+      ".idea/*",
+      "dist/*",
+      "gradlew*",
+      "desktop.ini"
+    },
+  }
 }
 EOF

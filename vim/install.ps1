@@ -32,7 +32,6 @@ function Vim-Install-Plug {
 function Vim-Copy-Config {
   # Nvim
   Copy-Item ".\init.lua" "$HOME\AppData\Local\nvim\init.lua" -Force 1> $null
-  Copy-Item ".\coc\coc-settings-windows.json" "$HOME\AppData\Local\nvim\coc-settings.json" -Force 1> $null
 
   Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\ftplugin"
   Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\core"
@@ -66,34 +65,6 @@ function Vim-Install-Plugs {
   Print "Plugins installed" -Level Success
 }
 
-function Vim-Install-Coc-Plugs {
-  $cocplugs = @(
-    "coc-tsserver"
-    "coc-eslint"
-    "coc-json"
-    "coc-prettier"
-    "coc-css"
-    "coc-java"
-    "coc-vetur"
-    "coc-powershell"
-    "coc-lua"
-    "coc-deno"
-    "@yaegassy/coc-intelephense"
-  )
-
-  foreach ($cocplug in $cocplugs) {
-    Start-Job -ScriptBlock { Invoke-Expression "nvim +CocInstall $cocplug +qall" } | Wait-Job 1> $null
-
-    Print "$cocplug installed" -Level Success
-  }
-
-  #$joinedCocPlugs = $cocplugs -join " "
-  #Start-Job -ScriptBlock { Invoke-Expression "nvim -c 'CocInstall $joinedCocPlugs' +qall" } | Wait-Job 1> $null
-  #Invoke-Expression "nvim -c 'CocInstall $joinedCocPlugs' +qall"
-
-  Print "Coc plugins installed" -Level Success
-}
-
 function Vim-Fix-Wakatime {
   Move-Item "$HOME\.wakatime\wakatime-cli-windows-amd64.exe" "$HOME\.wakatime\wakatime-cli.exe" -Force -ErrorAction SilentlyContinue
 } 
@@ -115,17 +86,8 @@ function Vim-Install {
   Vim-Ensure-Directories
   # Vim-Install-Plug
   Vim-Copy-Config
-
-  $confirmation = Read-Host "Skip coc plugins? (y/n)"
-  if ($confirmation -eq 'y') {
-    Print "Skipping coc plugins" -Level Warn
-    return  
-  }
-
-
   Vim-Install-Python-Deps
   Vim-Install-Plugs
-  Vim-Install-Coc-Plugs
   Vim-Fix-Wakatime
 
   Print "Neovim configured" -Level Info

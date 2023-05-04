@@ -1,3 +1,18 @@
+local prettier = function()
+  return {
+    exe = "prettier",
+    args = {
+      "--config-precedence",
+      "prefer-file",
+      -- you can add more global setup here
+      "--stdin-filepath",
+      vim.fn.shellescape(vim.api.nvim_buf_get_name(0)),
+    },
+    stdin = true,
+    try_node_modules = true,
+  }
+end
+
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -36,21 +51,9 @@ return {
 
   {
     'willothy/nvim-cokeline',
-    --    dependencies = {
-    --      'kyazdani42/nvim-web-devicons',
-    --    },
     config = function()
       require('cokeline').setup()
     end
-  },
-
-  -- {
-  --   "catppuccin/vim",
-  --   name = catppuccin
-  -- },
-
-  {
-    "kvrohit/mellow.nvim"
   },
 
   {
@@ -74,11 +77,6 @@ return {
   },
 
   {
-    'neoclide/coc.nvim',
-    branch = "release"
-  },
-
-  { 
     'mattn/emmet-vim',
     lazy = false
   },
@@ -100,7 +98,6 @@ return {
 
   { 'ap/vim-css-color' },
 
-  -- { 'yggdroot/indentline' },
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -118,25 +115,27 @@ return {
 
   { 'adalessa/laravel.nvim' },
 
-  { 'mfussenegger/nvim-dap' },
-
   { 'img-paste-devs/img-paste.vim' },
 
-  --{
-  --  'VonHeikemen/lsp-zero.nvim',
-  --  branch = 'v2.x',
-  --  dependencies = {
-  --    {'neovim/nvim-lspconfig'},
-  --    {
-  --      'williamboman/mason.nvim',
-  --      build = function()
-  --        pcall(vim.cmd, 'MasonUpdate')
-  --      end,
-  --    },
-  --    {'williamboman/mason-lspconfig.nvim'},
-  --    {'hrsh7th/nvim-cmp'},
-  --    {'hrsh7th/cmp-nvim-lsp'},
-  --    {'L3MON4D3/LuaSnip'},
-  --  }
-  --}
+  -- LSP
+  { 'williamboman/mason.nvim' },
+  { 'williamboman/mason-lspconfig.nvim' },
+  { 'neovim/nvim-lspconfig' },
+  { 'hrsh7th/nvim-cmp' },
+  { 'hrsh7th/cmp-nvim-lsp' },
+  { 'saadparwaiz1/cmp_luasnip' },
+  { 'L3MON4D3/LuaSnip' },
+  {
+    'mhartington/formatter.nvim',
+    opts = {
+      filetype = {
+        vue = { prettier },
+        javascript = { prettier },
+        typescript = { prettier },
+        css = { prettier },
+        scss = { prettier },
+        json = { prettier },
+      }
+    }
+  }
 }
