@@ -3,6 +3,8 @@ attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
 defbce "on"
 
+# Remove welcome screen
+
 # Bindings
 escape ^@a # Leader key Ctrl+Space
 bind w windows # Bind w to list windows
