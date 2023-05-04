@@ -11,6 +11,9 @@ filetype plugin on
 set path+=**
 set wildmenu
 
+" Colorscheme
+colorscheme lunaperche
+
 " Config
 "   Leader key
 let mapleader=","

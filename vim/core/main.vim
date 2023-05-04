@@ -4,7 +4,7 @@ endfunction
 
 " Config
 "   Colors
-set termguicolors
+" set termguicolors
 
 "   Center cursor
 set scrolloff=8
@@ -111,10 +111,11 @@ set mouse+=a
 
 "   Theme
 " colorscheme catppuccin_mocha
-colorscheme mellow
-let g:mellow_italic_functions = 1
-let g:mellow_bold_functions = 1
-let g:mellow_transparent = 1
+" colorscheme mellow
+colorscheme lunaperche
+" let g:mellow_italic_functions = 1
+" let g:mellow_bold_functions = 1
+" let g:mellow_transparent = 1
 
 "   Airline
 if PlugLoaded('vim-airline')
