@@ -78,19 +78,36 @@ if exists("g:neovide")
   endif
 endif
 
+"   Coc settings
+let g:coc_global_extensions = [
+            \'coc-json',
+            \'coc-css',
+            \'coc-html',
+            \'coc-tsserver',
+            \'coc-yaml',
+            \'coc-snippets',
+            \'coc-pyright',
+            \'coc-clangd',
+            \'coc-prettier',
+            \'coc-xml',
+            \'coc-git',
+            \'coc-highlight',
+            \'coc-sh',
+            \]
+
 "   Startify config
-let g:startify_bookmarks = [
-      \ { 'y': '~/Documents/Git/descommarket/yapayoo' },
-      \ { 'c': '~/Documents/Git/misc/dotfiles/vim' },
-      \ ]
+"let g:startify_bookmarks = [
+"      \ { 'y': '~/' },
+"      \ { 'c': '~/' },
+"      \ ]
 
 "   Emmet
 " let g:user_emmet_install_global = 0
 " autocmd FileType html,css,vue,scss EmmetInstall
 
 "   Line numbers
-set number relativenumber
-lua vim.opt.statuscolumn = "%l %r"
+" set number relativenumber
+" lua vim.opt.statuscolumn = "%l %r"
 
 "   Font
 if has("gui_running")
@@ -112,8 +129,8 @@ set mouse+=a
 "   Theme
 " colorscheme catppuccin_mocha
 " colorscheme mellow
-colorscheme habamax
 " colorscheme lunaperche
+colorscheme habamax
 " let g:mellow_italic_functions = 1
 " let g:mellow_bold_functions = 1
 " let g:mellow_transparent = 1
@@ -126,15 +143,15 @@ if PlugLoaded('vim-airline')
 endif
 
 "   Ale
-if PlugLoaded('ale')
-  let g:ale_fixers = {
-        \ 'javascript': ['eslint'],
-        \ 'vue': ['eslint']
-        \ }
-  let g:ale_sign_error = '❌'
-  let g:ale_sign_warning = '⚠️'
-  let g:ale_fix_on_save = 1
-endif
+"if PlugLoaded('ale')
+"  let g:ale_fixers = {
+"        \ 'javascript': ['eslint'],
+"        \ 'vue': ['eslint']
+"        \ }
+"  let g:ale_sign_error = '❌'
+"  let g:ale_sign_warning = '⚠️'
+"  let g:ale_fix_on_save = 1
+"endif
 
 "	  Tabs
 set expandtab
