@@ -1,9 +1,61 @@
-body{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Sans serif for readability on screens */
-  color: #212A3E;
+:root {
+  --fg-color: #212a3e;
+  --bg-color: #fff;
+  --accent-color: #394867;
 }
 
-img{
+body {
+  background-color: var(--bg-color);
+
+  color: var(--fg-color);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Sans serif for readability on screens */
+  font-size: 12pt;
+  font-weight: normal;
+}
+
+img {
   max-width: 100%;
   height: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+
+  text-align: center;
+
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h1 {
+}
+
+body > p:not(:has(code))::first-letter {
+  margin-left: 3em;
+  margin-right: 0.1em;
+  font-size: 1.5em;
+
+  text-transform: uppercase;
+}
+
+blockquote {
+  margin-left: 1em;
+  margin-right: 0;
+  padding-left: 1em;
+
+  font-style: italic;
+
+  border-left: 0.25em solid var(--accent-color);
+}
+
+ul,
+ol {
+  margin-left: 1em;
+  padding-left: 1em;
+}
+
+code {
+  margin-left: 1em;
 }
