@@ -1,0 +1,9 @@
+body{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Sans serif for readability on screens */
+  color: #212A3E;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
