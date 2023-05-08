@@ -23,5 +23,19 @@
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "phpactor.enable": true,
   "phpactor.path": "/home/tortitas/.local/bin/phpactor",
-  "clangd.path": "/usr/local/bin/clangd15"
+  "clangd.path": "/usr/local/bin/clangd15",
+  "languageserver": {
+    "csharp-ls": {
+      "command": "csharp-ls",
+      "filetypes": [
+        "cs"
+      ],
+      "rootPatterns": [
+        "*.csproj",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ]
+    }
+  }
 }
