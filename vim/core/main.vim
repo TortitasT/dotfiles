@@ -22,8 +22,10 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 
 "   Treesitter
 lua << EOF
+require 'nvim-treesitter.install'.compilers = {"gcc"} -- Must use mingw64 gcc `scoop install mingw` https://github.com/nvim-treesitter/nvim-treesitter/issues/1897
+
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "vue" },
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "vue", "java", "php" },
 
   auto_install = true,
 
