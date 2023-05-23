@@ -133,9 +133,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # LaTeX
   export PATH="/Library/TeX/texbin/:$PATH"
 
-  # Deno bin
-  export PATH="$HOME/.deno/bin:$PATH"
-
   # Git identity manager
   export PATH="$HOME/bin/git-idm:$PATH"
 
@@ -156,6 +153,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export SDKMAN_DIR="$HOME/.sdkman"
   [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
+
+# Deno bin
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Emacs keymap for zsh, needs to be set because editor is nvim
 bindkey -A emacs main
