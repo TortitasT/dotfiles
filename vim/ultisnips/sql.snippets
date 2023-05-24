@@ -1,0 +1,125 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet function "Create a function"
+CREATE OR REPLACE FUNCTION ${1:function_name}(p_id INTEGER)
+RETURNS TABLE(
+    id INTEGER,
+    name VARCHAR,
+    description TEXT
+)
+LANGUAGE plpgsql
+AS $body$
+BEGIN
+    RETURN QUERY
+        SELECT id, nombre
+				FROM usuarios
+        WHERE id = p_id;
+END;
+$body$;
+endsnippet
+
+snippet procedure "Create a procedure"
+CREATE OR REPLACE PROCEDURE ${1:procedure_name}(p_id INTEGER)
+LANGUAGE plpgsql
+AS $body$
+BEGIN
+		SELECT id, nombre
+		FROM usuarios
+		WHERE id = p_id;
+END;
+$body$;
+endsnippet
+
+snippet trigger "Create a trigger"
+CREATE OR REPLACE FUNCTION ${1:function_name}()
+RETURNS TRIGGER
+LANGUAGE plpgsql
+AS $body$
+DECLARE
+BEGIN
+	NEW.cuadrado := power(NEW.numero,2);
+	NEW.cubo := power(NEW.numero,3);
+	NEW.raiz2 := sqrt(NEW.numero);
+	NEW.raiz3 := cbrt(NEW.numero);
+	RETURN NEW;
+END;
+$body$ ;
+
+CREATE TRIGGER ${2:trigger_name} BEFORE INSERT OR UPDATE ON ${3:table_name} FOR EACH ROW EXECUTE PROCEDURE ${1:function_name}();
+endsnippet
+
+snippet view "Create a view"
+CREATE OR REPLACE VIEW ${1:view_name} AS
+SELECT ${2:column_name}
+FROM ${3:table_name}
+WHERE ${4:condition};
+endsnippet
+
+snippet raise "Create a raise"
+RAISE EXCEPTION 'Error: %', ${1:variable};
+endsnippet
+
+snippet transaction "Create a transaction"
+BEGIN;
+		${1:sql}
+COMMIT;
+endsnippet
+
+snippet select "Create a select"
+SELECT ${1:column_name}
+FROM ${2:table_name}
+WHERE ${3:column_name} = ${4:value};
+endsnippet
+
+snippet insert "Create a insert"
+INSERT INTO ${1:table_name} (${2:column_name})
+VALUES (${3:value});
+endsnippet
+
+snippet update "Create a update"
+UPDATE ${1:table_name}
+SET ${2:column_name} = ${3:value}
+WHERE ${4:column_name} = ${5:value};
+endsnippet
+
+snippet delete "Create a delete"
+DELETE FROM ${1:table_name}
+WHERE ${2:column_name} = ${3:value};
+endsnippet
+
+snippet create_table "Create a create_table"
+CREATE TABLE ${1:table_name} (
+		${2:column_name} ${3:data_type} ${4:constraint},
+);
+endsnippet
+
+snippet alter_table "Create a alter_table"
+ALTER TABLE ${1:table_name}
+${2:ADD COLUMN} ${3:column_name} ${4:data_type} ${5:constraint};
+endsnippet
+
+

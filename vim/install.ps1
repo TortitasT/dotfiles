@@ -5,7 +5,9 @@ Set-Location $PSScriptRoot
 
 function Vim-Ensure-Directories {
   $directories = @(
-    "$HOME\AppData\Local\nvim"
+    "$HOME\AppData\Local\nvim",
+    "$HOME\AppData\Local\coc",
+    "$HOME\AppData\Local\coc\ultisnips"
   )
 
   foreach ($directory in $directories) {
@@ -37,10 +39,12 @@ function Vim-Copy-Config {
   Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\ftplugin"
   Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\core"
   Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\lua"
+  Remove-Item -Recurse -Path "$HOME\AppData\Local\coc\ultisnips"
 
   Copy-Item -Path ".\ftplugin\" -Destination "$HOME\AppData\Local\nvim\ftplugin" -Recurse
   Copy-Item -Path ".\core\" -Destination "$HOME\AppData\Local\nvim\core" -Recurse
   Copy-Item -Path ".\lua\" -Destination "$HOME\AppData\Local\nvim\lua" -Recurse
+  Copy-Item -Path ".\ultisnips\" -Destination "$HOME\AppData\Local\coc\ultisnips" -Recurse
 
   # Vim
   Copy-Item ".\.vimrc" "$HOME\.vimrc" -Force 1> $null
