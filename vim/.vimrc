@@ -12,7 +12,7 @@ set path+=**
 set wildmenu
 
 " Colorscheme
-colorscheme darkblue
+colorscheme lunaperche
 
 " Config
 "   Leader key
