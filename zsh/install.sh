@@ -57,5 +57,8 @@ installPlugin "zsh-users/zsh-completions"
 installTheme "spaceship-prompt/spaceship-prompt"
 
 # Copy config
-cp .zshrc ~/.zshrc
+# cp .zshrc ~/.zshrc
+
+# Symbolic link config
+ln -s $PWD/.zshrc ~/.zshrc
 
