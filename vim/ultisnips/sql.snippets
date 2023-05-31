@@ -30,10 +30,10 @@ RETURNS ${2:return}
 LANGUAGE plpgsql
 AS $body$
 BEGIN
-    RETURN QUERY
-        SELECT id, nombre
-				FROM usuarios
-        WHERE id = id;
+	RETURN QUERY
+  	SELECT id, nombre
+			FROM usuarios
+      WHERE id = id;
 END;
 $body$;
 endsnippet
@@ -57,9 +57,9 @@ CREATE OR REPLACE PROCEDURE ${1:procedure_name}(p_id INTEGER)
 LANGUAGE plpgsql
 AS $body$
 BEGIN
-		SELECT id, nombre
-		FROM usuarios
-		WHERE id = p_id;
+	SELECT id, nombre
+	FROM usuarios
+	WHERE id = p_id;
 END;
 $body$;
 endsnippet
@@ -78,9 +78,9 @@ BEGIN
   OPEN empleados_cursor FOR SELECT * FROM empleados WHERE departamento = departamento_id;
 
   LOOP
-    FETCH empleados_cursor INTO empleado;
-    EXIT WHEN NOT FOUND;
-    RETURN NEXT empleado;
+  	FETCH empleados_cursor INTO empleado;
+  	EXIT WHEN NOT FOUND;
+  	RETURN NEXT empleado;
   END LOOP;
 
   CLOSE empleados_cursor;
@@ -94,8 +94,8 @@ CREATE OR REPLACE FUNCTION ${1:function_name}()
 LANGUAGE plpgsql
 RETURNS TRIGGER AS $body$
 BEGIN
-    NEW.updated_at = NOW();
-    RETURN NEW;
+  NEW.updated_at = NOW();
+	RETURN NEW;
 END;
 $body$;
 
@@ -114,7 +114,7 @@ endsnippet
 
 snippet transaction "Create a transaction" b
 BEGIN;
-		${1:sql}
+	${1:sql}
 COMMIT;
 endsnippet
 
@@ -142,7 +142,7 @@ endsnippet
 
 snippet create_table "Create a table" b
 CREATE TABLE ${1:table_name} (
-		${2:column_name} ${3:data_type} ${4:constraint},
+	${2:column_name} ${3:data_type} ${4:constraint},
 );
 endsnippet
 
