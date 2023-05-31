@@ -24,25 +24,35 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet function "Create a function"
-CREATE OR REPLACE FUNCTION ${1:function_name}(p_id INTEGER)
-RETURNS TABLE(
-    id INTEGER,
-    name VARCHAR,
-    description TEXT
-)
+snippet function "Create a function" b
+CREATE OR REPLACE FUNCTION ${1:function_name}(id INTEGER)
+RETURNS ${2:return}
 LANGUAGE plpgsql
 AS $body$
 BEGIN
     RETURN QUERY
         SELECT id, nombre
 				FROM usuarios
-        WHERE id = p_id;
+        WHERE id = id;
 END;
 $body$;
 endsnippet
 
-snippet procedure "Create a procedure"
+snippet returns_table "Return table example sentence"
+TABLE (
+	${1:column_name} ${2:column_type}
+)
+endsnippet
+
+snippet raise_exception "Raise an exception"
+RAISE EXCEPTION 'Error: %', ${1:exception_message};
+endsnippet
+
+snippet raise_notice "Raise a notice"
+RAISE NOTICE 'Notice: %', ${1:notice_message};
+endsnippet
+
+snippet procedure "Create a procedure" b
 CREATE OR REPLACE PROCEDURE ${1:procedure_name}(p_id INTEGER)
 LANGUAGE plpgsql
 AS $body$
@@ -54,7 +64,7 @@ END;
 $body$;
 endsnippet
 
-snippet cursor "Create a cursor" 
+snippet cursor "Create a cursor" b
 --Para utilizar un cursor, se debe declarar una variable de tipo "REFCURSOR", abrir el cursor utilizando una consulta SQL, 
 --y luego recorrer los resultados utilizando una combinación de las sentencias FETCH y CLOSE.
 
@@ -79,36 +89,30 @@ END;
 $body$;
 endsnippet
 
-snippet trigger "Create a trigger"
+snippet trigger "Create a trigger" b
 CREATE OR REPLACE FUNCTION ${1:function_name}()
-RETURNS TRIGGER
 LANGUAGE plpgsql
-AS $body$
-DECLARE
+RETURNS TRIGGER AS $body$
 BEGIN
-	NEW.cuadrado := power(NEW.numero,2);
-	NEW.cubo := power(NEW.numero,3);
-	NEW.raiz2 := sqrt(NEW.numero);
-	NEW.raiz3 := cbrt(NEW.numero);
-	RETURN NEW;
+    NEW.updated_at = NOW();
+    RETURN NEW;
 END;
 $body$;
 
-CREATE TRIGGER ${2:trigger_name} BEFORE INSERT OR UPDATE ON ${3:table_name} FOR EACH ROW EXECUTE PROCEDURE ${1:function_name}();
+CREATE TRIGGER trigger_update_updated_at
+BEFORE UPDATE ON ${2:table_name}
+FOR EACH ROW
+EXECUTE FUNCTION ${1:function_name}();
 endsnippet
 
-snippet view "Create a view"
+snippet view "Create a view" b
 CREATE OR REPLACE VIEW ${1:view_name} AS
 SELECT ${2:column_name}
 FROM ${3:table_name}
 WHERE ${4:condition};
 endsnippet
 
-snippet raise "Create a raise"
-RAISE EXCEPTION 'Error: %', ${1:variable};
-endsnippet
-
-snippet transaction "Create a transaction"
+snippet transaction "Create a transaction" b
 BEGIN;
 		${1:sql}
 COMMIT;
@@ -136,33 +140,18 @@ DELETE FROM ${1:table_name}
 WHERE ${2:column_name} = ${3:value};
 endsnippet
 
-snippet create_table "Create a create_table"
+snippet create_table "Create a table" b
 CREATE TABLE ${1:table_name} (
 		${2:column_name} ${3:data_type} ${4:constraint},
 );
 endsnippet
 
-snippet alter_table "Create a alter_table"
+snippet alter_table "Create a alter table" b
 ALTER TABLE ${1:table_name}
 ${2:ADD COLUMN} ${3:column_name} ${4:data_type} ${5:constraint};
 endsnippet
 
-snippet types "Prints types"
-
-bigint 	int8 	signed eight-byte integer
-bigserial 	serial8 	autoincrementing eight-byte integer
-bit [ (n) ] 	  	fixed-length bit string
-bit varying [ (n) ] 	varbit [ (n) ] 	variable-length bit string
-boolean 	bool 	logical Boolean (true/false)
-box 	  	rectangular box on a plane
-bytea 	  	binary data (“byte array”)
-character [ (n) ] 	char [ (n) ] 	fixed-length character string
-character varying [ (n) ] 	varchar [ (n) ] 	variable-length character string
-cidr 	  	IPv4 or IPv6 network address
-circle 	  	circle on a plane
-date 	  	calendar date (year, month, day)
-double precisi
-
+snippet types "Prints types" b
 bigint 	int8 	signed eight-byte integer
 bigserial 	serial8 	autoincrementing eight-byte integer
 bit [ (n) ] 	  	fixed-length bit string
@@ -236,5 +225,4 @@ tsvector 	  	text search document
 txid_snapshot 	  	user-level transaction ID snapshot (deprecated; see pg_snapshot)
 uuid 	  	universally unique identifier
 xml 	  	XML data
-
 endsnippet

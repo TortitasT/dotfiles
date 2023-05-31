@@ -6,8 +6,7 @@ Set-Location $PSScriptRoot
 function Vim-Ensure-Directories {
   $directories = @(
     "$HOME\AppData\Local\nvim",
-    "$HOME\AppData\Local\coc",
-    "$HOME\AppData\Local\coc\ultisnips"
+    "$HOME\AppData\Local\coc"
   )
 
   foreach ($directory in $directories) {
@@ -44,10 +43,13 @@ function Vim-Copy-Config {
   Copy-Item -Path ".\ftplugin\" -Destination "$HOME\AppData\Local\nvim\ftplugin" -Recurse
   Copy-Item -Path ".\core\" -Destination "$HOME\AppData\Local\nvim\core" -Recurse
   Copy-Item -Path ".\lua\" -Destination "$HOME\AppData\Local\nvim\lua" -Recurse
-  Copy-Item -Path ".\ultisnips\" -Destination "$HOME\AppData\Local\coc\ultisnips" -Recurse
+  # Copy-Item -Path ".\ultisnips\" -Destination "$HOME\AppData\Local\coc\ultisnips" -Recurse
+  New-Item -ItemType SymbolicLink -Target "$PWD\ultisnips" -Path "$HOME\AppData\Local\coc\ultisnips" 
 
   # Vim
-  Copy-Item ".\.vimrc" "$HOME\.vimrc" -Force 1> $null
+  # Copy-Item ".\.vimrc" "$HOME\.vimrc" -Force 1> $null
+  Remove-Item -Path "$HOME\.vimrc" 
+  New-Item -ItemType SymbolicLink -Target "$PWD\.vimrc" -Path "$HOME\.vimrc" 
 
   Print "Config files copied" -Level Success
 }
