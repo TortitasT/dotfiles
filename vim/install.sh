@@ -1,26 +1,25 @@
 #!/bin/bash
 # I am lazy I know
 
-cp ./.vimrc ~/.vimrc
-cp ./init.lua ~/.config/nvim/init.lua
-cp -rf ./core ~/.config/nvim
-cp -rf ./lua ~/.config/nvim
+# cp ./.vimrc ~/.vimrc
+ln -s $PWD/.vimrc ~/.vimrc
+
+# cp ./init.lua ~/.config/nvim/init.lua
+ln -s $PWD/init.lua ~/.config/nvim/init.lua
+
+# cp -rf ./core ~/.config/nvim
+ln -s $PWD/core ~/.config/nvim/core
+
+# cp -rf ./lua ~/.config/nvim
+ln -s $PWD/lua ~/.config/nvim/lua
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  cp ./coc/coc-settings-mac.json ~/.config/nvim/coc-settings.json
+  # cp ./coc/coc-settings-mac.json ~/.config/nvim/coc-settings.json
+  ln -s $PWD/coc/coc-settings-mac.json ~/.config/nvim/coc-settings.json 
 elif [[ "$OSTYPE" == "freebsd"* ]]; then
-  cp ./coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
+  # cp ./coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
+  ln -s $PWD/coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
 fi
 
-cp -rf ./ftplugin ~/.config/nvim/
-
-read -p "Continue (y/n)? " choice
-if [[ $choice != "y" ]]; then
-    echo "Exiting..."
-    exit 1
-fi
-
-cocExtensions="coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-java coc-vetur @yaegassy/coc-intelephense coc-sh @yaegassy/coc-phpstan coc-pyright"
-
-nvim -c "CocInstall $cocExtensions"
-
+# cp -rf ./ftplugin ~/.config/nvim/
+ln -s $PWD/ftplugin ~/.config/nvim/ftplugin
