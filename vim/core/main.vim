@@ -108,7 +108,7 @@ let g:coc_global_extensions = [
 " autocmd FileType html,css,vue,scss EmmetInstall
 
 "   Line numbers
-" set number relativenumber
+set number relativenumber
 " lua vim.opt.statuscolumn = "%l %r"
 
 "   Font

@@ -25,7 +25,6 @@ return {
           {
             event = "file_opened",
             handler = function(file_path)
-              --auto close
               require("neo-tree").close_all()
             end
           },
@@ -36,21 +35,20 @@ return {
 
   {
     'willothy/nvim-cokeline',
-    --    dependencies = {
-    --      'kyazdani42/nvim-web-devicons',
-    --    },
     config = function()
       require('cokeline').setup()
     end
   },
 
-  -- {
-  --   "catppuccin/vim",
-  --   name = catppuccin
-  -- },
-
   {
     "kvrohit/mellow.nvim"
+  },
+
+  {
+    "HampusHauffman/block.nvim",
+    config = function()
+        require("block").setup({})
+    end
   },
 
   {
@@ -100,7 +98,6 @@ return {
 
   { 'ap/vim-css-color' },
 
-  -- { 'yggdroot/indentline' },
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -121,22 +118,4 @@ return {
   { 'mfussenegger/nvim-dap' },
 
   { 'img-paste-devs/img-paste.vim' },
-
-  --{
-  --  'VonHeikemen/lsp-zero.nvim',
-  --  branch = 'v2.x',
-  --  dependencies = {
-  --    {'neovim/nvim-lspconfig'},
-  --    {
-  --      'williamboman/mason.nvim',
-  --      build = function()
-  --        pcall(vim.cmd, 'MasonUpdate')
-  --      end,
-  --    },
-  --    {'williamboman/mason-lspconfig.nvim'},
-  --    {'hrsh7th/nvim-cmp'},
-  --    {'hrsh7th/cmp-nvim-lsp'},
-  --    {'L3MON4D3/LuaSnip'},
-  --  }
-  --}
 }
