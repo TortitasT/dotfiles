@@ -1,6 +1,9 @@
 #!/bin/bash
 # I am lazy I know
 
+mkdir ~/.config/nvim
+mkdir ~/.config/coc
+
 rm -rf ~/.vimrc
 ln -sf $PWD/.vimrc ~/.vimrc
 
@@ -24,5 +27,5 @@ fi
 rm -rf ~/.config/nvim/ftplugin
 ln -sf $PWD/ftplugin ~/.config/nvim/ftplugin
 
-rm -rf ~/.config/nvim/
+rm -rf ~/.config/coc/ultisnips
 ln -sf $PWD/ultisnips ~/.config/coc/ultisnips
