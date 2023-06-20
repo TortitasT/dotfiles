@@ -17,6 +17,9 @@ set cursorline
 set spell
 set spell spelllang=es_es,en_us
 
+"   Line number
+set number relativenumber
+
 "   Paste images md
 autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 
@@ -85,12 +88,15 @@ let g:coc_global_extensions = [
             \'coc-json',
             \'coc-css',
             \'coc-html',
+            \'coc-emmet',
             \'coc-tsserver',
             \'coc-yaml',
             \'coc-snippets',
             \'coc-pyright',
             \'coc-clangd',
             \'coc-prettier',
+            \'coc-eslint',
+            \'coc-vetur',
             \'coc-xml',
             \'coc-git',
             \'coc-highlight',
