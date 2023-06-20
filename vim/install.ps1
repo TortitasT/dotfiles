@@ -40,14 +40,19 @@ function Vim-Copy-Config {
   Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\lua"
   Remove-Item -Recurse -Path "$HOME\AppData\Local\coc\ultisnips"
 
-  Copy-Item -Path ".\ftplugin\" -Destination "$HOME\AppData\Local\nvim\ftplugin" -Recurse
-  Copy-Item -Path ".\core\" -Destination "$HOME\AppData\Local\nvim\core" -Recurse
-  Copy-Item -Path ".\lua\" -Destination "$HOME\AppData\Local\nvim\lua" -Recurse
+  # Copy-Item -Path ".\ftplugin\" -Destination "$HOME\AppData\Local\nvim\ftplugin" -Recurse
+  New-Item -ItemType SymbolicLink -Target "$PWD\ftplugin" -Path "$HOME\AppData\Local\nvim\ftplugin" 
+
+  # Copy-Item -Path ".\core\" -Destination "$HOME\AppData\Local\nvim\core" -Recurse
+  New-Item -ItemType SymbolicLink -Target "$PWD\core" -Path "$HOME\AppData\Local\nvim\core" 
+
+  # Copy-Item -Path ".\lua\" -Destination "$HOME\AppData\Local\nvim\lua" -Recurse
+  New-Item -ItemType SymbolicLink -Target "$PWD\lua" -Path "$HOME\AppData\Local\nvim\lua" 
+  
   # Copy-Item -Path ".\ultisnips\" -Destination "$HOME\AppData\Local\coc\ultisnips" -Recurse
   New-Item -ItemType SymbolicLink -Target "$PWD\ultisnips" -Path "$HOME\AppData\Local\coc\ultisnips" 
 
   # Vim
-  # Copy-Item ".\.vimrc" "$HOME\.vimrc" -Force 1> $null
   Remove-Item -Path "$HOME\.vimrc" 
   New-Item -ItemType SymbolicLink -Target "$PWD\.vimrc" -Path "$HOME\.vimrc" 
 
@@ -64,40 +69,6 @@ function Vim-Install-Python-Deps {
 
   Print "Installing pynvim..." -Level Warn
   Invoke-Expression "pip3 install --user pynvim"
-}
-
-function Vim-Install-Plugs {
-  #Start-Job -ScriptBlock { Invoke-Expression "nvim +PlugInstall +qall" } | Wait-Job 1> $null
-
-  Print "Plugins installed" -Level Success
-}
-
-function Vim-Install-Coc-Plugs {
-  $cocplugs = @(
-    "coc-tsserver"
-    "coc-eslint"
-    "coc-json"
-    "coc-prettier"
-    "coc-css"
-    "coc-java"
-    "coc-vetur"
-    "coc-powershell"
-    "coc-lua"
-    "coc-deno"
-    "@yaegassy/coc-intelephense"
-  )
-
-  foreach ($cocplug in $cocplugs) {
-    Start-Job -ScriptBlock { Invoke-Expression "nvim +CocInstall $cocplug +qall" } | Wait-Job 1> $null
-
-    Print "$cocplug installed" -Level Success
-  }
-
-  #$joinedCocPlugs = $cocplugs -join " "
-  #Start-Job -ScriptBlock { Invoke-Expression "nvim -c 'CocInstall $joinedCocPlugs' +qall" } | Wait-Job 1> $null
-  #Invoke-Expression "nvim -c 'CocInstall $joinedCocPlugs' +qall"
-
-  Print "Coc plugins installed" -Level Success
 }
 
 function Vim-Fix-Wakatime {
@@ -119,19 +90,9 @@ function Vim-Install {
 
   Vim-Install-Nvim
   Vim-Ensure-Directories
-  # Vim-Install-Plug
   Vim-Copy-Config
 
-  $confirmation = Read-Host "Skip coc plugins? (y/n)"
-  if ($confirmation -eq 'y') {
-    Print "Skipping coc plugins" -Level Warn
-    return  
-  }
-
-
   Vim-Install-Python-Deps
-  Vim-Install-Plugs
-  Vim-Install-Coc-Plugs
   Vim-Fix-Wakatime
 
   Print "Neovim configured" -Level Info
