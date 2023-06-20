@@ -1,25 +1,28 @@
 #!/bin/bash
 # I am lazy I know
 
-# cp ./.vimrc ~/.vimrc
-ln -s $PWD/.vimrc ~/.vimrc
+rm -rf ~/.vimrc
+ln -sf $PWD/.vimrc ~/.vimrc
 
-# cp ./init.lua ~/.config/nvim/init.lua
-ln -s $PWD/init.lua ~/.config/nvim/init.lua
+rm -rf ~/.config/nvim/init.lua
+ln -sf $PWD/init.lua ~/.config/nvim/init.lua
 
-# cp -rf ./core ~/.config/nvim
-ln -s $PWD/core ~/.config/nvim/core
+rm -rf ~/.config/nvim/core
+ln -sf $PWD/core ~/.config/nvim/core
 
-# cp -rf ./lua ~/.config/nvim
-ln -s $PWD/lua ~/.config/nvim/lua
+rm -rf ~/.config/nvim/lua
+ln -sf $PWD/lua ~/.config/nvim/lua
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  # cp ./coc/coc-settings-mac.json ~/.config/nvim/coc-settings.json
-  ln -s $PWD/coc/coc-settings-mac.json ~/.config/nvim/coc-settings.json 
+  rm -rf ~/.config/nvim/coc-settings.json
+  ln -sf $PWD/coc/coc-settings-mac.json ~/.config/nvim/coc-settings.json 
 elif [[ "$OSTYPE" == "freebsd"* ]]; then
-  # cp ./coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
-  ln -s $PWD/coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
+  rm -rf ~/.config/nvim/coc-settings.json
+  ln -sf $PWD/coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
 fi
 
-# cp -rf ./ftplugin ~/.config/nvim/
-ln -s $PWD/ftplugin ~/.config/nvim/ftplugin
+rm -rf ~/.config/nvim/ftplugin
+ln -sf $PWD/ftplugin ~/.config/nvim/ftplugin
+
+rm -rf ~/.config/nvim/
+ln -sf $PWD/ultisnips ~/.config/coc/ultisnips
