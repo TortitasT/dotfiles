@@ -15,6 +15,8 @@ if version.cmp(ev, actual_ver) ~= 0 then
   return
 end
 
+vim.loader.enable()
+
 require("tortitas/lazy")
 
 local core_conf_files = {

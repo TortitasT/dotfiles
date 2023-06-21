@@ -41,15 +41,50 @@ return {
   },
 
   {
+    "mhinz/vim-startify"
+  },
+
+  {
     "kvrohit/mellow.nvim"
+  },
+
+  {
+    "ggandor/leap.nvim",
+    dependencies = {
+      "tpope/vim-repeat",
+      config = function()
+        require('leap').add_default_mappings()
+      end
+    },
+  },
+
+  {
+    "rgroli/other.nvim",
+    config = function()
+      require("other-nvim").setup({
+        mappings = {
+          "laravel",
+          {
+            pattern = "/src/(.*).php$",
+            target = "/test/Feature/%1Test.php",
+            context = "test",
+          },
+          {
+            pattern = "/test/Feature/(.*)Test.php$",
+            target = "/src/%1.php",
+            context = "controller",
+          }
+        }
+      })
+    end
   },
 
   {
     "HampusHauffman/block.nvim",
     config = function()
-        require("block").setup({
-          automatic = true
-        })
+      require("block").setup({
+        automatic = true
+      })
     end
   },
 
@@ -78,7 +113,7 @@ return {
     branch = "release"
   },
 
-  { 
+  {
     'mattn/emmet-vim',
     lazy = false
   },
@@ -88,8 +123,6 @@ return {
   { 'rstacruz/vim-closer' },
 
   { 'mhinz/vim-signify' },
-
-  { 'mhinz/vim-startify' },
 
   { 'voldikss/vim-floaterm' },
 

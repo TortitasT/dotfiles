@@ -39,27 +39,6 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-"   LSP
-lua <<EOF
---local lsp = require('lsp-zero').preset({})
-
---lsp.on_attach(function(client, bufnr)
---  lsp.default_keymaps({buffer = bufnr})
---end)
---
---lsp.ensure_installed({
---  'clangd',
---  'volar',
---  'eslint',
---  'rust_analyzer',
---  'intelephense'
---})
-
---require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
---lsp.setup()
-EOF
-
 "   Save when not root
 if has("bsd")
   command WriteRoot :w !doas tee %
@@ -101,6 +80,7 @@ let g:coc_global_extensions = [
             \'coc-git',
             \'coc-highlight',
             \'coc-sh',
+            \'coc-sumneko-lua',
             \]
 
 "   Startify config
@@ -150,27 +130,11 @@ if PlugLoaded('vim-airline')
   set noshowmode
 endif
 
-"   Ale
-"if PlugLoaded('ale')
-"  let g:ale_fixers = {
-"        \ 'javascript': ['eslint'],
-"        \ 'vue': ['eslint']
-"        \ }
-"  let g:ale_sign_error = '❌'
-"  let g:ale_sign_warning = '⚠️'
-"  let g:ale_fix_on_save = 1
-"endif
-
 "	  Tabs
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set autoindent
-
-"   Auto enter NERDTree
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-      "\ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
 "   NERDTree show hidden
 let NERDTreeShowHidden=1
