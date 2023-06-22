@@ -12,11 +12,11 @@ cnoreabbrev ga :Git add --all
 cnoreabbrev gc :Git commit -m
 cnoreabbrev gs :Git status
 
-"   NERDTree
-"map B :NERDTree<CR>
+"   Mini-files
+map B <cmd>lua MiniFiles.open()<CR>
 
 "   NeoTree
-map B :NeoTreeShowToggle<CR>
+map <C-b> :NeoTreeShowToggle<CR>
 
 "   Tabs
 map <F8> :tabp<CR>

@@ -15,7 +15,8 @@ return {
           position = "right",
         },
         filesystem = {
-          filtered_items = {
+          hijack_netrw_behavior = "disabled",
+          filtered_items        = {
             visible = true,
             hide_dotfiles = false,
             hide_gitignored = false,
@@ -56,6 +57,14 @@ return {
         require('leap').add_default_mappings()
       end
     },
+  },
+
+  {
+    'echasnovski/mini.files',
+    version = false,
+    config = function()
+      require('mini.files').setup()
+    end
   },
 
   {

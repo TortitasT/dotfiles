@@ -1,7 +1,3 @@
-function! PlugLoaded(name)
-  return 0
-endfunction 
-
 " Config
 "   Colors
 " set termguicolors
@@ -21,7 +17,7 @@ set spell spelllang=es_es,en_us
 set number relativenumber
 
 "   Paste images md
-autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>   " This will collapse with the paste from system clipboard mapping
 
 "   Treesitter
 lua << EOF
@@ -94,10 +90,6 @@ else
        \ ]
 endif
 
-"   Emmet
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,css,vue,scss EmmetInstall
-
 "   Line numbers
 set number relativenumber
 " lua vim.opt.statuscolumn = "%l %r"
@@ -128,24 +120,11 @@ let g:mellow_italic_functions = 1
 let g:mellow_bold_functions = 1
 let g:mellow_transparent = 1
 
-"   Airline
-if PlugLoaded('vim-airline')
-  let g:airline_theme = 'catppuccin_mocha'
-  set laststatus=2
-  set noshowmode
-endif
-
 "	  Tabs
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set autoindent
-
-"   NERDTree show hidden
-let NERDTreeShowHidden=1
-
-"   NERDTree right
-let g:NERDTreeWinPos = "right"
 
 "   Auto create folder on save
 augroup Mkdir
