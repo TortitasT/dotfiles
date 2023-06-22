@@ -142,6 +142,12 @@ let NERDTreeShowHidden=1
 "   NERDTree right
 let g:NERDTreeWinPos = "right"
 
+"   Auto create folder on save
+augroup Mkdir
+  autocmd!
+  autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
+augroup END
+
 "   telescope ignore files
 lua << EOF
 require('telescope').setup{
