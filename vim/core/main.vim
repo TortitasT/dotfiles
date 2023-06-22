@@ -84,10 +84,15 @@ let g:coc_global_extensions = [
             \]
 
 "   Startify config
-"let g:startify_bookmarks = [
-"      \ { 'y': '~/' },
-"      \ { 'c': '~/' },
-"      \ ]
+if has('win32')
+  let g:startify_bookmarks = [
+       \ { 'c': '~/AppData/Local/nvim' },
+       \ ]
+else
+  let g:startify_bookmarks = [
+       \ { 'c': '~/.config/nvim' },
+       \ ]
+endif
 
 "   Emmet
 " let g:user_emmet_install_global = 0
