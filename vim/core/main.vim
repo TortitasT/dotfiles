@@ -9,6 +9,17 @@ set scrolloff=8
 set cursorline
 "set cursorcolumn
 
+"   Set Powershell
+if has('win64') || has('win32')
+  let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
+  let &shellcmdflag = '-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';'
+  let &shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+  let &shellpipe  = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
+  set shellquote= shellxquote=
+
+  let g:floaterm_shell='powershell'
+endif
+
 "   Spell check
 set spell
 set spell spelllang=es_es,en_us
