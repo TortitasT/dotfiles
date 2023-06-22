@@ -2,6 +2,10 @@
 "   Leader key
 let mapleader = ","
 
+"   Refresh config
+command! Refresh source $MYVIMRC | source $MYVIMRC
+command! Reload source $MYVIMRC | source $MYVIMRC
+
 "   Git 
 cnoreabbrev gco :Git checkout
 cnoreabbrev ga :Git add --all
@@ -60,3 +64,9 @@ let user_emmet_expandabbr_key=','
 "   CokeLine
 nmap <leader>7 <Plug>(cokeline-focus-prev)
 nmap <leader>8 <Plug>(cokeline-focus-next)
+
+"   CocCommands
+"       Laravel
+command! -nargs=0 LaravelTestFile :CocCommand intelephense.phpunit.fileTest
+command! -nargs=0 LaravelTestSingle :CocCommand intelephense.phpunit.singleTest
+command! -nargs=0 LaravelTestProject :CocCommand intelephense.phpunit.projectTest
