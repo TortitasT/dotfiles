@@ -88,6 +88,7 @@ let g:coc_global_extensions = [
             \'coc-highlight',
             \'coc-sh',
             \'coc-sumneko-lua',
+            \'@yaegassy/coc-intelephense',
             \]
 
 "   Startify config
