@@ -26,5 +26,7 @@
   "clangd.path": "/usr/local/bin/clangd15",
   "emmet.excludeLanguages": [
     "php"
-  ]
+  ],
+  "intelephense.phpunit.colors": true,
+  "intelephense.phpunit.enableSplitRight": true
 }

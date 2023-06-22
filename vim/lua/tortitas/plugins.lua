@@ -63,17 +63,18 @@ return {
     config = function()
       require("other-nvim").setup({
         mappings = {
+          -- Laravel
           "laravel",
           {
             pattern = "/src/(.*).php$",
-            target = "/test/Feature/%1Test.php",
+            target = "/tests/Feature/%1Test.php",
             context = "test",
           },
           {
-            pattern = "/test/Feature/(.*)Test.php$",
+            pattern = "/tests/Feature/(.*)Test.php$",
             target = "/src/%1.php",
             context = "controller",
-          }
+          },
         }
       })
     end
@@ -91,8 +92,10 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    dependencies = { 'nvim-lua/plenary.nvim' },
   },
+
+  { "smartpde/telescope-recent-files" },
 
   {
     'numToStr/Comment.nvim',

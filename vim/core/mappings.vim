@@ -2,6 +2,10 @@
 "   Leader key
 let mapleader = ","
 
+"   Refresh config
+command! Refresh source $MYVIMRC | source $MYVIMRC
+command! Reload source $MYVIMRC | source $MYVIMRC
+
 "   Git 
 cnoreabbrev gco :Git checkout
 cnoreabbrev ga :Git add --all
@@ -35,9 +39,11 @@ vnoremap  <leader>P  "+P
 nnoremap  <leader>P  "+P
 
 "   Telescope
-nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <C-p> <cmd>Telescope commands<cr>
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<CR>
+nnoremap <leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <C-p> <cmd>Telescope commands<CR>
+
+nnoremap <leader>fr <cmd>lua require('telescope').extensions.recent_files.pick()<CR>
 
 "   COC
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
@@ -60,3 +66,9 @@ let user_emmet_expandabbr_key=','
 "   CokeLine
 nmap <leader>7 <Plug>(cokeline-focus-prev)
 nmap <leader>8 <Plug>(cokeline-focus-next)
+
+"   CocCommands
+"       Laravel
+command! -nargs=0 LaravelTestFile :CocCommand intelephense.phpunit.fileTest
+command! -nargs=0 LaravelTestSingle :CocCommand intelephense.phpunit.singleTest
+command! -nargs=0 LaravelTestProject :CocCommand intelephense.phpunit.projectTest

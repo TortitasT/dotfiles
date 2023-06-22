@@ -147,21 +147,35 @@ let NERDTreeShowHidden=1
 "   NERDTree right
 let g:NERDTreeWinPos = "right"
 
-"   telescope ignore files
+"   Auto create folder on save
+augroup Mkdir
+  autocmd!
+  autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
+augroup END
+
+"   telescope setup
 lua << EOF
+require('telescope').load_extension('recent_files')
+
 require('telescope').setup{
-defaults = {
-  file_ignore_patterns = { 
-    "node_modules/*",
-    "vendor/*",
-    "build/*",
-    "bin/*",
-    ".git/*",
-    ".idea/*",
-    "dist/*",
-    "gradlew*",
-    "desktop.ini"
+  defaults = {
+    file_ignore_patterns = { 
+      "node_modules/*",
+      "vendor/*",
+      "build/*",
+      "bin/*",
+      ".git/*",
+      ".idea/*",
+      "dist/*",
+      "gradlew*",
+      "desktop.ini"
+    },
   },
-}
+
+  extensions = {
+    recent_files = {
+      only_cwd = true,
+    }  
+  }
 }
 EOF
