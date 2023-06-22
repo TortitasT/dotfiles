@@ -148,21 +148,29 @@ augroup Mkdir
   autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
 augroup END
 
-"   telescope ignore files
+"   telescope setup
 lua << EOF
+require('telescope').load_extension('recent_files')
+
 require('telescope').setup{
-defaults = {
-  file_ignore_patterns = { 
-    "node_modules/*",
-    "vendor/*",
-    "build/*",
-    "bin/*",
-    ".git/*",
-    ".idea/*",
-    "dist/*",
-    "gradlew*",
-    "desktop.ini"
+  defaults = {
+    file_ignore_patterns = { 
+      "node_modules/*",
+      "vendor/*",
+      "build/*",
+      "bin/*",
+      ".git/*",
+      ".idea/*",
+      "dist/*",
+      "gradlew*",
+      "desktop.ini"
+    },
   },
-}
+
+  extensions = {
+    recent_files = {
+      only_cwd = true,
+    }  
+  }
 }
 EOF

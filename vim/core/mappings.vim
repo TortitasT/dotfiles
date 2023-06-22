@@ -39,9 +39,11 @@ vnoremap  <leader>P  "+P
 nnoremap  <leader>P  "+P
 
 "   Telescope
-nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <C-p> <cmd>Telescope commands<cr>
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<CR>
+nnoremap <leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <C-p> <cmd>Telescope commands<CR>
+
+nnoremap <leader>fr <cmd>lua require('telescope').extensions.recent_files.pick()<CR>
 
 "   COC
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"

@@ -92,8 +92,10 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    dependencies = { 'nvim-lua/plenary.nvim' },
   },
+
+  { "smartpde/telescope-recent-files" },
 
   {
     'numToStr/Comment.nvim',
