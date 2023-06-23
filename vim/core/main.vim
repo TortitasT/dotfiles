@@ -84,7 +84,6 @@ let g:coc_global_extensions = [
             \'coc-eslint',
             \'coc-vetur',
             \'coc-xml',
-            \'coc-git',
             \'coc-highlight',
             \'coc-sh',
             \'coc-sumneko-lua',
