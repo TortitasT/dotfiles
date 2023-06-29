@@ -173,5 +173,5 @@ EOF
 augroup Telescope
   autocmd!
   "   Close mini-files on telescope open
-  autocmd User TelescopePreviewerLoaded :lua MiniFiles.close()
+  " autocmd User TelescopePreviewerLoaded :lua MiniFiles.close()
 augroup END
