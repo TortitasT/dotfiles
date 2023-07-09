@@ -41,6 +41,7 @@ return {
     end
   },
 
+
   {
     "mhinz/vim-startify"
   },
@@ -212,4 +213,8 @@ return {
   { 'mfussenegger/nvim-dap' },
 
   { 'img-paste-devs/img-paste.vim' },
+
+  { 'nagy135/typebreak.nvim' },
+
+  { 'itchyny/vim-cursorword' }
 }
