@@ -1,5 +1,6 @@
 {
   "coc.preferences.formatOnSave": true,
+  "diagnostic.checkCurrentLine": true,
   "prettier.enable": true,
   "prettier.formatterPriority": -1,
   "prettier.disableLanguages": [
@@ -10,7 +11,7 @@
   "vetur.format.enable": true,
   "vetur.format.defaultFormatter.scss": "prettier",
   "vetur.format.defaultFormatter.js": "prettier-eslint",
-  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatter.html": "prettier",
   "vue.format.enable": false,
   "deno.enable": false,
   "codeLens.enable": true,
@@ -21,8 +22,6 @@
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.format.semicolons": "remove",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "phpactor.enable": true,
-  "phpactor.path": "/home/tortitas/.local/bin/phpactor",
   "clangd.path": "/usr/local/bin/clangd15",
   "emmet.excludeLanguages": [
     "php"

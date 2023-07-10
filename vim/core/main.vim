@@ -87,6 +87,7 @@ let g:coc_global_extensions = [
             \'coc-highlight',
             \'coc-sh',
             \'coc-sumneko-lua',
+            \'coc-deno',
             \'@yaegassy/coc-intelephense',
             \]
 

@@ -12,7 +12,7 @@ set path+=**
 set wildmenu
 
 " Colorscheme
-colorscheme industry
+colorscheme evening
 
 " Config
 "   Leader key
@@ -34,15 +34,8 @@ set shiftwidth=2
 set autoindent
 
 "   Mappings
-map <F8> :tabp<CR>
-map <F9> :tabn<CR>
-cnoreabbrev gco :Git checkout
-cnoreabbrev ga :Git add --all
-cnoreabbrev gc :Git commit -m
-cnoreabbrev gs :Git status
-cnoreabbrev term :FloatermNew<CR>
-nmap B :NERDTree<CR>
+map <leader>7 :tabp<CR>
+map <leader>8 :tabn<CR>
 tnoremap <F8> <C-W>:tabp<CR>
 tnoremap <F9> <C-W>:tabn<CR>
 tnoremap <Esc> <C-\><C-n>
-nmap º :FloatermToggle<CR>
