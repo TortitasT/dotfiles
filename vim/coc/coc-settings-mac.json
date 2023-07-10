@@ -7,7 +7,7 @@
     "vue"
   ],
   "tsserver.enable": false,
-  "vetur.format.enable": false,
+  "vetur.format.enable": true,
   "vetur.format.defaultFormatter.scss": "prettier",
   "vetur.format.defaultFormatter.js": "prettier-eslint",
   "vetur.format.defaultFormatter.html": "js-beautify-html",
