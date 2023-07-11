@@ -176,3 +176,6 @@ augroup Telescope
   "   Close mini-files on telescope open
   " autocmd User TelescopePreviewerLoaded :lua MiniFiles.close()
 augroup END
+
+"   No spell check on terminal windows
+au TermOpen * setlocal nospell
