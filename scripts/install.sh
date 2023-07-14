@@ -15,6 +15,7 @@ for script in $(ls -1 *.sh); do
 
     scriptname=$(echo $script | cut -d'.' -f1)
 
-    cp $script $INSTALL_PATH/$scriptname
+    rm -f $INSTALL_PATH/$scriptname
+    ln -s $PWD/$script $INSTALL_PATH/$scriptname
     chmod +x $INSTALL_PATH/$scriptname
 done
