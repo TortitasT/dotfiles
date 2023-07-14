@@ -1,20 +1,32 @@
 #!/bin/bash
-# I am lazy I know
+
+linkFile() {
+  if [ -f $2 ]; then
+    rm -rf $2
+  fi
+
+  ln -sf $PWD/$1 $2
+}
+
+linkDirectory() {
+  if [ -d $2 ]; then
+    rm -rf $2
+  fi
+
+  ln -sf $PWD/$1 $2
+}
 
 mkdir ~/.config/nvim
 mkdir ~/.config/coc
 
-rm -rf ~/.vimrc
-ln -sf $PWD/.vimrc ~/.vimrc
+linkFile ".vimrc" "~/.vimrc"
 
-rm -rf ~/.config/nvim/init.lua
-ln -sf $PWD/init.lua ~/.config/nvim/init.lua
+linkFile "init.lua" "~/.config/nvim/init.lua"
 
-rm -rf ~/.config/nvim/core
-ln -sf $PWD/core ~/.config/nvim/core
+linkDirectory "core" "~/.vim/core"
+linkDirectory "core" "~/.config/nvim/core"
 
-rm -rf ~/.config/nvim/lua
-ln -sf $PWD/lua ~/.config/nvim/lua
+linkDirectory "lua" "~/.config/nvim/lua"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   rm -rf ~/.config/nvim/coc-settings.json
@@ -24,13 +36,9 @@ elif [[ "$OSTYPE" == "freebsd"* ]]; then
   ln -sf $PWD/coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
 fi
 
-rm -rf ~/.config/nvim/ftplugin
-ln -sf $PWD/ftplugin ~/.config/nvim/ftplugin
+linkDirectory "ftplugin" "~/.config/nvim/ftplugin"
 
-rm -rf ~/.config/coc/ultisnips
-ln -sf $PWD/ultisnips ~/.config/coc/ultisnips
+linkDirectory "ultisnips" "~/.config/coc/ultisnips"
 
-if [ -d ~/.vim/colors ]; then
-  rm -rf ~/.vim/colors
-fi
-ln -sf $PWD/colors ~/.vim/colors
+linkDirectory "colors" "~/.vim/colors"
+linkDirectory "colors" "~/.config/nvim/colors"

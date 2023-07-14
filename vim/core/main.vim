@@ -180,3 +180,8 @@ augroup END
 
 "   No spell check on terminal windows
 au TermOpen * setlocal nospell
+
+"   Source vim file on save
+if !has("nvim")
+  autocmd BufWritePost .vimrc source % | echo "Reloaded .vimrc"
+endif
