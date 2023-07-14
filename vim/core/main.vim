@@ -90,6 +90,7 @@ let g:coc_global_extensions = [
             \'coc-deno',
             \'@yaegassy/coc-intelephense',
             \]
+" \'@yaegassy/coc-laravel',
 
 "   Startify config
 if has('win32')
