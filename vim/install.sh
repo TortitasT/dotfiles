@@ -29,3 +29,8 @@ ln -sf $PWD/ftplugin ~/.config/nvim/ftplugin
 
 rm -rf ~/.config/coc/ultisnips
 ln -sf $PWD/ultisnips ~/.config/coc/ultisnips
+
+if [ -d ~/.vim/colors ]; then
+  rm -rf ~/.vim/colors
+fi
+ln -sf $PWD/colors ~/.vim/colors

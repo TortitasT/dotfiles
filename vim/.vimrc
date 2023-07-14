@@ -12,7 +12,7 @@ set path+=**
 set wildmenu
 
 " Colorscheme
-colorscheme evening
+colorscheme paramount
 
 " Config
 "   Leader key
