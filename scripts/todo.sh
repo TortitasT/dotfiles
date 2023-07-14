@@ -23,8 +23,19 @@ if [[ "$1" == "-a" ]]; then
 fi
 
 if [[ "$1" == "-d" ]]; then
+    if [[ $# -eq 0 ]]; then
+        echo "No todo item specified."
+        exit 1
+    fi
+
     shift
-    sed -i.bak "$1d" $TODO_FILE
+
+    if [[ "$1" =~ ^[0-9]+$ ]]; then
+        sed -i.bak "$1d" $TODO_FILE
+        exit 0
+    fi
+
+    sed -i.bak "/$1/d" $TODO_FILE
     exit 0
 fi
 
