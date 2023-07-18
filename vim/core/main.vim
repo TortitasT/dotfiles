@@ -90,6 +90,7 @@ let g:coc_global_extensions = [
             \'coc-deno',
             \'@yaegassy/coc-intelephense',
             \]
+" \'@yaegassy/coc-laravel',
 
 "   Startify config
 if has('win32')
@@ -176,3 +177,11 @@ augroup Telescope
   "   Close mini-files on telescope open
   " autocmd User TelescopePreviewerLoaded :lua MiniFiles.close()
 augroup END
+
+"   No spell check on terminal windows
+au TermOpen * setlocal nospell
+
+"   Source vim file on save
+if !has("nvim")
+  autocmd BufWritePost .vimrc source % | echo "Reloaded .vimrc"
+endif
