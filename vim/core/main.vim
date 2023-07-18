@@ -35,7 +35,7 @@ lua << EOF
 require 'nvim-treesitter.install'.compilers = {"gcc"} -- Must use mingw64 gcc `scoop install mingw` https://github.com/nvim-treesitter/nvim-treesitter/issues/1897
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "vue", "java", "php" },
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "vue", "java", "php", "html", "css", "scss" },
 
   auto_install = true,
 
