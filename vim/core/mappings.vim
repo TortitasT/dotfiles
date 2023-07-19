@@ -72,3 +72,6 @@ nmap <leader>8 <Plug>(cokeline-focus-next)
 command! -nargs=0 LaravelTestFile :CocCommand intelephense.phpunit.fileTest
 command! -nargs=0 LaravelTestSingle :CocCommand intelephense.phpunit.singleTest
 command! -nargs=0 LaravelTestProject :CocCommand intelephense.phpunit.projectTest
+
+"   JABS
+nmap <leader>b :JABSOpen<CR>
