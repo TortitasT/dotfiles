@@ -42,7 +42,8 @@ return {
   -- },
 
   {
-    'matbme/JABS.nvim',
+    'jeff-dh/expJABS.nvim',
+    branch = 'expJABS',
     config = function()
       require 'jabs'.setup {
         keymap = {

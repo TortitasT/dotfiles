@@ -74,4 +74,4 @@ command! -nargs=0 LaravelTestSingle :CocCommand intelephense.phpunit.singleTest
 command! -nargs=0 LaravelTestProject :CocCommand intelephense.phpunit.projectTest
 
 "   JABS
-nmap <leader>b :JABSOpen<CR>
+nmap <leader>b :JABS<CR>
