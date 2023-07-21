@@ -185,3 +185,6 @@ au TermOpen * setlocal nospell
 if !has("nvim")
   autocmd BufWritePost .vimrc source % | echo "Reloaded .vimrc"
 endif
+
+"   DAP
+lua require 'tortitas/dap'

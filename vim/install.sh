@@ -42,3 +42,12 @@ linkDirectory "ultisnips" "~/.config/coc/ultisnips"
 
 linkDirectory "colors" "~/.vim/colors"
 linkDirectory "colors" "~/.config/nvim/colors"
+
+installPhpDebugger() {
+  VSCODE_PHP_DEBUG_PATH="$HOME/build/vscode-php-debug"
+
+  git clone https://github.com/xdebug/vscode-php-debug.git $VSCODE_PHP_DEBUG_PATH &&
+  npm install --prefix $VSCODE_PHP_DEBUG_PATH && npm run --prefix $VSCODE_PHP_DEBUG_PATH build
+}
+
+installPhpDebugger

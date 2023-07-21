@@ -258,6 +258,13 @@ return {
 
   { 'mfussenegger/nvim-dap' },
 
+  {
+    'rcarriga/nvim-dap-ui',
+    config = function()
+      require("dapui").setup()
+    end
+  },
+
   { 'img-paste-devs/img-paste.vim' },
 
   { 'nagy135/typebreak.nvim' },
