@@ -166,3 +166,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 bindkey -A emacs main
 #
 # // MAIN END ////////////////////////////
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  (&>/dev/null say $(curl -s https://whatthecommit.com/index.txt) &)
+fi
