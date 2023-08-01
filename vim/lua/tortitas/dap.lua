@@ -1,7 +1,5 @@
 local dap = require 'dap'
 
-loadPhpDebug()
-
 function loadPhpDebug()
   if not file_exists(get_home_path() .. '/build/vscode-php-debug/out/phpDebug.js') then
     return
@@ -33,3 +31,5 @@ function get_home_path()
   end
   return path
 end
+
+loadPhpDebug()
