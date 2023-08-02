@@ -102,6 +102,7 @@ alias emacs="emacs -nw"
 alias g="git"
 if [[ "$OSTYPE" == "darwin"* ]]; then alias gg="cd ~/Documents/Git"; fi
 if [[ "$OSTYPE" == "freebsd"* ]]; then alias gg="cd ~/Git"; fi
+if [[ "$OSTYPE" == "linux-android"* ]]; then alias gg="cd ~/Git"; fi
 alias gl="git log --graph --oneline --decorate --all"
 alias gs="git status"
 alias ga="git add --all"
@@ -153,6 +154,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="$HOME/bin:$PATH"
   export PATH="$HOME/.local/bin:$PATH"
 
+  # Emacs keymap for zsh, needs to be set because editor is nvim
+  bindkey -A emacs main
+
+  # Funny voice when starting the terminal in macos
+  (&>/dev/null say $(curl -s https://whatthecommit.com/index.txt) &)
+
   #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
   export SDKMAN_DIR="$HOME/.sdkman"
   [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -162,11 +169,5 @@ fi
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
-# Emacs keymap for zsh, needs to be set because editor is nvim
-bindkey -A emacs main
 #
 # // MAIN END ////////////////////////////
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  (&>/dev/null say $(curl -s https://whatthecommit.com/index.txt) &)
-fi
