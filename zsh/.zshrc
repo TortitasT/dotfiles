@@ -127,6 +127,10 @@ if [[ "$OSTYPE" == "freebsd"* ]]; then
   neofetch
 fi
 
+if [[ "$OSTYPE" == "linux-android"* ]]; then
+  eval `ssh-agent`
+fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Load autosuggestions
   source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
