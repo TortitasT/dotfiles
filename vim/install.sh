@@ -18,15 +18,16 @@ linkDirectory() {
 
 mkdir ~/.config/nvim
 mkdir ~/.config/coc
+mkdir ~/.vim
 
-linkFile ".vimrc" "~/.vimrc"
+linkFile ".vimrc" "$HOME/.vimrc"
 
-linkFile "init.lua" "~/.config/nvim/init.lua"
+linkFile "init.lua" "$HOME/.config/nvim/init.lua"
 
-linkDirectory "core" "~/.vim/core"
-linkDirectory "core" "~/.config/nvim/core"
+linkDirectory "core" "$HOME/.vim/core"
+linkDirectory "core" "$HOME/.config/nvim/core"
 
-linkDirectory "lua" "~/.config/nvim/lua"
+linkDirectory "lua" "$HOME/.config/nvim/lua"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   rm -rf ~/.config/nvim/coc-settings.json
@@ -36,14 +37,21 @@ elif [[ "$OSTYPE" == "freebsd"* ]]; then
   ln -sf $PWD/coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
 fi
 
-linkDirectory "ftplugin" "~/.config/nvim/ftplugin"
+linkDirectory "ftplugin" "$HOME/.config/nvim/ftplugin"
 
-linkDirectory "ultisnips" "~/.config/coc/ultisnips"
+linkDirectory "ultisnips" "$HOME/.config/coc/ultisnips"
 
-linkDirectory "colors" "~/.vim/colors"
-linkDirectory "colors" "~/.config/nvim/colors"
+linkDirectory "colors" "$HOME/.vim/colors"
+linkDirectory "colors" "$HOME/.config/nvim/colors"
 
 installPhpDebugger() {
+  read -p "Install php debugger? (y/n)?" choice
+  case "$choice" in 
+    y|Y ) echo "Installing php debugger";;
+    n|N ) return;;
+    * ) return;;
+  esac
+
   VSCODE_PHP_DEBUG_PATH="$HOME/build/vscode-php-debug"
 
   git clone https://github.com/xdebug/vscode-php-debug.git $VSCODE_PHP_DEBUG_PATH &&
