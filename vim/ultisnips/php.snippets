@@ -29,7 +29,7 @@ snippet Controller "Sample laravel controller" b
 
 namespace ${1:namespace};
 
-class ${2:Name}Controller extends Controller
+class `!p snip.rv = snip.basename` extends Controller
 {
 		${3:// code...}
 }
@@ -40,7 +40,7 @@ snippet Model "Sample laravel model" b
 
 namespace ${1:namespace};
 
-class ${2:Name}Model extends Model
+class `!p snip.rv = snip.basename` extends Model
 {
 		${3:// code...}
 }
@@ -51,7 +51,7 @@ snippet Test "Sample laravel test" b
 
 namespace ${1:namespace};
 
-class ${2:Name}Test extends TestCase
+class `!p snip.rv = snip.basename` extends TestCase
 {
 		${3:// code...}
 }
