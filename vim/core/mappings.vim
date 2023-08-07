@@ -11,6 +11,7 @@ cnoreabbrev gco :Git checkout
 cnoreabbrev ga :Git add --all
 cnoreabbrev gc :Git commit -m
 cnoreabbrev gs :Git status
+cnoreabbrev gb :Git branch --sort=-committerdate
 
 "   Mini-files
 map B <cmd>lua MiniFiles.open()<CR>

@@ -108,6 +108,7 @@ alias gs="git status"
 alias ga="git add --all"
 alias gc="git commit -m"
 alias gco="git checkout"
+alias gb="git branch --sort=-committerdate"
 # Laravel
 alias art="php artisan"
 alias artest="vendor/bin/phpunit --testdox"
