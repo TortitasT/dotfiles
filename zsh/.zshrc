@@ -100,7 +100,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
   alias install="sudo pacman -S --noconfirm"
 
-  function poweroff() {
+  function schedule-poweroff() {
     MINUTES=$1
     if [ -z "$MINUTES" ]; then
       echo "Usage: poweroff <minutes>"
