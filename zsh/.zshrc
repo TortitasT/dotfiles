@@ -92,6 +92,13 @@ alias x="startx"
 alias q="exit"
 alias :q="exit"
 alias .q="exit"
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then 
+  function copy() {
+    cat $1 | xclip -selection clipboard -i
+  } 
+fi
+
 if [[ "$OSTYPE" == "freebsd"* ]]; then alias poweroff="doas poweroff"; fi
 alias doo="chmod 700 ./do.sh && ./do.sh"
 if [[ "$OSTYPE" == "freebsd"* ]]; then alias ii="nohup pcmanfm > /dev/null 2>&1&"; fi
@@ -134,6 +141,7 @@ if [[ "$OSTYPE" == "linux-android"* ]]; then
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  eval `ssh-agent`
   neofetch
 fi
 
