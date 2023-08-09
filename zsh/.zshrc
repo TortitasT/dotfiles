@@ -97,6 +97,19 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   function copy() {
     cat $1 | xclip -selection clipboard -i
   } 
+
+  alias install="sudo pacman -S --noconfirm"
+
+  function poweroff() {
+    MINUTES=$1
+    if [ -z "$MINUTES" ]; then
+      echo "Usage: poweroff <minutes>"
+    else
+      echo "Powering off in $MINUTES minutes"
+      sleep $((MINUTES * 60))
+      sudo poweroff
+    fi
+  }
 fi
 
 if [[ "$OSTYPE" == "freebsd"* ]]; then alias poweroff="doas poweroff"; fi
@@ -186,6 +199,13 @@ fi
 # Deno bin
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Pyenv
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
 
 #
 # // MAIN END ////////////////////////////

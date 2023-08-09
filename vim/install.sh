@@ -35,6 +35,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "freebsd"* ]]; then
   rm -rf ~/.config/nvim/coc-settings.json
   ln -sf $PWD/coc/coc-settings-fbsd.json ~/.config/nvim/coc-settings.json
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  rm -rf ~/.config/nvim/coc-settings.json
+  ln -sf $PWD/coc/coc-settings-arch.json ~/.config/nvim/coc-settings.json
 fi
 
 linkDirectory "ftplugin" "$HOME/.config/nvim/ftplugin"
