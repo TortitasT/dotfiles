@@ -4,11 +4,11 @@ local api = vim.api
 local version = vim.version
 
 -- check if we have the latest stable version of nvim
-local expected_ver = "0.9.0"
-local ev = version.parse(expected_ver)
+local expected_ver_str = "0.9.0"
+local expected_ver = version.parse(expected_ver_str)
 local actual_ver = version()
 
-if version.cmp(ev, actual_ver) ~= 0 then
+if actual_ver.major < expected_ver.major then
   local _ver = string.format("%s.%s.%s", actual_ver.major, actual_ver.minor, actual_ver.patch)
   local msg = string.format("Unsupported nvim version: expect %s, but got %s instead!", expected_ver, _ver)
   api.nvim_err_writeln(msg)

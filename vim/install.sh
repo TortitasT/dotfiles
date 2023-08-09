@@ -58,4 +58,17 @@ installPhpDebugger() {
   npm install --prefix $VSCODE_PHP_DEBUG_PATH && npm run --prefix $VSCODE_PHP_DEBUG_PATH build
 }
 
+installWakatimeBin() {
+  read -p "Install wakatime binary? (y/n)?" choice
+  case "$choice" in 
+    y|Y ) echo "Installing wakatime binary";;
+    n|N ) return;;
+    * ) return;;
+  esac
+
+  mkdir ~/.wakatime
+  curl https://github.com/wakatime/wakatime-cli/releases/download/v1.73.2/wakatime-cli-linux-amd64.zip --output ~/.wakatime/wakatime-cli
+}
+
 installPhpDebugger
+installWakatimeBin

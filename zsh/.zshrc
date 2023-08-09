@@ -103,6 +103,7 @@ alias g="git"
 if [[ "$OSTYPE" == "darwin"* ]]; then alias gg="cd ~/Documents/Git"; fi
 if [[ "$OSTYPE" == "freebsd"* ]]; then alias gg="cd ~/Git"; fi
 if [[ "$OSTYPE" == "linux-android"* ]]; then alias gg="cd ~/Git"; fi
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then alias gg="cd ~/Git"; fi
 alias gl="git log --graph --oneline --decorate --all"
 alias gs="git status"
 alias ga="git add --all"
@@ -130,6 +131,10 @@ fi
 
 if [[ "$OSTYPE" == "linux-android"* ]]; then
   eval `ssh-agent`
+fi
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  neofetch
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
