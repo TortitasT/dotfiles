@@ -13,6 +13,7 @@
   "vetur.format.defaultFormatter.js": "prettier-eslint",
   "vetur.format.defaultFormatter.html": "prettier",
   "vue.format.enable": false,
+  "codeLens.position": "eol",
   "deno.enable": false,
   "codeLens.enable": true,
   "eslint.autoFixOnSave": true,

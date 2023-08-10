@@ -155,6 +155,7 @@ require('telescope').setup{
       "node_modules/*",
       "vendor/*",
       "build/*",
+      "target/*",
       "bin/*",
       ".git/*",
       ".idea/*",
