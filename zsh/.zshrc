@@ -92,6 +92,8 @@ alias x="startx"
 alias q="exit"
 alias :q="exit"
 alias .q="exit"
+alias diff="diff --color=always"
+alias less="less -R"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then 
   function copy() {

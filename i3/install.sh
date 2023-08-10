@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cp ./config ~/.config/i3/config
-cp ../wallpaper/dark-cat-rosewater.png ~/.config/i3/wallpaper
+ln -s $PWD/config ~/.config/i3/config 
+ln -s $PWD/wallpaper ~/.config/i3/wallpaper
