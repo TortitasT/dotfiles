@@ -4,10 +4,13 @@
   "prettier.enable": true,
   "prettier.formatterPriority": -1,
   "prettier.disableLanguages": [
-    "javascript",
     "vue"
   ],
   "tsserver.enable": false,
+  "markdownlint.config": {
+    "no-inline-html": false
+  },
+  "tsserver.log": "normal",
   "vetur.format.enable": true,
   "vetur.format.defaultFormatter.scss": "prettier",
   "vetur.format.defaultFormatter.js": "prettier-eslint",

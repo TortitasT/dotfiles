@@ -64,6 +64,9 @@ let g:copilot_no_tab_map = v:true
 let g:user_emmet_leader_key=','
 let user_emmet_expandabbr_key=','
 
+"   Misc
+command! -nargs=0 CopyBufPath :let @+ = expand("%:p")
+
 "   CokeLine
 nmap <leader>7 <Plug>(cokeline-focus-prev)
 nmap <leader>8 <Plug>(cokeline-focus-next)
