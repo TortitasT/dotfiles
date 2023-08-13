@@ -24,10 +24,20 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
+snippet namespace "Generate namespace" b
+namespace `!v substitute(substitute(substitute(expand("%:p"), '\v(.*\/\U+)((\/\w+)+)\/\w+.php$', '\2', ''), '\/', '\\', 'g'), '\\', '', '')`;
+endsnippet
+
+snippet invoke "Sample invoke" b
+    public function __invoke()
+    {
+    }
+endsnippet
+
 snippet Controller "Sample laravel controller" b
 <?php
 
-namespace ${1:namespace};
+namespace `!v substitute(substitute(substitute(expand("%:p"), '\v(.*\/\U+)((\/\w+)+)\/\w+.php$', '\2', ''), '\/', '\\', 'g'), '\\', '', '')`;
 
 class `!p snip.rv = snip.basename` extends Controller
 {
