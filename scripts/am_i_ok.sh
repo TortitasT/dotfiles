@@ -14,21 +14,28 @@ check_disk_space() {
       FREE=$(echo "$SIZE_KB - $OCUP_KB" | bc)
       THRESHOLD=$(echo "$SIZE_KB * 0.80" | bc)
 
-      # echo "DISK: $DISK"
-      # echo "SIZE_KB: $SIZE_KB"
-      # echo "OCUP_KB: $OCUP_KB"
-      # echo "FREE: $FREE"
-      # echo "THRESHOLD: $THRESHOLD"
+      if [ "$1" == "-v" ]; then
+        echo "DISK: $DISK"
+        echo "SIZE_KB: $SIZE_KB"
+        echo "OCUP_KB: $OCUP_KB"
+        echo "FREE: $FREE"
+        echo "THRESHOLD: $THRESHOLD"
+      fi
 
-      SIZE_HUMAN=$(echo "$SIZE_KB / 1024 / 1024" | bc)
-      OCUP_HUMAN=$(echo "$OCUP_KB / 1024 / 1024" | bc)
+      SIZE_GB=$(echo "$SIZE_KB / 1024 / 1024" | bc)
+      OCUP_GB=$(echo "$OCUP_KB / 1024 / 1024" | bc)
+      FREE_GB=$(echo "$FREE / 1024 / 1024" | bc)
+
+      if [ "$OCUP_GB" == "0" ]; then
+        continue
+      fi
 
       if [ 1 -eq "$(echo "${OCUP_KB} > ${THRESHOLD}" | bc)" ]; then
-          echo "WARNING: $DISK with size $SIZE_HUMAN GB has $OCUP_HUMAN GB ocupied"
+          echo "WARNING: $DISK with size $SIZE_GB GB has $OCUP_GB GB ocupied and $FREE_GB GB free"
       else
-          echo "OK: $DISK with size $SIZE_HUMAN GB has $OCUP_HUMAN GB ocupied"
+          echo "OK: $DISK with size $SIZE_GB GB has $OCUP_GB GB ocupied and $FREE_GB GB free"
       fi
   done
 }
 
-check_disk_space
+check_disk_space $1
