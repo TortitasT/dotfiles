@@ -1,15 +1,16 @@
 {
   "coc.preferences.formatOnSave": true,
   "diagnostic.checkCurrentLine": true,
-  "prettier.enable": true,
+  "prettier.enable": false,
   "prettier.formatterPriority": -1,
   "prettier.disableLanguages": [
     "vue"
   ],
-  "tsserver.enable": false,
+  "tsserver.enable": true,
   "markdownlint.config": {
     "no-inline-html": false
   },
+  "colors.enable": true,
   "tsserver.log": "normal",
   "vetur.format.enable": true,
   "vetur.format.defaultFormatter.scss": "prettier",

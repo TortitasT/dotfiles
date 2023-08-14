@@ -132,6 +132,9 @@ alias ga="git add --all"
 alias gc="git commit -m"
 alias gco="git checkout"
 alias gb="git branch --sort=-committerdate"
+function gp() {
+  git push origin $(git branch --show-current)
+}
 # Laravel
 alias art="php artisan"
 alias artest="vendor/bin/phpunit --testdox"

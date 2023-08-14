@@ -79,3 +79,6 @@ command! -nargs=0 LaravelTestProject :CocCommand intelephense.phpunit.projectTes
 
 "   JABS
 nmap <leader>b :JABS<CR>
+
+"   CocMappings
+nmap <leader><leader>p :CocCommand<CR>
