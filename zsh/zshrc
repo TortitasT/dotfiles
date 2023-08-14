@@ -112,6 +112,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
       sudo poweroff
     fi
   }
+
+  alias logoff="i3-msg exit"
 fi
 
 if [[ "$OSTYPE" == "freebsd"* ]]; then alias poweroff="doas poweroff"; fi

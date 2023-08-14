@@ -56,5 +56,5 @@ installPlugin "zsh-users/zsh-completions"
 installTheme "spaceship-prompt/spaceship-prompt"
 
 # Symlink files
-linkFile ".zshrc" "$HOME/.zshrc"
+linkFile "zshrc" "$HOME/.zshrc"
 

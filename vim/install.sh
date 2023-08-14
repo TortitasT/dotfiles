@@ -4,11 +4,11 @@ source ../lib/installer.sh
 
 installCocSettings() {
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    linkFile "coc-settings-mac.json" "$HOME/.config/nvim/coc-settings.json"
+    linkFile "coc/coc-settings-mac.json" "$HOME/.config/nvim/coc-settings.json"
   elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    linkFile "coc-settings-fbsd.json" "$HOME/.config/nvim/coc-settings.json"
+    linkFile "coc/coc-settings-fbsd.json" "$HOME/.config/nvim/coc-settings.json"
   elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    linkFile "coc-settings-arch.json" "$HOME/.config/nvim/coc-settings.json"
+    linkFile "coc/coc-settings-arch.json" "$HOME/.config/nvim/coc-settings.json"
   fi
 }
 
