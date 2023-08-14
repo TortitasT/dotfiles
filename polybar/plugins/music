@@ -1,20 +1,5 @@
 #!/bin/bash
 
-# player_status=$(playerctl status 2> /dev/null)
-# if [[ $? -eq 0 ]]; then
-#   # metadata="$(playerctl metadata artist) - $(playerctl metadata title)"
-#   # ZSCROLL
-#   # output="$(zscroll -M "playerctl metadata title" -l 30 -d 0.3)"
-#
-#   zscroll --before-text "♪ x" --delay 0.3 \
-#       --match-command "playerctl status" \
-#       --match-text "playing" "--before-text ' '" \
-#       --match-text "paused" "--before-text ' ' --scroll 0" \
-#       --update-check true "playerctl metadata title" &
-#
-#   wait
-# fi
-
 if [ $1 = "toggle" ]; then
   playerctl play-pause
   exit
@@ -26,12 +11,3 @@ zscroll --before-text "♪ x" --delay 0.3 -l 20 \
     --match-text "Paused" "--before-text '%{F#999}' --after-text '%{F-}' --scroll 0" \
     --update-check true "playerctl metadata title" &
 wait
-
-# # Foreground color formatting tags are optional
-# if [[ $player_status = "Playing" ]]; then
-#     echo "%{F#FFFFFF}$output%{F-}"
-# elif [[ $player_status = "Paused" ]]; then
-#     echo "%{F#999}$output%{F-}"
-# else
-#     echo ""
-# fi
