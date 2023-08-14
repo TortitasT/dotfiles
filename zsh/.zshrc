@@ -135,6 +135,10 @@ alias gb="git branch --sort=-committerdate"
 function gp() {
   git push origin $(git branch --show-current)
 }
+function gpl() {
+  git pull origin $(git branch --show-current)
+}
+alias reload="source ~/.zshrc"
 # Laravel
 alias art="php artisan"
 alias artest="vendor/bin/phpunit --testdox"
