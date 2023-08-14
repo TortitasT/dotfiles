@@ -1,9 +1,13 @@
 #!/bin/bash
 
-mkdir ~/.config/polybar
+source ../lib/installer.sh
 
-cp ./config.ini ~/.config/polybar/config.ini
-cp ./start.sh ~/.config/polybar/start.sh
+ensureDirectory "$HOME/.config/polybar"
 
-rm -rf ~/.config/polybar/plugins
-ln -sf $PWD/plugins ~/.config/polybar/plugins
+linkDirectory "." "$HOME/.config/polybar"
+
+# cp ./config.ini ~/.config/polybar/config.ini
+# cp ./start.sh ~/.config/polybar/start.sh
+#
+# rm -rf ~/.config/polybar/plugins
+# ln -sf $PWD/plugins ~/.config/polybar/plugins
