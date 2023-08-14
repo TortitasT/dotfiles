@@ -4,4 +4,6 @@ mkdir ~/.config/polybar
 
 cp ./config.ini ~/.config/polybar/config.ini
 cp ./start.sh ~/.config/polybar/start.sh
-ln -s $PWD/plugins ~/.config/polybar/plugins
+
+rm -rf ~/.config/polybar/plugins
+ln -sf $PWD/plugins ~/.config/polybar/plugins
