@@ -71,26 +71,31 @@ endif
 
 "   Coc settings
 let g:coc_global_extensions = [
-            \'coc-json',
             \'coc-css',
-            \'coc-html',
-            \'coc-emmet',
-            \'coc-tsserver',
+            \'coc-json',
             \'coc-yaml',
             \'coc-snippets',
-            \'coc-pyright',
             \'coc-clangd',
-            \'coc-prettier',
-            \'coc-eslint',
-            \'coc-vetur',
+            \'coc-html',
             \'coc-xml',
+            \'coc-prettier',
             \'coc-highlight',
             \'coc-sh',
+            \'coc-pyright',
+            \'coc-emmet',
+            \'coc-eslint',
+            \'coc-markdownlint',
+            \'@yaegassy/coc-intelephense',
             \'coc-sumneko-lua',
             \'coc-deno',
-            \'@yaegassy/coc-intelephense',
+            \'coc-toml',
+            \'coc-tsserver',
+            \'coc-rust-analyzer',
+            \'@yaegassy/coc-volar',
+            \'@yaegassy/coc-volar-tools',
+            \'@yaegassy/coc-typescript-vue-plugin',
+            \'@yaegassy/coc-laravel',
             \]
-" \'@yaegassy/coc-laravel',
 
 "   Startify config
 if has('win32')
