@@ -6,13 +6,13 @@ window:
 font:
   size: 12
   normal:
-    family: FiraCode NF
+    family: FiraCodeNerdFont
 
   bold:
-    family: FiraCode NF
+    family: FiraCodeNerdFont
 
   italic:
-    family: FiraCode NF
+    family: FiraCodeNerdFont
 
   bold_italic:
-    family: FiraCode NF
+    family: FiraCodeNerdFont

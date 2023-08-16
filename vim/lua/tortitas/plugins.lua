@@ -35,7 +35,7 @@ return {
   },
 
   {
-    "tortitast/langkeeper.nvim",
+    'tortitast/langkeeper.nvim',
     config = function()
       require 'langkeeper'.setup()
     end

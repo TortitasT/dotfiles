@@ -1,4 +1,7 @@
 #!/bin/bash
 
-mkdir ~/.config/alacritty
-cp ./alacritty.yml ~/.config/alacritty/alacritty.yml
+source ../lib/installer.sh
+
+ensureDirectory "$HOME/.config/alacritty"
+
+linkFile "alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ $1 = "toggle" ]; then
+  playerctl play-pause
+  exit
+fi
+
+zscroll --before-text "♪ x" --delay 0.3 -l 20 \
+    --match-command "playerctl status" \
+    --match-text "Playing" "--before-text '%{F#FFFFFF}' --after-text '%{F-}'" \
+    --match-text "Paused" "--before-text '%{F#999}' --after-text '%{F-}' --scroll 0" \
+    --update-check true "playerctl metadata title" &
+wait
