@@ -6,7 +6,7 @@
   "prettier.disableLanguages": [
     "vue"
   ],
-  "tsserver.enable": true,
+  "tsserver.enable": false,
   "markdownlint.config": {
     "no-inline-html": false
   },
@@ -16,12 +16,12 @@
   "vetur.format.defaultFormatter.scss": "prettier",
   "vetur.format.defaultFormatter.js": "prettier-eslint",
   "vetur.format.defaultFormatter.html": "prettier",
-  "vue.format.enable": false,
+  "vetur.dev.logLevel": "DEBUG",
   "deno.enable": false,
   "codeLens.enable": true,
   "eslint.autoFixOnSave": true,
-  "typescript.format.enable": true,
-  "javascript.format.enable": true,
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
   "javascript.preferences.quoteStyle": "single",
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.format.semicolons": "remove",

@@ -34,6 +34,13 @@ return {
     end
   },
 
+  {
+    "tortitast/langkeeper.nvim",
+    config = function()
+      require 'langkeeper'.setup()
+    end
+  },
+
   -- {
   --   'willothy/nvim-cokeline',
   --   config = function()
