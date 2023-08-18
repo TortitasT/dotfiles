@@ -6,6 +6,7 @@
   "colors.enable": true,
   "prettier.enable": true,
   "prettier.disableLanguages": [],
+  "volar.disableFormatting": true,
   "eslint.autoFixOnSave": true,
   "tsserver.enable": false,
   "tsserver.log": "verbose",
@@ -19,8 +20,9 @@
   "javascript.format.semicolons": "remove",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "clangd.path": "/usr/local/bin/clangd15",
-  "emmet.excludeLanguages": ["php"],
+  "emmet.excludeLanguages": [
+    "php"
+  ],
   "intelephense.phpunit.colors": true,
-  "intelephense.phpunit.enableSplitRight": true,
-  "volar.disableFormatting": true
+  "intelephense.phpunit.enableSplitRight": true
 }
