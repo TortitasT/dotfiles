@@ -102,11 +102,13 @@ if has('win32')
   let g:startify_bookmarks = [
        \ { 'c': '~/AppData/Local/nvim' },
        \ { 'h': '~' },
+       \ { 'g': '~/Documents/Git' },
        \ ]
 else
   let g:startify_bookmarks = [
        \ { 'c': '~/.config/nvim' },
        \ { 'h': '~' },
+       \ { 'g': '~/Git' },
        \ ]
 endif
 
