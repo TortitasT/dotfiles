@@ -101,10 +101,12 @@ let g:coc_global_extensions = [
 if has('win32')
   let g:startify_bookmarks = [
        \ { 'c': '~/AppData/Local/nvim' },
+       \ { 'h': '~' },
        \ ]
 else
   let g:startify_bookmarks = [
        \ { 'c': '~/.config/nvim' },
+       \ { 'h': '~' },
        \ ]
 endif
 
