@@ -1,37 +1,12 @@
 return {
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    },
-    config = function()
-      require("neo-tree").setup({
-        close_if_last_window = true,
-        enable_git_status = true,
-        window = {
-          position = "right",
-        },
-        filesystem = {
-          hijack_netrw_behavior = "disabled",
-          filtered_items        = {
-            visible = true,
-            hide_dotfiles = false,
-            hide_gitignored = false,
-          },
-        },
-        event_handlers = {
-          {
-            event = "file_opened",
-            handler = function(file_path)
-              require("neo-tree").close_all()
-            end
-          },
-        }
-      })
-    end
+    "nvim-lua/plenary.nvim",
+  },
+  {
+    "nvim-tree/nvim-web-devicons",
+  },
+  {
+    "MunifTanjim/nui.nvim",
   },
 
   {
@@ -40,13 +15,6 @@ return {
       require 'langkeeper'.setup()
     end
   },
-
-  -- {
-  --   'willothy/nvim-cokeline',
-  --   config = function()
-  --     require('cokeline').setup()
-  --   end
-  -- },
 
   {
     'jeff-dh/expJABS.nvim',
@@ -86,7 +54,11 @@ return {
     'echasnovski/mini.files',
     version = false,
     config = function()
-      require('mini.files').setup()
+      require('mini.files').setup({
+        options = {
+          use_as_default_explorer = false
+        }
+      })
 
       -- :w to write to the file system, on key "h" it bugs out
       -- vim.api.nvim_create_autocmd('User', {
