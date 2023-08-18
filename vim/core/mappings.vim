@@ -82,3 +82,23 @@ nmap <leader>b :JABS<CR>
 
 "   CocMappings
 nmap <leader><leader>p :CocCommand<CR>
+
+"   Netrw
+"   https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
+function! NetrwMapping()
+  "   Movement with h and l
+  nmap <buffer> h -^
+  nmap <buffer> l <CR>
+
+  "   Toggle hidden files and folders with .
+  nmap <buffer> . gh
+
+  "   TAB for markings
+  nmap <buffer> <TAB> mf
+  nmap <buffer> <S-TAB> mF
+  nmap <buffer> <Leader><TAB> mu
+endfunction
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
