@@ -1,5 +1,7 @@
 #!/bin/bash
 
-cp ./.xinitrc ~/.xinitrc
+source ../lib/installer.sh
+
+linkFile "xinitrc" "$HOME/.xinitrc"
 
 systemctl --user enable pulseaudio
