@@ -102,3 +102,6 @@ augroup netrw_mapping
   autocmd!
   autocmd filetype netrw call NetrwMapping()
 augroup END
+
+command! -nargs=0 Netrw :e .
+command! -nargs=0 Dired :e .
