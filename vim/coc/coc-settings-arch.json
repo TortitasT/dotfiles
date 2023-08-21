@@ -8,7 +8,7 @@
   "prettier.disableLanguages": [],
   "volar.disableFormatting": true,
   "eslint.autoFixOnSave": true,
-  "tsserver.enable": false,
+  "tsserver.enable": true,
   "tsserver.log": "verbose",
   "markdownlint.config": {
     "no-inline-html": false
@@ -19,9 +19,7 @@
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.format.semicolons": "remove",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "emmet.excludeLanguages": [
-    "php"
-  ],
+  "emmet.excludeLanguages": ["php"],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true
 }
