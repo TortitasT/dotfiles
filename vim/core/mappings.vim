@@ -105,3 +105,7 @@ augroup END
 
 command! -nargs=0 Netrw :e .
 command! -nargs=0 Dired :e .
+
+"   Coc go to definition
+nmap <leader>gd :call CocActionAsync('jumpDefinition')<CR>
+nmap <leader>- :edit #<CR>
