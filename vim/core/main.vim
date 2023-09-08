@@ -213,3 +213,8 @@ let g:netrw_banner = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_localcopydircmd = 'cp -r'
 hi! link netrwMarkFile Search
+
+"   Markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80
+"   Paste images
+autocmd FileType markdown nmap <buffer><silent> <leader><leader><leader>p :call mdip#MarkdownClipboardImage()<CR>
