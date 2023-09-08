@@ -55,14 +55,14 @@ linkDirectory() {
 
 ensureDirectory() {
   if [ ! -d $1 ]; then
+    print "info" "Creating $1"
     mkdir -p $1
-    print "success" "Creating $1"
   fi
 }
 
 ensureDirectories() {
-  for directory in $@; do
-    ensureDirectory $directory
+  for directory in "$@"; do
+    ensureDirectory "$directory"
   done
 }
 
