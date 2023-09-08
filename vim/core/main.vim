@@ -156,8 +156,6 @@ augroup END
 
 "   telescope setup
 lua << EOF
-require('telescope').load_extension('recent_files')
-
 require('telescope').setup{
   defaults = {
     file_ignore_patterns = { 
@@ -173,12 +171,6 @@ require('telescope').setup{
       "desktop.ini"
     },
   },
-
-  extensions = {
-    recent_files = {
-      only_cwd = true,
-    }  
-  }
 }
 EOF
 

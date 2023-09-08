@@ -1,4 +1,5 @@
 return {
+  -- LIBRARIES
   {
     "nvim-lua/plenary.nvim",
   },
@@ -8,7 +9,15 @@ return {
   {
     "MunifTanjim/nui.nvim",
   },
+  {
+    "rcarriga/nvim-notify"
+  },
+  {
+    "tpope/vim-dotenv"
+  },
+  --
 
+  -- langkeeper will keep track of the languages you use and the time you spend on them.
   {
     'tortitast/langkeeper.nvim',
     -- dir = '/home/tortitas/Git/langkeeper.nvim',
@@ -18,6 +27,8 @@ return {
     end
   },
 
+  -- expJABS will manage your buffers
+  -- NOTE: This is a fork of matbme/JABS.nvim that suits my use case better.
   {
     'jeff-dh/expJABS.nvim',
     branch = 'expJABS',
@@ -34,6 +45,7 @@ return {
     end
   },
 
+  -- Noice is the plugin that shows messages as a notification and ex commands in a floating window.
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -62,16 +74,9 @@ return {
         },
       })
     end,
-    dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-      "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
-    }
   },
 
+  -- Dadbod UI is a UI for the dadbod plugin that allows you to run SQL queries on your database.
   {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {
@@ -79,14 +84,17 @@ return {
     },
   },
 
+  -- Startify is a plugin that shows a start screen when you open vim.
   {
     "mhinz/vim-startify"
   },
 
+  -- This is the colortheme I use.
   {
     "kvrohit/mellow.nvim"
   },
 
+  -- leap.nvim lets you jump through your code with ease.
   {
     "ggandor/leap.nvim",
     dependencies = {
@@ -97,6 +105,7 @@ return {
     },
   },
 
+  -- This is the file explorer I use.
   {
     'echasnovski/mini.files',
     version = false,
@@ -140,6 +149,7 @@ return {
     end
   },
 
+  -- This plugin allows you to jump to a related file by typing :Other
   {
     "rgroli/other.nvim",
     config = function()
@@ -162,6 +172,7 @@ return {
     end
   },
 
+  -- This plugin is the one making the boxes around the code.
   {
     "HampusHauffman/block.nvim",
     config = function()
@@ -171,14 +182,13 @@ return {
     end
   },
 
+  -- Telescope duh
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
-    dependencies = { 'nvim-lua/plenary.nvim' },
   },
 
-  { "smartpde/telescope-recent-files" },
-
+  -- This is the plugin that comments lines with "gcc" keymap.
   {
     'numToStr/Comment.nvim',
     config = function()
@@ -186,29 +196,28 @@ return {
     end
   },
 
+  -- Copilot duh
   { 'github/copilot.vim' },
 
+  -- Treesitter will highlight the code in a better way than vim.
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate"
   },
 
+  -- Coc is the plugin that adds LSP support
   {
     'neoclide/coc.nvim',
     branch = "release"
   },
 
-  {
-    'mattn/emmet-vim',
-    lazy = false
-  },
+  -- Adds git commands from ex mode
+  { 'tpope/vim-fugitive' },
 
-  { 'tpope/vim-fugitive' },  -- Adds git operations integration
+  -- Auto closes brackets
+  { 'rstacruz/vim-closer' },
 
-  { 'rstacruz/vim-closer' }, -- Autocloses brackets
-
-  -- { 'mhinz/vim-signify' }, -- Adds signs in files for git
-
+  -- Adds git line status indicators in the current buffer
   {
     'lewis6991/gitsigns.nvim',
     config = function()
@@ -254,36 +263,63 @@ return {
         },
       }
     end
-  }, -- Adds signs in files for git
+  },
 
+  -- Adds a floating terminal for quick access
   { 'voldikss/vim-floaterm' },
 
+  -- Will track the time you spend on each file
+  -- NOTE: Replace with langkeeper when it's ready
   {
     'wakatime/vim-wakatime',
     branch = 'master'
   },
 
-  { 'ap/vim-css-color' },
-
+  -- Adds a line indicating indentation
   {
     "lukas-reineke/indent-blankline.nvim",
-    config = function()
-    end
   },
 
+  -- Blamer will show who wrote each line
   { 'APZelos/blamer.nvim' },
 
+  -- Will preview markdown files
   {
     'iamcco/markdown-preview.nvim',
-    build = "cd app && yarn install"
+    build = "cd app && npm i"
   },
 
+  -- Adds :ZenMode command
   { 'folke/zen-mode.nvim' },
 
-  { 'adalessa/laravel.nvim' },
+  -- Neat Laravel integration with telescope
+  {
+    "adalessa/laravel.nvim",
+    cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
+    keys = {
+      { "<leader>la", ":Laravel artisan<cr>" },
+      { "<leader>lr", ":Laravel routes<cr>" },
+      { "<leader>lm", ":Laravel related<cr>" },
+      {
+        "<leader>lt",
+        function()
+          require("laravel.tinker").send_to_tinker()
+        end,
+        mode = "v",
+        desc = "Laravel Application Routes",
+      },
+    },
+    event = { "VeryLazy" },
+    config = function()
+      require("laravel").setup()
+      require("telescope").load_extension "laravel"
+    end,
+  },
 
+  -- Debug Adapter Protocol for Neovim
   { 'mfussenegger/nvim-dap' },
 
+  -- UI for nvim-dap
   {
     'rcarriga/nvim-dap-ui',
     config = function()
@@ -291,9 +327,9 @@ return {
     end
   },
 
+  -- Paste images in markdown files
   { 'img-paste-devs/img-paste.vim' },
 
-  { 'nagy135/typebreak.nvim' },
-
+  -- Underline the current word under the cursor
   { 'itchyny/vim-cursorword' }
 }
