@@ -1,4 +1,5 @@
--- This file is heavily based on the init.lua file from https://github.com/jdhao/nvim-config/blob/master/init.lua thanks to @jdhao for the great work!
+-- This file is heavily based on the init.lua file from https://github.com/jdhao/nvim-config/blob/master/init.lua
+-- Thanks to @jdhao for the great work!
 
 local api = vim.api
 local version = vim.version
