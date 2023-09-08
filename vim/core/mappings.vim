@@ -109,3 +109,6 @@ command! -nargs=0 Dired :e .
 "   Coc go to definition
 nmap <leader>gd :call CocActionAsync('jumpDefinition')<CR>
 nmap <leader>- :edit #<CR>
+
+"   Paste images md
+autocmd FileType markdown nmap <buffer><silent> <leader><leader>p :call mdip#MarkdownClipboardImage()<CR>   

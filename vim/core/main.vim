@@ -2,6 +2,9 @@
 "   Colors
 " set termguicolors
 
+"	  Mouse
+set mouse+=a
+
 "   Center cursor
 set scrolloff=8
 
@@ -21,17 +24,12 @@ if has('win64') || has('win32')
 endif
 
 "   Spell check
-set spell
+"   NOTE: If you get an error on boot, run the line bellow this comment and it
+"   will prompt a download of the spellfiles.
 set spell spelllang=es_es,en_us
 
-"   Line number
-set number relativenumber
-
-"   Paste images md
-autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>   " This will collapse with the paste from system clipboard mapping
-
 "   Treesitter
-lua << EOF
+silent! lua << EOF
 require 'nvim-treesitter.install'.compilers = {"gcc"} -- Must use mingw64 gcc `scoop install mingw` https://github.com/nvim-treesitter/nvim-treesitter/issues/1897
 
 require'nvim-treesitter.configs'.setup {
@@ -72,13 +70,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-
-"   Save when not root
-if has("bsd")
-  command WriteRoot :w !doas tee %
-elseif has("linux")
-  command WriteRoot :w !sudo tee %
-endif
 
 "   Neovide
 if exists("g:neovide")
@@ -157,17 +148,13 @@ if has("win32")
   set backspace=indent,eol,start
 endif
 
-"	  Mouse
-set mouse+=a
-
 "   Theme
-" colorscheme catppuccin_mocha
-colorscheme mellow
-" colorscheme lunaperche
-" colorscheme habamax
-let g:mellow_italic_functions = 1
-let g:mellow_bold_functions = 1
-let g:mellow_transparent = 1
+if has("nvim")
+  colorscheme mellow
+  let g:mellow_italic_functions = 1
+  let g:mellow_bold_functions = 1
+  let g:mellow_transparent = 1
+endif
 
 "	  Tabs
 set expandtab
@@ -182,7 +169,7 @@ augroup Mkdir
 augroup END
 
 "   telescope setup
-lua << EOF
+silent! lua << EOF
 require('telescope').setup{
   defaults = {
     file_ignore_patterns = { 
@@ -207,8 +194,8 @@ augroup Telescope
   " autocmd User TelescopePreviewerLoaded :lua MiniFiles.close()
 augroup END
 
-"   No spell check on terminal windows
-au TermOpen * setlocal nospell
+"   No spell check on terminal
+silent! au TermOpen * setlocal nospell
 
 "   Source vim file on save
 if !has("nvim")
@@ -216,7 +203,7 @@ if !has("nvim")
 endif
 
 "   DAP
-lua require 'tortitas/dap'
+silent! lua require 'tortitas/dap'
 
 "   Netrw
 "   https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
