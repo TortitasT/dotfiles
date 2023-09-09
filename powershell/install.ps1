@@ -22,12 +22,20 @@ function Powershell-Copy-Profile {
   Copy-Item -Path ".\PROFILE.ps1" -Destination $PROFILE -Force
 }
 
+function Powershell-Link-Profile {
+  if (Test-Path $PROFILE -e $true) {
+    Move-Item -Path $PROFILE -Destination "$PROFILE.bak"
+  }
+  New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$PWD\PROFILE.ps1"
+}
+
 function Powershell-Install {
   Print "Configuring Powershell..." Info
 
   # Powershell-Install-OhMyPosh
   # Powershell-Install-TerminalIcons
-  Powershell-Copy-Profile
+
+  Powershell-Link-Profile
 
   Print "Powershell configured!" Success
 }

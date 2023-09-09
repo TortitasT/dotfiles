@@ -36,6 +36,13 @@ Set-Alias gc gitCommit
 function gitPull { git pull @args }
 Set-Alias gpl gitPull
 
+function gitPush { 
+  $branch = git rev-parse --abbrev-ref HEAD
+  git push origin $branch
+}
+del alias:gp -ErrorAction SilentlyContinue -Force
+Set-Alias gp gitPush
+
 function gitCheckout { git checkout @args }
 Set-Alias gco gitCheckout
 
