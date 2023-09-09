@@ -30,7 +30,7 @@ set spell spelllang=es_es,en_us
 
 "   Treesitter
 silent! lua << EOF
-require 'nvim-treesitter.install'.compilers = {"gcc"} -- Must use mingw64 gcc `scoop install mingw` https://github.com/nvim-treesitter/nvim-treesitter/issues/1897
+require 'nvim-treesitter.install'.compilers = {"clang"} -- Must use llvm `scoop install llvm` https://github.com/nvim-treesitter/nvim-treesitter/issues/1897
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {

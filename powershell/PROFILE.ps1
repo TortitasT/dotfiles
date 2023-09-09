@@ -47,5 +47,7 @@ function makedocAlias {
 }
 Set-Alias makedoc makedocAlias
 
+del alias:curl -ErrorAction SilentlyContinue -Force
+
 # function emacsAlias { emacs -nw @args }
 # Set-Alias emacs emacsAlias
