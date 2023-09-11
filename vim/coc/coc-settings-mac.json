@@ -4,25 +4,27 @@
   "codeLens.enable": true,
   "deno.enable": false,
   "colors.enable": true,
+  "volar.disableFormatting": true,
   "prettier.enable": true,
   "prettier.disableLanguages": [],
-  "volar.disableFormatting": true,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "prettier.formatterPriority": 2,
   "eslint.autoFixOnSave": true,
-  "tsserver.enable": false,
+  "tsserver.enable": true,
   "tsserver.log": "verbose",
   "markdownlint.config": {
     "no-inline-html": false
   },
-  "typescript.format.enable": true,
-  "javascript.format.enable": true,
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
   "javascript.preferences.quoteStyle": "single",
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.format.semicolons": "remove",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "clangd.path": "/usr/local/bin/clangd15",
-  "emmet.excludeLanguages": [
-    "php"
-  ],
+  "emmet.excludeLanguages": ["php"],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true
 }
