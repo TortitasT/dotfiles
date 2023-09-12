@@ -5,7 +5,7 @@
   "deno.enable": false,
   "colors.enable": true,
   "volar.disableFormatting": true,
-  "prettier.enable": true,
+  "prettier.enable": false,
   "prettier.disableLanguages": [],
   "prettier.semi": false,
   "prettier.singleQuote": true,
