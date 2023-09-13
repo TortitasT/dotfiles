@@ -90,6 +90,7 @@ endif
 "   Coc settings
 let g:coc_global_extensions = [
             \'coc-css',
+            \'coc-vimlsp',
             \'coc-json',
             \'coc-yaml',
             \'coc-snippets',
@@ -110,6 +111,7 @@ let g:coc_global_extensions = [
             \'coc-tsserver',
             \'coc-rust-analyzer',
             \'coc-java',
+            \'coc-db',
             \'@yaegassy/coc-volar',
             \'@yaegassy/coc-volar-tools',
             \'@yaegassy/coc-typescript-vue-plugin',
@@ -205,6 +207,13 @@ endif
 
 "   DAP
 silent! lua require 'tortitas/dap'
+
+"   DadBod UI
+let g:db_ui_auto_execute_table_helpers = 1
+let g:db_ui_win_position = 'right'
+let g:db_ui_show_database_icon = 1
+let g:db_ui_show_database_icon = 1
+let g:db_ui_use_nerd_fonts = 1
 
 "   Netrw
 "   https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
