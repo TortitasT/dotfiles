@@ -109,6 +109,7 @@ let g:coc_global_extensions = [
             \'coc-toml',
             \'coc-tsserver',
             \'coc-rust-analyzer',
+            \'coc-db',
             \'@yaegassy/coc-volar',
             \'@yaegassy/coc-volar-tools',
             \'@yaegassy/coc-typescript-vue-plugin',
