@@ -27,6 +27,27 @@ return {
     end
   },
 
+
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},  -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.dirman"] = {      -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                notes = "~/neorg",
+              },
+            },
+          },
+        },
+      }
+    end,
+  },
+
   -- expJABS will manage your buffers
   -- NOTE: This is a fork of matbme/JABS.nvim that suits my use case better.
   {
