@@ -173,7 +173,6 @@ if [[ "$OSTYPE" == "linux-android"* ]]; then
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  eval `ssh-agent`
   neofetch
 fi
 

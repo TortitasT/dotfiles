@@ -1,0 +1,9 @@
+[Unit]
+Description=Start ssh-agent on login
+
+[Service]
+ExecStart=bash -c 'eval $(/usr/bin/ssh-agent)'
+
+
+[Install]
+WantedBy=default.target

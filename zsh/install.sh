@@ -44,6 +44,25 @@ function installTheme() {
   print "info" "Theme $name already installed"
 }
 
+function installSshAgentService() {
+  local has_systemd=$(command -v systemctl)
+  local is_linux=$(uname -a | grep -i linux)
+
+  if [ -z "$has_systemd" ] && [ -z "$is_linux" ]; then
+    return
+  fi
+
+  local service_path="$HOME/.config/systemd/user/ssh-agent.service"
+
+  mkdir -p "$HOME/.config/systemd/user"
+  cp "$PWD/ssh-agent.service" "$service_path"
+
+  systemctl --user enable ssh-agent.service
+}
+
+installSshAgentService
+exit 1
+
 # Ensure dirs
 ensureDirectories ~/.zsh ~/.zsh/plugins ~/.zsh/themes
 
