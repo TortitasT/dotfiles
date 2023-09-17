@@ -92,7 +92,7 @@
     :spacing "8"
     :class "volume"
       (eventbox 
-        :onscroll '[ {} = up ] || pamixer --increase 5; [ {} = down ] || pamixer --decrease 5'
+        :onscroll '[ {} = down ] || pamixer --increase 5; [ {} = up ] || pamixer --decrease 5'
           (button 
             :onclick "pamixer --toggle-mute"
             :tooltip "Toggle Mute"
