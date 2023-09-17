@@ -21,6 +21,7 @@
       (_battery :status {EWW_BATTERY.BAT0.status}
                 :percentage {EWW_BATTERY.BAT0.capacity})
       (_volume)
+      (_brightness)
       (_network)
       (label :text "|" :class "sep")
       (button :onclick "eww close powermenu" :class "close-btn" "󱎘"))
@@ -99,6 +100,19 @@
               (label :text {is_muted == "false" ? "󰕾 ${volume}" : "󰖁 ${volume}"})))
   )
 )
+
+(defpoll brightness :interval "200ms" "brightnessctl g")
+(defwidget _brightness []
+  (box 
+    :orientation "h" 
+    :space-evenly "false" 
+    :spacing "8"
+    :class "brightness"
+      (eventbox 
+        :onscroll '[ {} = down ] || brightnessctl s +2%; [ {} = up ] || brightnessctl s 2%-'
+          (label
+            :text "󰃞 ${brightness}"
+              ))))
 
 ;; vim:ft=yuck
 

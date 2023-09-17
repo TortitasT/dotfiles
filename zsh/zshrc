@@ -113,6 +113,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo pacman -S --noconfirm $1
   }
 
+  alias lock="swaylock --no-unlock-indicator --color 121212"
+
   function schedule-poweroff() {
     MINUTES=$1
     if [ -z "$MINUTES" ]; then
