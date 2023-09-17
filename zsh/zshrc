@@ -100,7 +100,18 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     cat $1 | xclip -selection clipboard -i
   } 
 
-  alias install="sudo pacman -S --noconfirm"
+  function install() {
+    is_on_repos=$(pacman -Ss $1 | grep $1 | wc -l)
+
+    if [ $is_on_repos -eq 0 ]; then
+      echo "Installing $1 from AUR"
+      yay -S --noconfirm $1
+      return 
+    fi
+
+    echo "Installing $1"
+    sudo pacman -S --noconfirm $1
+  }
 
   function schedule-poweroff() {
     MINUTES=$1
