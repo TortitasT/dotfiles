@@ -5,6 +5,14 @@
 "	  Mouse
 set mouse+=a
 
+"   Hard ass vim 
+"   Credits: https://vi.stackexchange.com/users/74/dhruva-sagar
+for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+  exec 'noremap' key '<Nop>'
+  exec 'inoremap' key '<Nop>'
+  exec 'cnoremap' key '<Nop>'
+endfor
+
 "   Center cursor
 set scrolloff=8
 
