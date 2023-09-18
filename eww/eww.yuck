@@ -16,15 +16,22 @@
 
 (defwidget powermenu_layout []
   (box :class "layout" :space-evenly false :orientation "vertical"
-    (box :valign "start" :space-evenly false :spacing 25
-      (_sundial)
-      (_battery :status {EWW_BATTERY.BAT0.status}
-                :percentage {EWW_BATTERY.BAT0.capacity})
-      (_volume)
-      (_brightness)
-      (_network)
-      (label :text "|" :class "sep")
-      (button :onclick "eww close powermenu" :class "close-btn" "󱎘"))
+
+    ;; Top row
+    (box :space-evenly true
+      (box :valign "start" :halign "start" :space-evenly false :spacing 25
+        (_notifications))
+      (box :valign "start" :halign "end" :space-evenly false :spacing 25
+        (_sundial)
+        (_battery :status {EWW_BATTERY.BAT0.status}
+                  :percentage {EWW_BATTERY.BAT0.capacity})
+        (_volume)
+        (_brightness)
+        (_network)
+        (label :text "|" :class "sep")
+        (button :onclick "eww close powermenu" :class "close-btn" "󱎘")))
+
+    ;; Bottom row
     (box :space-evenly false :hexpand true :vexpand true
       (box :spacing 15 :class "clock" :space-evenly false
             :valign "end" :halign "start"
@@ -113,6 +120,12 @@
           (label
             :text "󰃞 ${brightness}"
               ))))
+
+(defwidget _notifications []
+  (button :onclick "eww close powermenu && swaync-client -t -sw"
+          :class "notifications"
+          :tooltip "Open notifications"
+          (label :text "󰾱")))
 
 ;; vim:ft=yuck
 
