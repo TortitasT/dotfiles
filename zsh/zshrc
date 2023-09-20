@@ -155,6 +155,7 @@ alias ga="git add --all"
 alias gc="git commit -m"
 alias gco="git checkout"
 alias gb="git branch --sort=-committerdate"
+alias gd="git diff"
 function gp() {
   git push origin $(git branch --show-current)
 }
