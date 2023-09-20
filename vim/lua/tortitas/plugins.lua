@@ -27,6 +27,10 @@ return {
     end
   },
 
+  -- Compatibility with tmux
+  {
+    "christoomey/vim-tmux-navigator",
+  },
 
   {
     "nvim-neorg/neorg",
