@@ -236,6 +236,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Funny voice when starting the terminal in macos
   (&>/dev/null say $(curl -s https://whatthecommit.com/index.txt) &)
 
+  # Zoxide
+  eval "$(zoxide init zsh)"
+
   #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
   export SDKMAN_DIR="$HOME/.sdkman"
   [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
