@@ -155,7 +155,21 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then alias gg="cd ~/Git"; fi
 alias gl="git log --graph --oneline --decorate --all"
 alias gs="git status"
 alias ga="git add --all"
-alias gc="git commit -m"
+# alias gc="git commit -m"
+function gc() {
+  message="$1"
+
+  echo "Commit message: $message"
+
+  if command -v commitlint &> /dev/null
+  then
+    echo $message | commitlint
+  fi
+
+  if [ $? -eq 0 ]; then
+    git commit -m "$message"
+  fi
+}
 alias gco="git checkout"
 alias gb="git branch --sort=-committerdate"
 alias gd="git diff"

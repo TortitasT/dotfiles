@@ -5,7 +5,7 @@
   "deno.enable": false,
   "colors.enable": true,
   "volar.disableFormatting": true,
-  "prettier.enable": false,
+  "prettier.enable": true,
   "prettier.disableLanguages": [],
   "prettier.semi": false,
   "prettier.singleQuote": true,
@@ -24,7 +24,9 @@
   "javascript.format.semicolons": "remove",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "clangd.path": "/usr/local/bin/clangd15",
-  "emmet.excludeLanguages": ["php"],
+  "emmet.excludeLanguages": [
+    "php"
+  ],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true
 }
