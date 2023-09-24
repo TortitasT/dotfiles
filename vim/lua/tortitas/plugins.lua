@@ -32,6 +32,12 @@ return {
     "christoomey/vim-tmux-navigator",
   },
 
+  -- Zig language support
+  {
+    "ziglang/zig.vim",
+  },
+
+  -- OrgMode alternative
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",

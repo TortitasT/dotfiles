@@ -97,6 +97,7 @@ endif
 
 "   Coc settings
 let g:coc_global_extensions = [
+            \'coc-zig',
             \'coc-css',
             \'coc-vimlsp',
             \'coc-json',
