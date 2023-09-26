@@ -1,4 +1,5 @@
 {
+  "kotlin.languageServer.enabled": true,
   "coc.preferences.formatOnSave": true,
   "diagnostic.checkCurrentLine": true,
   "codeLens.enable": true,

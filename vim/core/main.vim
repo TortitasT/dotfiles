@@ -10,7 +10,7 @@ set mouse+=a
 for key in ['<Up>', '<Down>', '<Left>', '<Right>']
   exec 'noremap' key '<Nop>'
   " exec 'inoremap' key '<Nop>'
-  exec 'cnoremap' key '<Nop>'
+  " exec 'cnoremap' key '<Nop>'
 endfor
 
 "   Center cursor
@@ -97,6 +97,7 @@ endif
 
 "   Coc settings
 let g:coc_global_extensions = [
+            \'coc-zig',
             \'coc-css',
             \'coc-vimlsp',
             \'coc-json',

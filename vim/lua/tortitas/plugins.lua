@@ -20,6 +20,7 @@ return {
   -- langkeeper will keep track of the languages you use and the time you spend on them.
   {
     'tortitast/langkeeper.nvim',
+    enabled = false,
     -- dir = '/home/tortitas/Git/langkeeper.nvim',
     -- dev = true,
     config = function()
@@ -32,6 +33,12 @@ return {
     "christoomey/vim-tmux-navigator",
   },
 
+  -- Zig language support
+  {
+    "ziglang/zig.vim",
+  },
+
+  -- OrgMode alternative
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
