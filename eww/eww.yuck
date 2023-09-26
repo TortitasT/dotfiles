@@ -25,22 +25,26 @@
         (_sundial)
         (_battery :status {EWW_BATTERY.BAT0.status}
                   :percentage {EWW_BATTERY.BAT0.capacity})
-        (_volume)
-        (_brightness)
         (_network)
         (label :text "|" :class "sep")
         (button :onclick "eww close powermenu" :class "close-btn" "󱎘")))
 
     ;; Bottom row
-    (box :space-evenly false :hexpand true :vexpand true
+    (box :space-evenly true :hexpand true :vexpand true :valign "end"
       (box :spacing 15 :class "clock" :space-evenly false
             :valign "end" :halign "start"
         (label :text "")
         (label :text "${time.hour}:${time.min}"))
+      (_controls)
       (_buttons :shutdown "poweroff" :reboot "reboot"
                 :logout "loginctl kill-session self"
                 :shutdown_icon "" :reboot_icon "󰑓"
                 :logout_icon "󰗽"))))
+
+(defwidget _controls []
+  (box :class "controls" :space-evenly false :spacing 8 :valign "end" :halign "center"
+    (_volume)
+    (_brightness)))
 
 (defwidget _battery [percentage status]
   (box :class "battery" :space-evenly false :spacing 8

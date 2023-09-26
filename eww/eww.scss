@@ -11,8 +11,9 @@ $surface-red: #f87070;
 
 .layout {
   font-family: Phosphor, Koulen;
-  padding: 5em;
   color: rgba($surface-fg, 0.8);
+
+  padding: 4em;
 
   background-color: rgba(#000, 0.5);
 }
@@ -33,6 +34,9 @@ $surface-red: #f87070;
   &:hover {
     color: $surface-red;
   }
+}
+
+.controls {
 }
 
 .actions {
