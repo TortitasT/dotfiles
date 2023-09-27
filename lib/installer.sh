@@ -91,3 +91,22 @@ archInstallPackage () {
   print "info" "Installing $1 from repos"
   sudo pacman -S --noconfirm $1
 }
+
+isCommandInstalled() {
+  if command -v $1 &> /dev/null; then
+    return
+  fi
+
+  false
+}
+
+archIsPackageInstalled() {
+  pacman -Qi $1 &>/dev/null
+  found=$?
+
+  if [ $found = 1 ]; then
+    isCommandInstalled "$1"
+  fi
+
+  return
+}

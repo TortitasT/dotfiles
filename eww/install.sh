@@ -14,6 +14,6 @@ installEww() {
   install eww
 }
 
-if ! command -v eww &> /dev/null; then
+if ! isCommandInstalled eww; then
   installEww
 fi
