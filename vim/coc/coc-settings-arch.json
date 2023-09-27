@@ -22,5 +22,6 @@
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "emmet.excludeLanguages": ["php"],
   "intelephense.phpunit.colors": true,
-  "intelephense.phpunit.enableSplitRight": true
+  "intelephense.phpunit.enableSplitRight": true,
+  "snippets.ultisnips.pythonPrompt": false
 }

@@ -212,7 +212,7 @@ if [[ "$OSTYPE" == "linux-android"* ]]; then
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  neofetch
+  neofetch --kitty $HOME/.config/neofetch/tux.png
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then

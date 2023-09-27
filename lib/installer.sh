@@ -76,3 +76,18 @@ prompt () {
 
   return 0
 }
+
+archInstallPackage () {
+  is_on_repos=$(pacman -Ss $1 | grep $1 | wc -l)
+
+  echo "$1;" >> $HOME/.install.log
+
+  if [ $is_on_repos -eq 0 ]; then
+    print "info" "Installing $1 from AUR" 
+    yay -S --noconfirm $1
+    return 
+  fi
+
+  print "info" "Installing $1 from repos"
+  sudo pacman -S --noconfirm $1
+}

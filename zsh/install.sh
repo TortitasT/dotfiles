@@ -61,7 +61,6 @@ function installSshAgentService() {
 }
 
 installSshAgentService
-exit 1
 
 # Ensure dirs
 ensureDirectories ~/.zsh ~/.zsh/plugins ~/.zsh/themes
