@@ -122,6 +122,7 @@ let g:coc_global_extensions = [
             \'coc-rust-analyzer',
             \'coc-java',
             \'coc-db',
+            \'coc-go',
             \'@yaegassy/coc-volar',
             \'@yaegassy/coc-volar-tools',
             \'@yaegassy/coc-typescript-vue-plugin',
