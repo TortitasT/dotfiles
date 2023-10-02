@@ -33,6 +33,11 @@ return {
     "christoomey/vim-tmux-navigator",
   },
 
+  -- LaTeX support
+  {
+    "lervag/vimtex",
+  },
+
   -- Zig language support
   {
     "ziglang/zig.vim",
