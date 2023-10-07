@@ -75,6 +75,9 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
+    disable = {
+      "latex", -- Vimtex already does this
+    },
   },
 }
 EOF
@@ -239,3 +242,7 @@ hi! link netrwMarkFile Search
 au BufRead,BufNewFile *.md setlocal textwidth=80
 "   Paste images
 autocmd FileType markdown nmap <buffer><silent> <leader><leader><leader>p :call mdip#MarkdownClipboardImage()<CR>
+
+"   VimTex
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
