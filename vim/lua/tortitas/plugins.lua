@@ -20,7 +20,7 @@ return {
   -- langkeeper will keep track of the languages you use and the time you spend on them.
   {
     'tortitast/langkeeper.nvim',
-    enabled = false,
+    enabled = true,
     -- dir = '/home/tortitas/Git/langkeeper.nvim',
     -- dev = true,
     config = function()
