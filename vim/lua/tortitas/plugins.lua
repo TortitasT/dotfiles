@@ -20,7 +20,7 @@ return {
   -- langkeeper will keep track of the languages you use and the time you spend on them.
   {
     'tortitast/langkeeper.nvim',
-    enabled = false,
+    enabled = true,
     -- dir = '/home/tortitas/Git/langkeeper.nvim',
     -- dev = true,
     config = function()
@@ -111,6 +111,26 @@ return {
         },
       })
     end,
+  },
+
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      plugins = {
+        spelling = {
+          enabled = true,   -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+          suggestions = 20, -- how many suggestions should be shown in the list?
+        },
+      },
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
   },
 
   -- Dadbod UI is a UI for the dadbod plugin that allows you to run SQL queries on your database.
