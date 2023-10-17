@@ -137,6 +137,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
       android-studio $1 &>/dev/null &
     fi
   }
+
+  alias open="xdg-open"
 fi
 
 if [[ "$OSTYPE" == "freebsd"* ]]; then alias poweroff="doas poweroff"; fi
@@ -262,6 +264,10 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export PYENV_ROOT="$HOME/.pyenv"
   command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
+
+  # GO
+  export GOPATH=$(go env GOPATH)
+  export PATH="$GOPATH/bin:$PATH"
 
   #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
   export SDKMAN_DIR="$HOME/.sdkman"

@@ -23,5 +23,6 @@
   "emmet.excludeLanguages": ["php"],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true,
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "workspace.rootPatterns": [".git", ".hg", ".projections.json", ".vim"]
 }
