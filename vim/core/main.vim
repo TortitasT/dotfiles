@@ -118,6 +118,7 @@ let g:coc_global_extensions = [
             \'coc-eslint',
             \'coc-markdownlint',
             \'@yaegassy/coc-intelephense',
+            \'coc-php-cs-fixer',
             \'coc-sumneko-lua',
             \'coc-deno',
             \'coc-toml',

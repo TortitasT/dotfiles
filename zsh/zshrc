@@ -95,6 +95,18 @@ alias .q="exit"
 alias diff="diff --color=always"
 alias less="less -R"
 
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  function systemctl() {
+    if [ "$1" == "status" ]; then
+      brew services info $2
+      return
+    fi
+
+    brew services $@
+  }
+fi
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then 
   function copy() {
     cat $1 | xclip -selection clipboard -i

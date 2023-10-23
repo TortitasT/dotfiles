@@ -12,6 +12,7 @@
   "prettier.trailingComma": "none",
   "prettier.formatterPriority": 2,
   "eslint.autoFixOnSave": true,
+  "eslint.fixOnSaveTimeout": 2000,
   "tsserver.enable": true,
   "tsserver.log": "verbose",
   "markdownlint.config": {
@@ -23,10 +24,9 @@
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.format.semicolons": "remove",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "clangd.path": "/usr/local/bin/clangd15",
-  "emmet.excludeLanguages": [
-    "php"
-  ],
+  "emmet.excludeLanguages": ["php"],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true
 }
