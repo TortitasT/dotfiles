@@ -249,7 +249,7 @@ return {
   -- Telescope duh
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
+    tag = '0.1.3',
   },
 
   -- This is the plugin that comments lines with "gcc" keymap.
