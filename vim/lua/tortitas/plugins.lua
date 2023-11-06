@@ -154,8 +154,11 @@ return {
   },
 
   -- This is the colortheme I use.
+  -- {
+  --   "kvrohit/mellow.nvim"
+  -- },
   {
-    "kvrohit/mellow.nvim"
+    "nyoom-engineering/oxocarbon.nvim",
   },
 
   -- leap.nvim lets you jump through your code with ease.
