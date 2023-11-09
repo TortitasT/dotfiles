@@ -291,6 +291,9 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     *) export PATH="$PNPM_HOME:$PATH" ;;
   esac
   # pnpm end
+  
+  # opam configuration
+  [[ ! -r ~/.opam/opam-init/init.zsh ]] || source ~/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
   #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
   export SDKMAN_DIR="$HOME/.sdkman"
