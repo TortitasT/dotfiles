@@ -24,5 +24,12 @@
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true,
   "snippets.ultisnips.pythonPrompt": false,
-  "workspace.rootPatterns": [".git", ".hg", ".projections.json", ".vim"]
+  "workspace.rootPatterns": [".git", ".hg", ".projections.json", ".vim"],
+  "languageserver": {
+    "ocaml-lsp": {
+      "command": "opam",
+      "args": ["config", "exec", "--", "ocamllsp"],
+      "filetypes": ["ocaml", "reason"]
+    }
+  }
 }
