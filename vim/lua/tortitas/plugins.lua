@@ -28,6 +28,13 @@ return {
     end
   },
 
+  --
+  {
+    'TortitasT/coc-intelephense',
+    branch = 'fix-composer-psr4',
+    build = 'yarn install --frozen-lockfile',
+  },
+
   -- Compatibility with tmux
   {
     "christoomey/vim-tmux-navigator",

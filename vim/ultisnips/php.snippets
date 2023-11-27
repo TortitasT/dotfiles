@@ -92,3 +92,10 @@ class `!p snip.rv = snip.basename` extends JsonResource
     }
 }
 endsnippet
+
+snippet php "Sample php" b
+<?php
+	namespace `!v substitute(substitute(substitute(expand("%:p"), '\v(.*\/\U+)((\/\w+)+)\/\w+.php$', '\2', ''), '\/', '\\', 'g'), '\\', '', '')`;
+
+	${1}
+endsnippet
