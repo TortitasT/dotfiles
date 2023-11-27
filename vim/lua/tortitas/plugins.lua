@@ -35,6 +35,11 @@ return {
     build = 'yarn install --frozen-lockfile',
   },
 
+  --
+  {
+    'dpelle/vim-LanguageTool',
+  },
+
   -- Compatibility with tmux
   {
     "christoomey/vim-tmux-navigator",
