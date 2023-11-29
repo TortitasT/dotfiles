@@ -35,6 +35,10 @@ return {
     build = 'yarn install --frozen-lockfile',
   },
 
+  {
+    'chrisbra/csv.vim',
+  },
+
   -- Compatibility with tmux
   {
     "christoomey/vim-tmux-navigator",
