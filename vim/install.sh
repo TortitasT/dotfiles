@@ -34,7 +34,7 @@ installWakatimeBin() {
   curl https://github.com/wakatime/wakatime-cli/releases/download/v1.73.2/wakatime-cli-linux-amd64.zip --output ~/.wakatime/wakatime-cli
 }
 
-ensureDirectories "$HOME/.config" "$HOME/.config/nvim" "$HOME/.config/coc" "$HOME/.vim" 
+ensureDirectories "$HOME/.config" "$HOME/.config/nvim" "$HOME/.config/coc" "$HOME/.vim"
 
 linkFile ".vimrc" "$HOME/.vimrc"
 
@@ -54,3 +54,5 @@ installCocSettings
 
 installPhpDebugger
 installWakatimeBin
+
+print "info" "If you get an error about missing spell files, run ':set spell spelllang=es'"

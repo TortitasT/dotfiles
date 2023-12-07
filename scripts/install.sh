@@ -14,6 +14,7 @@ for script in $(ls -1 *.sh); do
     fi
 
     scriptname=$(echo $script | cut -d'.' -f1)
+    scriptname=",${scriptname}"
 
     rm -f $INSTALL_PATH/$scriptname
     ln -s $PWD/$script $INSTALL_PATH/$scriptname

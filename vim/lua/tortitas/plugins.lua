@@ -35,9 +35,8 @@ return {
     build = 'yarn install --frozen-lockfile',
   },
 
-  --
   {
-    'dpelle/vim-LanguageTool',
+    'chrisbra/csv.vim',
   },
 
   -- Compatibility with tmux
