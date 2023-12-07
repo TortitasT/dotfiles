@@ -184,26 +184,6 @@ augroup Mkdir
   autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
 augroup END
 
-"   telescope setup
-silent! lua << EOF
-require('telescope').setup{
-  defaults = {
-    file_ignore_patterns = { 
-      "node_modules/*",
-      "vendor/*",
-      "build/*",
-      "target/*",
-      "bin/*",
-      ".git/*",
-      ".idea/*",
-      "dist/*",
-      "gradlew*",
-      "desktop.ini"
-    },
-  },
-}
-EOF
-
 augroup Telescope
   autocmd!
   "   Close mini-files on telescope open
