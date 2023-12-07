@@ -30,6 +30,13 @@
       "command": "opam",
       "args": ["config", "exec", "--", "ocamllsp"],
       "filetypes": ["ocaml", "reason"]
+    },
+    "csharp-ls": {
+      "command": "csharp-ls",
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
     }
-  }
+  },
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+  "elixirLS.projectDir": "."
 }

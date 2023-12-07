@@ -122,6 +122,7 @@ let g:coc_global_extensions = [
             \'coc-db',
             \'coc-go',
             \'coc-perl',
+            \'coc-elixir',
             \'@yaegassy/coc-volar',
             \'@yaegassy/coc-volar-tools',
             \'@yaegassy/coc-typescript-vue-plugin',
