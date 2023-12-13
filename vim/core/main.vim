@@ -112,6 +112,7 @@ let g:coc_global_extensions = [
             \'coc-emmet',
             \'coc-eslint',
             \'coc-markdownlint',
+            \'@yaegassy/coc-intelephense',
             \'coc-php-cs-fixer',
             \'coc-sumneko-lua',
             \'coc-deno',
@@ -128,8 +129,6 @@ let g:coc_global_extensions = [
             \'@yaegassy/coc-typescript-vue-plugin',
             \'@yaegassy/coc-laravel',
             \]
-
-            " \'@yaegassy/coc-intelephense',
 
 "   Startify config
 if has('win32')
@@ -185,26 +184,6 @@ augroup Mkdir
   autocmd!
   autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
 augroup END
-
-"   telescope setup
-silent! lua << EOF
-require('telescope').setup{
-  defaults = {
-    file_ignore_patterns = { 
-      "node_modules/*",
-      "vendor/*",
-      "build/*",
-      "target/*",
-      "bin/*",
-      ".git/*",
-      ".idea/*",
-      "dist/*",
-      "gradlew*",
-      "desktop.ini"
-    },
-  },
-}
-EOF
 
 augroup Telescope
   autocmd!
