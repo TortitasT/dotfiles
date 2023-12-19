@@ -50,6 +50,15 @@ nnoremap <leader>fr <cmd>lua require('telescope').extensions.recent_files.pick()
 "   COC
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
 
 "   Intelisense lens
 nmap <silent> gl <Plug>(coc-codelens-action)
