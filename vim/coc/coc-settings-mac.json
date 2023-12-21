@@ -46,5 +46,6 @@
       ]
     }
   },
-  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+  "snippets.ultisnips.pythonPrompt": false
 }
