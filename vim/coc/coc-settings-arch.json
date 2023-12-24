@@ -24,7 +24,13 @@
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true,
   "snippets.ultisnips.pythonPrompt": false,
-  "workspace.rootPatterns": [".git", ".hg", ".projections.json", ".vim"],
+  "workspace.rootPatterns": [
+    ".git",
+    ".hg",
+    ".projections.json",
+    ".vim",
+    "mix.exs"
+  ],
   "languageserver": {
     "ocaml-lsp": {
       "command": "opam",
@@ -38,5 +44,15 @@
     }
   },
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
-  "elixirLS.projectDir": "."
+  "tailwindCSS.includeLanguages": {
+    "eelixir": "html",
+    "elixir": "html",
+    "eruby": "html",
+    "html.twig": "html",
+    "heex": "html"
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "emmet.includeLanguages": {
+    "heex": "html"
+  }
 }
