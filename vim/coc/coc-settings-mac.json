@@ -5,7 +5,7 @@
   "deno.enable": false,
   "colors.enable": true,
   "volar.disableFormatting": true,
-  "prettier.enable": false,
+  "prettier.enable": true,
   "prettier.disableLanguages": [],
   "prettier.semi": false,
   "prettier.singleQuote": true,
@@ -15,6 +15,13 @@
   "eslint.fixOnSaveTimeout": 3000,
   "tsserver.enable": true,
   "tsserver.log": "verbose",
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "blade",
+    "vue"
+  ],
   "markdownlint.config": {
     "no-inline-html": false
   },
