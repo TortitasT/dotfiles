@@ -2,7 +2,7 @@
 return {
   'tortitast/langkeeper.nvim',
   enabled = true,
-  dev = false,
+  dev = true,
   config = function()
     require 'langkeeper'.setup()
   end

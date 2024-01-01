@@ -187,7 +187,7 @@ function gco() {
   if [ -z "$1" ]; then
     if command -v fzf &> /dev/null
     then
-      git checkout $(git branch --sort=-committerdate | fzf)
+      git checkout $(git branch -r --sort=-committerdate | sed 's/origin\///g' | fzf)
     fi
   fi
 
