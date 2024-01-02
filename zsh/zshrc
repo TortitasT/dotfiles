@@ -155,6 +155,7 @@ alias gitzip="git archive HEAD -o " # gitzip <filename>.zip to create a zip file
 alias ed="nvim"
 # alias emacs="emacs -nw"
 alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
+alias composer="COMPOSER=composer-local.json composer"
 # Git
 alias g="git"
 if [[ "$OSTYPE" == "darwin"* ]]; then alias gg="cd ~/Documents/Git"; fi
