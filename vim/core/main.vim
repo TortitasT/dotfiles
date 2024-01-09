@@ -76,6 +76,9 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
+
+local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+ft_to_parser.mdx = "markdown"
 EOF
 
 "   Neovide
@@ -245,3 +248,5 @@ let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 
 "   LanguageTool
 let g:languagetool_cmd='/usr/bin/languagetool'
+
+"   

@@ -36,6 +36,9 @@ function Vim-Copy-Config {
   Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\coc-settings.json"
   New-Item -ItemType SymbolicLink -Target "$PWD\coc\coc-settings-windows.json" -Path "$HOME\AppData\Local\nvim\coc-settings.json"
 
+  Remove-Item -Recurse -Path "$HOME\AppData\Local\nvim\filetype.lua"
+  New-Item -ItemType SymbolicLink -Target "$PWD\filetype.lua" -Path "$HOME\AppData\Local\nvim\filetype.lua"
+
   Print "Config files copied" -Level Success
 }
 

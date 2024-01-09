@@ -40,6 +40,8 @@ linkFile ".vimrc" "$HOME/.vimrc"
 
 linkFile "init.lua" "$HOME/.config/nvim/init.lua"
 
+linkFile "filetype.lua" "$HOME/.config/nvim/filetype.lua"
+
 linkDirectory "core" "$HOME/.vim/core"
 linkDirectory "core" "$HOME/.config/nvim/core"
 
