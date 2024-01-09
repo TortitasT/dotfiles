@@ -119,3 +119,6 @@ command! -nargs=0 Dired :e .
 "   Coc go to definition
 nmap <leader>gd :call CocActionAsync('jumpDefinition')<CR>
 nmap <leader>- :edit #<CR>
+
+"   Treesitter utils
+command! -nargs=0 TSClear :!rm $HOME/.local/share/nvim/lazy/nvim-treesitter/parser/*

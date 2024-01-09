@@ -1,23 +1,9 @@
 -- Neat Laravel integration with telescope
 return {
-  "adalessa/laravel.nvim",
-  cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
-  keys = {
-    { "<leader>la", ":Laravel artisan<cr>" },
-    { "<leader>lr", ":Laravel routes<cr>" },
-    { "<leader>lm", ":Laravel related<cr>" },
-    {
-      "<leader>lt",
-      function()
-        require("laravel.tinker").send_to_tinker()
-      end,
-      mode = "v",
-      desc = "Laravel Application Routes",
-    },
-  },
-  event = { "VeryLazy" },
-  config = function()
-    require("laravel").setup()
-    require("telescope").load_extension "laravel"
-  end,
+  "noahfrederick/vim-laravel",
+  dependencies = {
+    'tpope/vim-dispatch',
+    'tpope/vim-projectionist',
+    'noahfrederick/vim-composer'
+  }
 }

@@ -6,7 +6,9 @@
   "colors.enable": true,
   "volar.disableFormatting": true,
   "prettier.enable": true,
-  "prettier.disableLanguages": [],
+  "prettier.disableLanguages": [
+    "vue"
+  ],
   "prettier.semi": false,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
@@ -54,5 +56,6 @@
     }
   },
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "intelephense.format.braces": "psr12"
 }

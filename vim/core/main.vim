@@ -59,6 +59,7 @@ require'nvim-treesitter.configs'.setup {
     "yaml",
     "toml",
     "bash",
+    "ruby",
     "python",
     "rust",
     "dockerfile",
@@ -124,10 +125,12 @@ let g:coc_global_extensions = [
             \'coc-go',
             \'coc-perl',
             \'coc-elixir',
+            \'coc-solargraph',
             \'@yaegassy/coc-volar',
             \'@yaegassy/coc-volar-tools',
             \'@yaegassy/coc-typescript-vue-plugin',
             \'@yaegassy/coc-laravel',
+            \'@yaegassy/coc-tailwindcss3',
             \]
 
 "   Startify config
