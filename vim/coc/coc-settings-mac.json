@@ -6,9 +6,7 @@
   "colors.enable": true,
   "volar.disableFormatting": true,
   "prettier.enable": true,
-  "prettier.disableLanguages": [
-    "vue"
-  ],
+  "prettier.disableLanguages": ["vue"],
   "prettier.semi": false,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
@@ -17,13 +15,7 @@
   "eslint.fixOnSaveTimeout": 3000,
   "tsserver.enable": true,
   "tsserver.log": "verbose",
-  "html.filetypes": [
-    "html",
-    "handlebars",
-    "htmldjango",
-    "blade",
-    "vue"
-  ],
+  "html.filetypes": ["html", "handlebars", "htmldjango", "blade", "vue"],
   "markdownlint.config": {
     "no-inline-html": false
   },
@@ -35,24 +27,14 @@
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "clangd.path": "/usr/local/bin/clangd15",
-  "emmet.excludeLanguages": [
-    "php"
-  ],
+  "emmet.excludeLanguages": ["php"],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true,
   "languageserver": {
     "ocaml-lsp": {
       "command": "opam",
-      "args": [
-        "config",
-        "exec",
-        "--",
-        "ocamllsp"
-      ],
-      "filetypes": [
-        "ocaml",
-        "reason"
-      ]
+      "args": ["config", "exec", "--", "ocamllsp"],
+      "filetypes": ["ocaml", "reason"]
     }
   },
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",

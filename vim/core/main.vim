@@ -129,6 +129,7 @@ let g:coc_global_extensions = [
             \'coc-perl',
             \'coc-elixir',
             \'coc-solargraph',
+            \'coc-biome',
             \'@yaegassy/coc-volar',
             \'@yaegassy/coc-volar-tools',
             \'@yaegassy/coc-typescript-vue-plugin',
