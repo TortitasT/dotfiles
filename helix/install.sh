@@ -1,4 +1,7 @@
 #!/bin/bash
 
-mkdir -p ~/.config/helix
-cp ./config.toml ~/.config/helix/config.toml
+source ../lib/installer.sh
+
+ensureDirectory "$HOME/.config/helix"
+
+linkFile "config.toml" "$HOME/.config/helix/config.toml"

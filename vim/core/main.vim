@@ -185,11 +185,11 @@ endif
 
 "   Theme
 if has("nvim")
-  " colorscheme mellow
-  " let g:mellow_italic_functions = 1
-  " let g:mellow_bold_functions = 1
-  " let g:mellow_transparent = 1
-  colorscheme oxocarbon
+  colorscheme mellow
+  let g:mellow_italic_functions = 1
+  let g:mellow_bold_functions = 1
+  let g:mellow_transparent = 1
+  " colorscheme oxocarbon
   set background=dark
 endif
 
