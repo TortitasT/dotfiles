@@ -4,37 +4,53 @@
   "codeLens.enable": true,
   "deno.enable": false,
   "colors.enable": true,
+  "vetur.enable": true,
+  "volar.enable": true,
   "volar.disableFormatting": true,
   "prettier.enable": false,
-  "prettier.disableLanguages": ["vue"],
+  "prettier.disableLanguages": [],
   "prettier.semi": false,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
   "prettier.formatterPriority": 2,
   "eslint.autoFixOnSave": true,
-  "eslint.fixOnSaveTimeout": 3000,
   "tsserver.enable": true,
   "tsserver.log": "verbose",
-  "html.filetypes": ["html", "handlebars", "htmldjango", "blade", "vue"],
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "blade"
+  ],
   "markdownlint.config": {
     "no-inline-html": false
   },
-  "typescript.format.enable": true,
-  "javascript.format.enable": true,
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
   "javascript.preferences.quoteStyle": "single",
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.format.semicolons": "remove",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "clangd.path": "/usr/local/bin/clangd15",
-  "emmet.excludeLanguages": ["php"],
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/17.0.3/clangd_17.0.3/bin/clangd",
+  "emmet.excludeLanguages": [
+    "php"
+  ],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true,
   "languageserver": {
     "ocaml-lsp": {
       "command": "opam",
-      "args": ["config", "exec", "--", "ocamllsp"],
-      "filetypes": ["ocaml", "reason"]
+      "args": [
+        "config",
+        "exec",
+        "--",
+        "ocamllsp"
+      ],
+      "filetypes": [
+        "ocaml",
+        "reason"
+      ]
     }
   },
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",

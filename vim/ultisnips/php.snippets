@@ -103,3 +103,46 @@ endsnippet
 snippet pf "Fill with public function" i
 public function 
 endsnippet
+
+snippet migration "Sample laravel migration" b
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+		/**
+		* Run the migrations.
+		*
+		* @return void
+		*/
+		public function up()
+		{
+		}
+	
+		/**
+		* Reverse the migrations.
+		*
+		* @return void
+		*/
+		public function down()
+		{
+		}
+};
+endsnippet
+
+snippet setUp "Laravel test set up method" b
+		public function setUp(): void
+		{
+				parent::setUp();
+		}
+endsnippet
+
+snippet booted "Laravel model booted method" b
+		protected static function booted(): void
+		{
+		}
+endsnippet
