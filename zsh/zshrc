@@ -319,3 +319,10 @@ bindkey -A emacs main
 
 #
 # // MAIN END ////////////////////////////
+
+# bun completions
+[ -s "/home/tortitas/.bun/_bun" ] && source "/home/tortitas/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
