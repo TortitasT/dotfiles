@@ -90,6 +90,7 @@ alias .q="exit"
 alias diff="diff --color=always"
 alias less="less -R"
 alias v="nvim"
+alian nv="nvim"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   function systemctl() {
@@ -155,7 +156,13 @@ alias gitzip="git archive HEAD -o " # gitzip <filename>.zip to create a zip file
 alias ed="nvim"
 # alias emacs="emacs -nw"
 alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
-alias composer="COMPOSER=composer-local.json composer"
+function composer() {
+  if [ -f "composer-local.json" ]; then
+    COMPOSER=composer-local.json php /usr/local/bin/composer $@
+  else
+    php /usr/local/bin/composer $@
+  fi
+}
 # Git
 alias g="git"
 if [[ "$OSTYPE" == "darwin"* ]]; then alias gg="cd ~/Documents/Git"; fi

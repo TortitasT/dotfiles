@@ -28,13 +28,26 @@ snippet namespace "Generate namespace" b
 namespace `!v substitute(substitute(substitute(expand("%:p"), '\v(.*\/\U+)((\/\w+)+)\/\w+.php$', '\2', ''), '\/', '\\', 'g'), '\\', '', '')`;
 endsnippet
 
-snippet invoke "Sample invoke" b
-    public function __invoke()
-    {
-    }
+snippet php "Php file" b
+<?php
+	namespace `!v substitute(substitute(substitute(expand("%:p"), '\v(.*\/\U+)((\/\w+)+)\/\w+.php$', '\2', ''), '\/', '\\', 'g'), '\\', '', '')`;
+
+	${1}
 endsnippet
 
-snippet Controller "Sample laravel controller" b
+# === Laravel ===
+
+snippet pf "Public function" i
+		public function 
+endsnippet
+
+snippet invoke "Laravel controller invoke method" b
+		public function __invoke(Request $request)
+		{
+		}
+endsnippet
+
+snippet Controller "Laravel controller" b
 <?php
 
 namespace `!v substitute(substitute(substitute(expand("%:p"), '\v(.*\/\U+)((\/\w+)+)\/\w+.php$', '\2', ''), '\/', '\\', 'g'), '\\', '', '')`;
@@ -45,7 +58,7 @@ class `!p snip.rv = snip.basename` extends Controller
 }
 endsnippet
 
-snippet Model "Sample laravel model" b
+snippet Model "Laravel model" b
 <?php
 
 namespace ${1:namespace};
@@ -56,7 +69,7 @@ class `!p snip.rv = snip.basename` extends Model
 }
 endsnippet
 
-snippet Test "Sample laravel test" b
+snippet Test "Laravel phpunit test" b
 <?php
 
 namespace ${1:namespace};
@@ -67,39 +80,73 @@ class `!p snip.rv = snip.basename` extends TestCase
 }
 endsnippet
 
-snippet Resource "Sample laravel resource" b
+snippet Resource "Laravel resource" b
 <?php
- 
+
 namespace `!v substitute(substitute(substitute(expand("%:p"), '\v(.*\/\U+)((\/\w+)+)\/\w+.php$', '\2', ''), '\/', '\\', 'g'), '\\', '', '')`;
- 
+
 use Illuminate\Http\Resources\Json\JsonResource;
- 
+
 class `!p snip.rv = snip.basename` extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-		 * @param Request $request
-     * @return array<string, mixed>
-     */
-    public function toArray($request)
-    {
-        return [
-            'id' => $this->id,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-        ];
-    }
+		/**
+		* Transform the resource into an array.
+		*
+		* @param Request $request
+		* @return array<string, mixed>
+		*/
+		public function toArray($request)
+		{
+				return [
+						'id' => $this->id,
+						'created_at' => $this->created_at,
+						'updated_at' => $this->updated_at,
+				];
+		}
 }
 endsnippet
 
-snippet php "Sample php" b
+snippet migration "Laravel migration" b
 <?php
-	namespace `!v substitute(substitute(substitute(expand("%:p"), '\v(.*\/\U+)((\/\w+)+)\/\w+.php$', '\2', ''), '\/', '\\', 'g'), '\\', '', '')`;
 
-	${1}
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+		/**
+		* Run the migrations.
+		*
+		* @return void
+		*/
+		public function up()
+		{
+		}
+	
+		/**
+		* Reverse the migrations.
+		*
+		* @return void
+		*/
+		public function down()
+		{
+		}
+};
 endsnippet
 
-snippet pf "Fill with public function" i
-public function 
+snippet setUp "Laravel test set up method" b
+		public function setUp(): void
+		{
+				parent::setUp();
+		}
 endsnippet
+
+snippet booted "Laravel model booted method" b
+		protected static function booted(): void
+		{
+		}
+endsnippet
+
+# === END Laravel ===

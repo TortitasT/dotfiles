@@ -45,7 +45,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <leader>fd <cmd>Telescope workspaces<CR>
 nnoremap <C-p> <cmd>Telescope commands<CR>
 
-nnoremap <leader>fr <cmd>lua require('telescope').extensions.recent_files.pick()<CR>
+nnoremap <leader>fr <cmd>Telescope oldfiles<CR>
 
 "   COC
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
