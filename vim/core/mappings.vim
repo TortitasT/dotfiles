@@ -16,6 +16,14 @@ cnoreabbrev gb :Git branch --sort=-committerdate
 "   Mini-files
 map B <cmd>lua MiniFiles.open()<CR>
 
+function! OpenMiniFilesOnCurrentBuffer()
+lua << EOF
+  local current_buffer_path = vim.fn.expand("%:p:h")
+  require("mini.files").open(current_buffer_path)
+EOF
+endfunction
+map <leader>B :call OpenMiniFilesOnCurrentBuffer()<CR>
+
 "   NeoTree
 map <C-b> :NeoTreeShowToggle<CR>
 
