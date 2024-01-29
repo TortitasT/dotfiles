@@ -90,7 +90,7 @@ alias .q="exit"
 alias diff="diff --color=always"
 alias less="less -R"
 alias v="nvim"
-alian nv="nvim"
+alias nv="nvim"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   function systemctl() {
