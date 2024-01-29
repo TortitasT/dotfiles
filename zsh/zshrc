@@ -248,13 +248,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Bash completion nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-  # Bun completions
-  [ -s "/Users/vgf/.bun/_bun" ] && source "/Users/vgf/.bun/_bun"
-
-  # Bun
-  export BUN_INSTALL="$HOME/.bun"
-  export PATH="$BUN_INSTALL/bin:$PATH"
-
   # User bin directory
   export PATH="$HOME/bin:$PATH"
   export PATH="$HOME/.local/bin:$PATH"
@@ -327,9 +320,8 @@ bindkey -A emacs main
 #
 # // MAIN END ////////////////////////////
 
-# bun completions
+# Bun
 [ -s "/home/tortitas/.bun/_bun" ] && source "/home/tortitas/.bun/_bun"
 
-# bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
