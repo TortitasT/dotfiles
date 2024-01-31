@@ -19,8 +19,7 @@
   "html.filetypes": [
     "html",
     "handlebars",
-    "htmldjango",
-    "blade"
+    "htmldjango"
   ],
   "markdownlint.config": {
     "no-inline-html": false
