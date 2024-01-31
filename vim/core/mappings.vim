@@ -48,13 +48,18 @@ vnoremap  <leader>P  "+P
 nnoremap  <leader>P  "+P
 
 "   Telescope
-nnoremap <leader>ff <cmd>Telescope find_files hidden=true<CR> " find files
-nnoremap <leader>fg <cmd>Telescope live_grep<CR> " find rep
-nnoremap <leader>fs <cmd>Telescope git_status<CR> " find status
-nnoremap <leader>fd <cmd>Telescope workspaces<CR> " find dir
+" find files
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<CR> 
+" find rep
+nnoremap <leader>fg <cmd>Telescope live_grep<CR> 
+" find status
+nnoremap <leader>fs <cmd>Telescope git_status<CR> 
+" find dir
+nnoremap <leader>fd <cmd>Telescope workspaces<CR> 
 nnoremap <C-p> <cmd>Telescope commands<CR>
 
-nnoremap <leader>fr <cmd>Telescope oldfiles<CR> " find recent
+" find recent
+nnoremap <leader>fr <cmd>Telescope oldfiles<CR> 
 
 "   COC
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
