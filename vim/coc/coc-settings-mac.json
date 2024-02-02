@@ -16,11 +16,7 @@
   "eslint.autoFixOnSave": true,
   "tsserver.enable": true,
   "tsserver.log": "verbose",
-  "html.filetypes": [
-    "html",
-    "handlebars",
-    "htmldjango"
-  ],
+  "html.filetypes": ["html", "handlebars", "htmldjango"],
   "markdownlint.config": {
     "no-inline-html": false
   },
@@ -32,24 +28,14 @@
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/17.0.3/clangd_17.0.3/bin/clangd",
-  "emmet.excludeLanguages": [
-    "php"
-  ],
+  "emmet.excludeLanguages": ["php"],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true,
   "languageserver": {
     "ocaml-lsp": {
       "command": "opam",
-      "args": [
-        "config",
-        "exec",
-        "--",
-        "ocamllsp"
-      ],
-      "filetypes": [
-        "ocaml",
-        "reason"
-      ]
+      "args": ["config", "exec", "--", "ocamllsp"],
+      "filetypes": ["ocaml", "reason"]
     }
   },
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
