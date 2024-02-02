@@ -186,6 +186,7 @@ function gc() {
     git commit -m "$message"
   fi
 }
+alias gca="git commit --amend"
 function gco() {
   if [ -z "$1" ]; then
     if command -v fzf &> /dev/null
