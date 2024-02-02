@@ -316,6 +316,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 # Emacs keymap for zsh, needs to be set because editor is nvim
+# thx https://catonmat.net/bash-emacs-editing-mode-cheat-sheet
 # C = Ctrl, M = Alt
 # Go to the beginning of the line <C-a>
 # Go to the end of the line <C-e>
