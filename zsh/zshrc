@@ -316,6 +316,15 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 # Emacs keymap for zsh, needs to be set because editor is nvim
+# C = Ctrl, M = Alt
+# Go to the beginning of the line <C-a>
+# Go to the end of the line <C-e>
+# Go to the previous word <M-b>
+# Go to the next word <M-f>
+# Delete the previous word <M-Backspace>
+# Delete the next word <M-d>
+# Undo <C-_> (unsure)
+# Redo <M-_> (unsure)
 bindkey -A emacs main
 
 #
