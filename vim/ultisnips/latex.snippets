@@ -47,3 +47,31 @@ snippet Template "Template for document" b
 \end{multicols*}
 \end{document}
 endsnippet
+
+snippet Table "Sample table" b
+\setlength{\tabcolsep}{4pt}
+\begin{center}
+\begin{tabular}{ c|c|c|c }
+  \large\textbf{Inversión} & \large\textbf{Valor} & \large\textbf{Gasto} & \large\textbf{Valor}\\
+
+  \hline
+  \makecell{Macbook Air} 
+                             & \makecell{1400 €}
+                             & \makecell{Luz y agua} 
+                             & \makecell{70 €/mes} \\
+
+  \hline
+  \makecell{Reserva de capital} 
+                             & \makecell{8600 €} 
+                             & \makecell{Dominio} 
+                             & \makecell{0,83 €/mes} \\
+
+  \hline
+  \makecell{Total} 
+                             & \makecell{10000 €} 
+                             & \makecell{Total} 
+                             & \makecell{2710,18 €/mes} \\
+
+\end{tabular}
+\end{center}
+endsnippet
