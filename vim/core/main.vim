@@ -65,6 +65,7 @@ require'nvim-treesitter.configs'.setup {
     "rust",
     "dockerfile",
     "latex",
+    "blade",
   },
 
   auto_install = true,
@@ -82,7 +83,23 @@ vim.filetype.add({extension = {mdx = 'mdx'}})
 local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
 ft_to_parser.mdx = "markdown"
 
+
+-- Blade
+-- https://github.com/EmranMR/tree-sitter-blade/discussions/19#discussion-5400675
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.blade = {
+  install_info = {
+    url = "https://github.com/EmranMR/tree-sitter-blade",
+    files = {"src/parser.c"},
+    branch = "main",
+  },
+  filetype = "blade"
+}
 EOF
+
+augroup BladeFiltypeRelated
+  au BufNewFile,BufRead *.blade.php set ft=blade
+augroup END
 
 "   Neovide
 if exists("g:neovide")

@@ -12,9 +12,18 @@ cnoreabbrev ga :Git add --all
 cnoreabbrev gc :Git commit -m
 cnoreabbrev gs :Git status
 cnoreabbrev gb :Git branch --sort=-committerdate
+cnoreabbrev gd :Git diff
 
 "   Mini-files
 map B <cmd>lua MiniFiles.open()<CR>
+
+function! OpenMiniFilesOnCurrentBuffer()
+lua << EOF
+  local current_buffer_path = vim.fn.expand("%:p:h")
+  require("mini.files").open(current_buffer_path)
+EOF
+endfunction
+map <leader>B :call OpenMiniFilesOnCurrentBuffer()<CR>
 
 "   NeoTree
 map <C-b> :NeoTreeShowToggle<CR>
@@ -40,11 +49,17 @@ vnoremap  <leader>P  "+P
 nnoremap  <leader>P  "+P
 
 "   Telescope
+" find files
 nnoremap <leader>ff <cmd>Telescope find_files hidden=true<CR>
+" find rep
 nnoremap <leader>fg <cmd>Telescope live_grep<CR>
+" find status
+nnoremap <leader>fs <cmd>Telescope git_status<CR>
+" find dir
 nnoremap <leader>fd <cmd>Telescope workspaces<CR>
 nnoremap <C-p> <cmd>Telescope commands<CR>
 
+" find recent
 nnoremap <leader>fr <cmd>Telescope oldfiles<CR>
 
 "   COC

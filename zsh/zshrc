@@ -93,7 +93,7 @@ alias .q="exit"
 alias diff="diff --color=always"
 alias less="less -R"
 alias v="nvim"
-alian nv="nvim"
+alias nv="nvim"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   function systemctl() {
@@ -189,6 +189,7 @@ function gc() {
     git commit -m "$message"
   fi
 }
+alias gca="git commit --amend"
 function gco() {
   if [ -z "$1" ]; then
     if command -v fzf &> /dev/null
@@ -250,13 +251,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Bash completion nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-  # Bun completions
-  [ -s "/Users/vgf/.bun/_bun" ] && source "/Users/vgf/.bun/_bun"
-
-  # Bun
-  export BUN_INSTALL="$HOME/.bun"
-  export PATH="$BUN_INSTALL/bin:$PATH"
 
   # User bin directory
   export PATH="$HOME/bin:$PATH"
@@ -325,14 +319,23 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 # Emacs keymap for zsh, needs to be set because editor is nvim
+# thx https://catonmat.net/bash-emacs-editing-mode-cheat-sheet
+# C = Ctrl, M = Alt
+# Go to the beginning of the line <C-a>
+# Go to the end of the line <C-e>
+# Go to the previous word <M-b>
+# Go to the next word <M-f>
+# Delete the previous word <M-Backspace>
+# Delete the next word <M-d>
+# Undo <C-_> (unsure)
+# Redo <M-_> (unsure)
 bindkey -A emacs main
 
 #
 # // MAIN END ////////////////////////////
 
-# bun completions
+# Bun
 [ -s "/home/tortitas/.bun/_bun" ] && source "/home/tortitas/.bun/_bun"
 
-# bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
