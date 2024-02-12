@@ -137,3 +137,5 @@ nmap <leader>- :edit #<CR>
 
 "   Treesitter utils
 command! -nargs=0 TSClear :!rm $HOME/.local/share/nvim/lazy/nvim-treesitter/parser/*
+
+command! W w

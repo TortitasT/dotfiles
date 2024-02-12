@@ -1,0 +1,60 @@
+window.bar {
+  background-color: rgba(18, 18, 18, 0.31);
+  color: #f0f0f0;
+}
+
+button {
+  /*RESETS*/
+  min-width: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  background-image: none;
+  color: #f0f0f0;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+highlight {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  border: none;
+
+  border-radius: 0;
+}
+
+trough {
+  background-color: rgba(18, 18, 18, 0.31);
+  color: #f0f0f0;
+  border-radius: 10px;
+  border: none;
+
+  border-radius: 0;
+}
+
+button:active {
+}
+
+button:hover {
+}
+
+label {
+  font-weight: bold;
+}
+
+.workspaces button.focused {
+  border-bottom: 3px solid #acacae;
+}
+
+.client-title {
+}
+
+.notification {
+  color: yellow;
+}
+
+progress,
+highlight {
+  min-height: 8px;
+}
