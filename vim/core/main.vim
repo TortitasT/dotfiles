@@ -275,3 +275,22 @@ let g:languagetool_cmd='/usr/bin/languagetool'
 let g:copilot_filetypes = {
                         \ 'markdown': v:true,
                         \ }
+
+"   Check vue version
+" function! IsVue2()
+"   if exists('g:is_vue2')
+"     return g:is_vue2
+"   endif
+"
+"   silent exec "!npm list --depth=0 | grep ' vue@2'"
+"
+"   if v:shell_error
+"     let g:is_vue2 = 0
+"     return 0
+"   endif
+"
+"   let g:is_vue2 = 1
+"   return 1
+" endfunction
+"
+" autocmd FileType vue if IsVue2() | call CocActionAsync('deactivateExtension', '@yaegassy/coc-volar') | echo "DISABLED!" | endif
