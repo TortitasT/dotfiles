@@ -139,3 +139,14 @@ nmap <leader>- :edit #<CR>
 command! -nargs=0 TSClear :!rm $HOME/.local/share/nvim/lazy/nvim-treesitter/parser/*
 
 command! W w
+
+function SearchAndReplace()
+  let search = input("Search: ")
+  let files = input("Files grep regexp: ")
+  let replace = input("Replace: ")
+
+  execute ":grep " . search . " " . files
+  execute ":cdo %s/" . search . "/" . replace . "/cg"
+endfunction
+
+command! -nargs=0 SearchAndReplace :call SearchAndReplace()
