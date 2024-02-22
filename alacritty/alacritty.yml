@@ -16,3 +16,11 @@ font:
 
   bold_italic:
     family: FiraCode Nerd Font
+bindings:
+  [
+    {
+      key = "N",
+      mods = "Command",
+      action = CreateNewWindow
+    }
+  ]
