@@ -339,3 +339,7 @@ bindkey -A emacs main
 
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Composer 
+
+export PATH=~/.composer/vendor/bin:$PATH
