@@ -7,12 +7,14 @@ command! Refresh source $MYVIMRC | source $MYVIMRC
 command! Reload source $MYVIMRC | source $MYVIMRC
 
 "   Git 
-cnoreabbrev gco :Git checkout
-cnoreabbrev ga :Git add --all
-cnoreabbrev gc :Git commit -m
-cnoreabbrev gs :Git status
-cnoreabbrev gb :Git branch --sort=-committerdate
-cnoreabbrev gd :Git diff
+"   Not even using it anymore, I use floaterm now. They give problems when
+"   writing gc for regexp and stuff
+" cnoreabbrev gco :Git checkout
+" cnoreabbrev ga :Git add --all
+" cnoreabbrev gc :Git commit -m
+" cnoreabbrev gs :Git status
+" cnoreabbrev gb :Git branch --sort=-committerdate
+" cnoreabbrev gd :Git diff
 
 "   Mini-files
 map B <cmd>lua MiniFiles.open()<CR>
