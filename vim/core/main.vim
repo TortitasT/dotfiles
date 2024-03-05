@@ -1,7 +1,7 @@
 " Config
 "   Colors
 " set termguicolors
-
+"
 "	  Mouse
 set mouse+=a
 
@@ -20,6 +20,15 @@ set scrolloff=8
 set cursorline
 "set cursorcolumn
 set colorcolumn=80
+
+"   Undofile
+set undofile
+
+"   statusline
+set laststatus=2
+silent! lua << EOF
+vim.opt.statusline = " %f %m %= %l:%c ◡̈⃝  "
+EOF
 
 "   Set Powershell
 if has('win64') || has('win32')
@@ -210,7 +219,11 @@ if has("nvim")
   " let g:mellow_italic_functions = 1
   " let g:mellow_bold_functions = 1
   " let g:mellow_transparent = 1
-  colorscheme oxocarbon
+
+  " colorscheme oxocarbon
+  " set background=dark
+
+  colorscheme rose-pine
   set background=dark
 endif
 
