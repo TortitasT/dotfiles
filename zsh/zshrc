@@ -28,7 +28,8 @@ source $ZSH/themes/spaceship-prompt/spaceship.zsh-theme
 export LANG=es_ES.UTF-8
 
 # In kitty set terminal type to xterm-256color so ssh works properly
-export TERM=xterm-256color
+# If this is set, neovim on tmux will have weird background color in text
+# export TERM=xterm-256color
 
 # Preferred editor
 export EDITOR="nvim"

@@ -1,6 +1,6 @@
 " Config
 "   Colors
-" set termguicolors
+set termguicolors
 "
 "	  Mouse
 set mouse+=a
@@ -223,8 +223,8 @@ if has("nvim")
   " colorscheme oxocarbon
   " set background=dark
 
-  colorscheme rose-pine
   set background=dark
+  colorscheme rose-pine
 endif
 
 "	  Tabs
