@@ -34,6 +34,22 @@ installWakatimeBin() {
   curl https://github.com/wakatime/wakatime-cli/releases/download/v1.73.2/wakatime-cli-linux-amd64.zip --output ~/.wakatime/wakatime-cli
 }
 
+installKotlinLSP() {
+  prompt "Install Kotlin LSP?"
+  if [[ $? -eq 1 ]]; then
+    return
+  fi
+
+  curl -s https://api.github.com/repos/fwcd/kotlin-language-server/releases/latest \
+  | grep "server.*zip" \
+  | cut -d : -f 2,3 \
+  | tr -d \" \
+  | wget -qi - -O /tmp/kotlin-lsp.zip
+
+  unzip /tmp/kotlin-lsp.zip -d /tmp/kotlin-lsp
+  mv /tmp/kotlin-lsp/server ~/.local/share/kotlin-language-server
+}
+
 ensureDirectories "$HOME/.config" "$HOME/.config/nvim" "$HOME/.config/coc" "$HOME/.vim"
 
 linkFile ".vimrc" "$HOME/.vimrc"
@@ -54,6 +70,7 @@ linkDirectory "colors" "$HOME/.config/nvim/colors"
 
 installCocSettings
 
+installKotlinLSP
 installPhpDebugger
 installWakatimeBin
 

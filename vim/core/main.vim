@@ -141,7 +141,6 @@ let g:coc_global_extensions = [
             \'coc-highlight',
             \'coc-sh',
             \'coc-pyright',
-            \'coc-kotlin',
             \'coc-emmet',
             \'coc-eslint',
             \'coc-markdownlint',

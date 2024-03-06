@@ -45,3 +45,19 @@ jobs:
     - name: Run tests
       run: cargo test --verbose
 endsnippet
+
+snippet compose "Docker compose sample" b
+version: '3.8'
+services:
+	db:
+		image: postgres
+		restart: always
+		volumes:
+			- db:/var/lib/postgresql/data
+		environment:
+			POSTGRES_PASSWORD: example
+		ports:
+			- "5432:5432"
+volumes:
+	db:
+endsnippet

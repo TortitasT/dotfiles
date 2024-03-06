@@ -45,6 +45,12 @@
         "ocaml",
         "reason"
       ]
+    },
+    "kotlin": {
+      "command": "~/.local/share/kotlin-language-server/bin/kotlin-language-server",
+      "filetypes": [
+        "kotlin"
+      ]
     }
   },
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
