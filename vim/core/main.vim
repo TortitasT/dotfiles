@@ -27,7 +27,7 @@ set undofile
 "   statusline
 set laststatus=2
 silent! lua << EOF
-vim.opt.statusline = " %f %m %= %l:%c ◡̈⃝  "
+vim.opt.statusline = " %f %m %= %l:%c"
 EOF
 
 "   Set Powershell
@@ -48,7 +48,7 @@ set spell spelllang=es_es,en_us
 
 "   Treesitter
 silent! lua << EOF
-require 'nvim-treesitter.install'.compilers = {"clang"} -- Must use llvm `scoop install llvm` https://github.com/nvim-treesitter/nvim-treesitter/issues/1897
+"require 'nvim-treesitter.install'.compilers = {"clang"} -- Must use llvm `scoop install llvm` https://github.com/nvim-treesitter/nvim-treesitter/issues/1897
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {

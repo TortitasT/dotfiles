@@ -2,5 +2,6 @@
 -- NOTE: Replace with langkeeper when it's ready
 return {
   'wakatime/vim-wakatime',
+  enabled = false,
   branch = 'master'
 }
