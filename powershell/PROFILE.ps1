@@ -11,6 +11,16 @@ function bg() { Start-Process -NoNewWindow @args }
 # MODULES
 Import-Module -Name Terminal-Icons
 
+# Autosuggersions
+# https://khushwant.hashnode.dev/powershell-autosuggestions-like-fishzsh-autosuggestions
+Import-Module PSReadLine
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+Set-PSReadLineOption -Colors @{ InlinePrediction = '#875f5f'}
+Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
+
 # BASH LIKE AUTOCOMPLETE https://dev.to/ofhouse/add-a-bash-like-autocomplete-to-your-powershell-4257
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
