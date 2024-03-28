@@ -14,6 +14,11 @@ function Powershell-Install-TerminalIcons {
   Import-Module -Name Terminal-Icons
 }
 
+function Powershell-Install-Autosuggestions {
+  Install-Module PSReadLine -RequiredVersion 2.1.0
+  Import-Module -Name PSReadLine
+}
+
 function Powershell-Copy-Profile {
   if (Test-Path $PROFILE -ne $true) {
     New-Item -ItemType File -Path $PROFILE -Force
@@ -34,6 +39,7 @@ function Powershell-Install {
 
   # Powershell-Install-OhMyPosh
   # Powershell-Install-TerminalIcons
+  # Powershell-Install-Autosuggestions
 
   Powershell-Link-Profile
 
