@@ -2,16 +2,16 @@
 size = 14
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "GoMono Nerd Font"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font"
+family = "GoMono Nerd Font"
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "GoMono Nerd Font"
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "GoMono Nerd Font"
 
 [window]
 opacity = 0.95

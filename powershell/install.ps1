@@ -4,8 +4,7 @@ Set-Location $PSScriptRoot
 . .\..\utils.ps1
 
 function Powershell-Install-OhMyPosh {
-  Install-Module oh-my-posh -Scope AllUsers
-  Import-Module oh-my-posh
+  winget install JanDeDobbeleer.OhMyPosh -s winget
   Get-PoshThemes
 }
 
@@ -34,19 +33,15 @@ function Powershell-Link-Profile {
   New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$PWD\PROFILE.ps1"
 }
 
-function Powershell-Install {
-  Print "Configuring Powershell..." Info
+Print "Configuring Powershell..." Info
 
-  # Powershell-Install-OhMyPosh
-  # Powershell-Install-TerminalIcons
-  # Powershell-Install-Autosuggestions
+# Powershell-Install-OhMyPosh
+# Powershell-Install-TerminalIcons
+# Powershell-Install-Autosuggestions
 
-  Powershell-Link-Profile
+Powershell-Link-Profile
 
-  Print "Powershell configured!" Success
-}
-
-Powershell-Install
+Print "Powershell configured!" Success
 
 Set-Location $OriginalDirectory
 

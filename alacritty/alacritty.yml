@@ -6,21 +6,14 @@ window:
 font:
   size: 14
   normal:
-    family: FiraCode Nerd Font
+    family: GoMono Nerd Font
 
   bold:
-    family: FiraCode Nerd Font
+    family: GoMono Nerd Font
 
   italic:
-    family: FiraCode Nerd Font
+    family: GoMono Nerd Font
 
   bold_italic:
-    family: FiraCode Nerd Font
-bindings:
-  [
-    {
-      key = "N",
-      mods = "Command",
-      action = CreateNewWindow
-    }
-  ]
+    family: GoMono Nerd Font
+bindings: [{ key = "N", mods = "Command", action = CreateNewWindow }]

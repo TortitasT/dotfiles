@@ -56,6 +56,9 @@ Set-Alias gp gitPush
 function gitCheckout { git checkout @args }
 Set-Alias gco gitCheckout
 
+function gitDiff { git diff @args }
+Set-Alias gd gitDiff
+
 function qAlias { exit }
 Set-Alias q qAlias
 
