@@ -4,40 +4,44 @@ Set-Location $PSScriptRoot
 . .\..\utils.ps1
 
 function Powershell-Install-OhMyPosh {
+  if (Get-Command oh-my-posh.exe -errorAction SilentlyContinue) {
+    return
+  }
+
   winget install JanDeDobbeleer.OhMyPosh -s winget
   Get-PoshThemes
 }
 
 function Powershell-Install-TerminalIcons {
+  if (Get-Module -Name Terminal-Icons -ListAvailable) {
+    return
+  }
+
   Install-Module -Name Terminal-Icons -Repository PSGallery
   Import-Module -Name Terminal-Icons
 }
 
 function Powershell-Install-Autosuggestions {
+  if (Get-Module -Name PSReadLine -ListAvailable) {
+    return
+  }
+  
   Install-Module PSReadLine -RequiredVersion 2.1.0
   Import-Module -Name PSReadLine
 }
 
-function Powershell-Copy-Profile {
-  if (Test-Path $PROFILE -ne $true) {
-    New-Item -ItemType File -Path $PROFILE -Force
-  }
- 
-  Copy-Item -Path ".\PROFILE.ps1" -Destination $PROFILE -Force
-}
-
 function Powershell-Link-Profile {
   if (Test-Path $PROFILE -e $true) {
-    Move-Item -Path $PROFILE -Destination "$PROFILE.bak"
+    Move-Item -Path $PROFILE -Destination "$PROFILE.bak" -Force
   }
-  New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$PWD\PROFILE.ps1"
+  New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$PWD\PROFILE.ps1" -Force
 }
 
 Print "Configuring Powershell..." Info
 
-# Powershell-Install-OhMyPosh
-# Powershell-Install-TerminalIcons
-# Powershell-Install-Autosuggestions
+Powershell-Install-OhMyPosh
+Powershell-Install-TerminalIcons
+Powershell-Install-Autosuggestions
 
 Powershell-Link-Profile
 
