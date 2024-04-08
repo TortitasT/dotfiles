@@ -160,7 +160,6 @@ let g:coc_global_extensions = [
             \'coc-biome',
             \'@yaegassy/coc-volar',
             \'@yaegassy/coc-volar-tools',
-            \'@yaegassy/coc-typescript-vue-plugin',
             \'@yaegassy/coc-laravel',
             \'@yaegassy/coc-tailwindcss3',
             \]

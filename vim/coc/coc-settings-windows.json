@@ -1,29 +1,17 @@
 {
-  "java.jdt.ls.java.home": "C:\\Program Files\\RedHat\\java-17-openjdk-17.0.6.0.10-1",
   "coc.preferences.formatOnSave": true,
-  "prettier.enable": true,
-  "prettier.formatterPriority": -1,
-  "prettier.disableLanguages": [
-    "javascript",
-    "vue"
-  ],
-  "tsserver.enable": false,
-  "vetur.format.enable": true,
-  "vetur.format.defaultFormatter.scss": "prettier",
-  "vetur.format.defaultFormatter.js": "none",
-  "vetur.format.defaultFormatter.html": "none",
+  "prettier.enable": false,
+  "tsserver.enable": true,
   "deno.enable": false,
   "codeLens.enable": true,
   "eslint.autoFixOnSave": true,
-  "typescript.format.enable": true,
-  "javascript.format.enable": true,
+  "vetur.enable": true,
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
   "javascript.preferences.quoteStyle": "single",
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.format.semicolons": "remove",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "phpactor.enable": true,
-  "phpactor.path": "/home/tortitas/.local/bin/phpactor",
-  "clangd.path": "/usr/local/bin/clangd15",
   "languageserver": {
     "csharp-ls": {
       "command": "csharp-ls",
@@ -39,5 +27,5 @@
     }
   },
   "powershell.integratedConsole.showOnStartup": false,
-  "snippets.ultisnips.pythonPrompt": false,
+  "snippets.ultisnips.pythonPrompt": false
 }
