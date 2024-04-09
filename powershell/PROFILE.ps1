@@ -53,7 +53,14 @@ function gitPush {
 del alias:gp -ErrorAction SilentlyContinue -Force
 Set-Alias gp gitPush
 
-function gitCheckout { git checkout @args }
+function gitCheckout {
+  if ($Args.Count -gt 0) {
+    git checkout @args
+    return
+  }
+
+  git checkout $(git branch -r --sort=-committerdate | sed 's/  origin\///g' | fzf)
+}
 Set-Alias gco gitCheckout
 
 function gitDiff { git diff @args }

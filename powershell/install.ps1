@@ -37,11 +37,16 @@ function Powershell-Link-Profile {
   New-Item -ItemType SymbolicLink -Path $PROFILE -Target "$PWD\PROFILE.ps1" -Force
 }
 
+function Powershell-Install-Fzf {
+  winget install fzf
+}
+
 Print "Configuring Powershell..." Info
 
 Powershell-Install-OhMyPosh
 Powershell-Install-TerminalIcons
 Powershell-Install-Autosuggestions
+Powershell-Install-Fzf
 
 Powershell-Link-Profile
 
