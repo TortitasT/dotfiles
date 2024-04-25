@@ -235,7 +235,7 @@ if [[ "$OSTYPE" == "linux-android"* ]]; then
   eval `ssh-agent`
 fi
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+if [[ "$OSTYPE" == "linux-gnu"* ]] && ! [[ $(grep -i Microsoft /proc/version) ]]; then
   fastfetch --kitty $HOME/.config/neofetch/tux.png
 fi
 
