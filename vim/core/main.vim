@@ -1,6 +1,8 @@
 " Config
 "   Colors
 set termguicolors
+"   Transparency
+au ColorScheme * hi Normal ctermbg=none guibg=none
 
 "	  Mouse
 set mouse+=a
@@ -21,6 +23,8 @@ set scrolloff=8
 set cursorline
 "set cursorcolumn
 set colorcolumn=80
+au ColorScheme * hi ColorColumn ctermbg=235 guibg=#262626
+au ColorScheme * hi CursorLine ctermbg=235 guibg=#262626
 
 "   Undofile
 set undofile
