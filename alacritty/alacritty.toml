@@ -29,3 +29,13 @@ mods = "Command"
 action = "Paste"
 key = "V"
 mods = "alt"
+
+# https://github.com/alacritty/alacritty/issues/1703
+[[keyboard.bindings]]
+chars = "\u0000"
+key = "Space"
+mods = "Control"
+
+[shell]
+program = "wsl"
+args = ["--cd ~", "tmux"]
