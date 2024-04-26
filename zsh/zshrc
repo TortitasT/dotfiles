@@ -54,6 +54,8 @@ fi
 # Same with linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export PATH="$PATH:$HOME/.local/bin"
+
+  bindkey -s ^f "tmux-sessionizer\n"
 fi
 
 # // THEME ////////////////////////////////

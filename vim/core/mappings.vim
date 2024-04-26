@@ -152,3 +152,5 @@ function SearchAndReplace()
 endfunction
 
 command! -nargs=0 SearchAndReplace :call SearchAndReplace()
+
+nmap <leader><leader>te /<template><CR>:nohlsearch<CR>j
