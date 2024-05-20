@@ -5,10 +5,10 @@
   "codeLens.enable": true,
   "deno.enable": false,
   "colors.enable": true,
-  "prettier.enable": true,
+  "prettier.enable": false,
   "prettier.disableLanguages": [],
-  "volar.disableFormatting": true,
-  "eslint.autoFixOnSave": true,
+  "volar.disableFormatting": false,
+  "eslint.autoFixOnSave": false,
   "tsserver.enable": true,
   "tsserver.log": "verbose",
   "markdownlint.config": {
