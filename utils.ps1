@@ -22,3 +22,19 @@ function Print([String] $Text, [PrintLevels] $Level = [PrintLevels]::Info) {
 
   Write-Color -Text $Prefix, $Text -Color $Level, White
 }
+
+function EnsureDirectory([String] $Directories) {
+  if (Test-Path $Directory -e $false) {
+    New-Item -ItemType "directory" -Path $Directory -Force
+  }
+}
+
+function EnsureDirectories([String[]] $Directories) {
+  foreach ($Directory in $Directories) {
+    EnsureDirectory $Directory
+  }
+}
+
+function LinkFile([String] $TargetPath, [String] $Path) {
+  New-Item -ItemType SymbolicLink -Path $Path -Target $TargetPath -Force
+}
