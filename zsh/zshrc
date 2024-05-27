@@ -176,7 +176,7 @@ function composer() {
 }
 # Git
 alias g="git"
-if [[ "$OSTYPE" == "darwin"* ]]; then alias gg="cd ~/Documents/Git"; fi
+if [[ "$OSTYPE" == "darwin"* ]]; then alias gg="cd ~/Git"; fi
 if [[ "$OSTYPE" == "freebsd"* ]]; then alias gg="cd ~/Git"; fi
 if [[ "$OSTYPE" == "linux-android"* ]]; then alias gg="cd ~/Git"; fi
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then alias gg="cd ~/Git"; fi
@@ -247,8 +247,10 @@ if [[ "$OSTYPE" == "linux-gnu"* ]] && ! [[ $(grep -i Microsoft /proc/version) ]]
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  fastfetch --kitty $HOME/.config/neofetch/tux.png
+
   # Load autosuggestions
-  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+  # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
   # LaTeX
   export PATH="/Library/TeX/texbin/:$PATH"
