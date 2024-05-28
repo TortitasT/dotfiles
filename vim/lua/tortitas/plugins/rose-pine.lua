@@ -7,6 +7,9 @@ return {
         StatusLine = { fg = "love", bg = "love", blend = 10 },
         StatusLineNC = { fg = "subtle", bg = "surface" },
       },
+      styles = {
+        transparency = true,
+      },
     })
   end
 }

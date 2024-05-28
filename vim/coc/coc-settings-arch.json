@@ -5,22 +5,34 @@
   "codeLens.enable": true,
   "deno.enable": false,
   "colors.enable": true,
-  "prettier.enable": false,
-  "prettier.disableLanguages": [],
+  "prettier.enable": true,
+  "prettier.disableLanguages": [
+    "vue"
+  ],
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
   "volar.disableFormatting": false,
+  "volar.autoCreateQuotes": true,
+  "volar.autoClosingTags": true,
   "eslint.autoFixOnSave": false,
   "tsserver.enable": true,
   "tsserver.log": "verbose",
   "markdownlint.config": {
     "no-inline-html": false
   },
-  "typescript.format.enable": false,
-  "javascript.format.enable": false,
+  "eslint.enable": false,
+  "typescript.format.enable": true,
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.format.semicolons": "insert",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "javascript.format.enable": true,
   "javascript.preferences.quoteStyle": "single",
-  "javascript.preferences.importModuleSpecifier": "relative",
-  "javascript.format.semicolons": "remove",
+  "javascript.format.semicolons": "insert",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "emmet.excludeLanguages": ["php"],
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "emmet.excludeLanguages": [
+    "php"
+  ],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true,
   "snippets.ultisnips.pythonPrompt": false,
@@ -34,13 +46,28 @@
   "languageserver": {
     "ocaml-lsp": {
       "command": "opam",
-      "args": ["config", "exec", "--", "ocamllsp"],
-      "filetypes": ["ocaml", "reason"]
+      "args": [
+        "config",
+        "exec",
+        "--",
+        "ocamllsp"
+      ],
+      "filetypes": [
+        "ocaml",
+        "reason"
+      ]
     },
     "csharp-ls": {
       "command": "csharp-ls",
-      "filetypes": ["cs"],
-      "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+      "filetypes": [
+        "cs"
+      ],
+      "rootPatterns": [
+        "*.csproj",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ]
     }
   },
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",

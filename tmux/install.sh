@@ -10,3 +10,5 @@ ensureDirectory "$HOME/.config/tmux"
 ensureDirectory "$HOME/.local/bin"
 linkFile "tmux.conf" "$HOME/.config/tmux/tmux.conf"
 linkFile "tmux-sessionizer.sh" "$HOME/.local/bin/tmux-sessionizer"
+
+print "warning" "Done! Start tmux and execute prefix + I to install tpm plugins"

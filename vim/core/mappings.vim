@@ -28,7 +28,7 @@ endfunction
 map <leader>B :call OpenMiniFilesOnCurrentBuffer()<CR>
 
 "   NeoTree
-map <C-b> :NeoTreeShowToggle<CR>
+" map <C-b> :NeoTreeShowToggle<CR>
 
 "   Tabs
 map <F8> :tabp<CR>
