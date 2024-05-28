@@ -226,10 +226,10 @@ if has("nvim")
   " colorscheme oxocarbon
   " set background=dark
 
-  " set background=dark
-  " colorscheme rose-pine
+  set background=dark
+  colorscheme rose-pine
   
-  colorscheme vesper
+  " colorscheme vesper
 endif
 
 "	  Tabs
