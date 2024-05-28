@@ -41,22 +41,28 @@ else
   export ARCHFLAGS="-arch x86_64"
 fi
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# FreeBSD $HOME/.local/bin path is not in $PATH by default ($HOME/bin is)
 if [[ "$OSTYPE" == "freebsd"* ]]; then
   export PATH="$PATH:$HOME/.local/bin"
 fi
 
-# Same with linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export PATH="$PATH:$HOME/.local/bin"
 
   bindkey -s ^f "tmux-sessionizer\n"
 fi
+
+# Emacs keymap for zsh, needs to be set because editor is nvim
+# thx https://catonmat.net/bash-emacs-editing-mode-cheat-sheet
+# C = Ctrl, M = Alt
+# Go to the beginning of the line <C-a>
+# Go to the end of the line <C-e>
+# Go to the previous word <M-b>
+# Go to the next word <M-f>
+# Delete the previous word <M-Backspace>
+# Delete the next word <M-d>
+# Undo <C-_> (unsure)
+# Redo <M-_> (unsure)
+bindkey -A emacs main
 
 # // THEME ////////////////////////////////
 
@@ -102,6 +108,69 @@ alias diff="diff --color=always"
 alias less="less -R"
 alias v="nvim"
 alias nv="nvim"
+alias doo="chmod 700 ./do.sh && ./do.sh"
+alias gitzip="git archive HEAD -o " # gitzip <filename>.zip to create a zip file using gitignore
+alias ed="nvim"
+alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
+alias reload="source ~/.zshrc"
+alias art="php artisan"
+alias artest="vendor/bin/phpunit --testdox"
+alias py="python3"
+alias pip="pip3"
+alias gradlew="./gradlew"
+
+function composer() {
+  if [ -f "composer-local.json" ]; then
+    COMPOSER=composer-local.json php /usr/local/bin/composer $@
+  else
+    php /usr/local/bin/composer $@
+  fi
+}
+
+alias g="git"
+alias gg="cd ~/Git"
+alias gl="git log --graph --oneline --decorate --all"
+alias gs="git status"
+alias ga="git add --all"
+alias gca="git commit --amend"
+alias gb="git branch --sort=-committerdate"
+alias gd="git diff"
+
+function gc() {
+  message="$1"
+
+  echo "Commit message: $message"
+
+  if command -v commitlint &> /dev/null
+  then
+    echo $message | commitlint
+  fi
+
+  if [ $? -eq 0 ]; then
+    git commit -m "$message"
+  fi
+}
+
+function gco() {
+  if [ -z "$1" ]; then
+    if command -v fzf &> /dev/null
+    then
+      git checkout $(git branch -r --sort=-committerdate | sed 's/origin\///g' | fzf)
+    else
+      echo "fzf not found, install it to use this feature"
+    fi
+  fi
+
+  git checkout $@
+}
+
+function gp() {
+  git push origin $(git branch --show-current)
+}
+
+function gpl() {
+  git pull origin $(git branch --show-current)
+}
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   function systemctl() {
@@ -160,73 +229,11 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias open="xdg-open"
 fi
 
-if [[ "$OSTYPE" == "freebsd"* ]]; then alias poweroff="doas poweroff"; fi
-alias doo="chmod 700 ./do.sh && ./do.sh"
-if [[ "$OSTYPE" == "freebsd"* ]]; then alias ii="nohup pcmanfm > /dev/null 2>&1&"; fi
-alias gitzip="git archive HEAD -o " # gitzip <filename>.zip to create a zip file using gitignore
-alias ed="nvim"
-# alias emacs="emacs -nw"
-alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
-function composer() {
-  if [ -f "composer-local.json" ]; then
-    COMPOSER=composer-local.json php /usr/local/bin/composer $@
-  else
-    php /usr/local/bin/composer $@
-  fi
-}
-# Git
-alias g="git"
-if [[ "$OSTYPE" == "darwin"* ]]; then alias gg="cd ~/Git"; fi
-if [[ "$OSTYPE" == "freebsd"* ]]; then alias gg="cd ~/Git"; fi
-if [[ "$OSTYPE" == "linux-android"* ]]; then alias gg="cd ~/Git"; fi
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then alias gg="cd ~/Git"; fi
-alias gl="git log --graph --oneline --decorate --all"
-alias gs="git status"
-alias ga="git add --all"
-function gc() {
-  message="$1"
+if [[ "$OSTYPE" == "freebsd"* ]]; then
+  alias poweroff="doas poweroff"
+  alias ii="nohup pcmanfm > /dev/null 2>&1&"
+fi
 
-  echo "Commit message: $message"
-
-  if command -v commitlint &> /dev/null
-  then
-    echo $message | commitlint
-  fi
-
-  if [ $? -eq 0 ]; then
-    git commit -m "$message"
-  fi
-}
-alias gca="git commit --amend"
-function gco() {
-  if [ -z "$1" ]; then
-    if command -v fzf &> /dev/null
-    then
-      git checkout $(git branch -r --sort=-committerdate | sed 's/origin\///g' | fzf)
-    else
-      echo "fzf not found, install it to use this feature"
-    fi
-  fi
-
-  git checkout $@
-}
-alias gb="git branch --sort=-committerdate"
-alias gd="git diff"
-function gp() {
-  git push origin $(git branch --show-current)
-}
-function gpl() {
-  git pull origin $(git branch --show-current)
-}
-alias reload="source ~/.zshrc"
-# Laravel
-alias art="php artisan"
-alias artest="vendor/bin/phpunit --testdox"
-# Python
-alias py="python3"
-alias pip="pip3"
-# Java
-alias gradlew="./gradlew"
 #
 # // ALIAS END ////////////////////////////
 
@@ -249,109 +256,15 @@ fi
 if [[ "$OSTYPE" == "darwin"* ]]; then
   fastfetch --kitty $HOME/.config/neofetch/tux.png
 
-  # Load autosuggestions
-  # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-  # LaTeX
-  export PATH="/Library/TeX/texbin/:$PATH"
-
-  # Git identity manager
-  export PATH="$HOME/bin/git-idm:$PATH"
-
-  # iTerm2 integration
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-  # Bash completion nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-  # User bin directory
   export PATH="$HOME/bin:$PATH"
   export PATH="$HOME/.local/bin:$PATH"
 
   # Funny voice when starting the terminal in macos
-  (&>/dev/null say $(curl -s https://whatthecommit.com/index.txt) &)
-
-  # opam configuration
-  [[ ! -r ~/.opam/opam-init/init.zsh ]] || source ~/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-  # GO
-  export GOPATH=$(go env GOPATH)
-  export PATH="$GOPATH/bin:$PATH"
-
-  # pnpm
-  export PNPM_HOME="/Users/vgf/Library/pnpm"
-  case ":$PATH:" in
-    *":$PNPM_HOME:"*) ;;
-    *) export PATH="$PNPM_HOME:$PATH" ;;
-  esac
-  # pnpm end
-
-  # Zoxide
-  eval "$(zoxide init zsh)"
-
-  #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-  export SDKMAN_DIR="$HOME/.sdkman"
-  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+  # (&>/dev/null say $(curl -s https://whatthecommit.com/index.txt) &)
 fi
 
-# Deno bin
-export DENO_INSTALL="$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
-# Pyenv
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-
-  # GO
-  export GOPATH=$(go env GOPATH)
-  export PATH="$GOPATH/bin:$PATH"
-
-  # pnpm
-  export PNPM_HOME="/home/tortitas/.local/share/pnpm"
-  case ":$PATH:" in
-    *":$PNPM_HOME:"*) ;;
-    *) export PATH="$PNPM_HOME:$PATH" ;;
-  esac
-  # pnpm end
-  
-  # Android sdk
-  export ANDROID_HOME="$HOME/Android/Sdk"
-  
-  # opam configuration
-  [[ ! -r ~/.opam/opam-init/init.zsh ]] || source ~/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-  # dotnet
-  export PATH="$PATH:$HOME/.dotnet/tools"
-
-  #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-  export SDKMAN_DIR="$HOME/.sdkman"
-  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
-
-# Emacs keymap for zsh, needs to be set because editor is nvim
-# thx https://catonmat.net/bash-emacs-editing-mode-cheat-sheet
-# C = Ctrl, M = Alt
-# Go to the beginning of the line <C-a>
-# Go to the end of the line <C-e>
-# Go to the previous word <M-b>
-# Go to the next word <M-f>
-# Delete the previous word <M-Backspace>
-# Delete the next word <M-d>
-# Undo <C-_> (unsure)
-# Redo <M-_> (unsure)
-bindkey -A emacs main
 
 #
 # // MAIN END ////////////////////////////
-
-# Bun
-[ -s "/home/tortitas/.bun/_bun" ] && source "/home/tortitas/.bun/_bun"
-
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Composer 
-
-export PATH=~/.composer/vendor/bin:$PATH
