@@ -119,13 +119,13 @@ alias py="python3"
 alias pip="pip3"
 alias gradlew="./gradlew"
 
-function composer() {
-  if [ -f "composer-local.json" ]; then
-    COMPOSER=composer-local.json php /usr/local/bin/composer $@
-  else
-    php /usr/local/bin/composer $@
-  fi
-}
+# function composer() {
+#   if [ -f "composer-local.json" ]; then
+#     COMPOSER=composer-local.json php /usr/local/bin/composer $@
+#   else
+#     php /usr/local/bin/composer $@
+#   fi
+# }
 
 alias g="git"
 alias gg="cd ~/Git"
@@ -268,3 +268,15 @@ fi
 
 #
 # // MAIN END ////////////////////////////
+
+
+# Herd injected PHP binary.
+export PATH="/Users/vgf/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/83/"
+
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/82/"
