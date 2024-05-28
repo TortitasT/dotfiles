@@ -50,6 +50,26 @@ installKotlinLSP() {
   mv /tmp/kotlin-lsp/server ~/.local/share/kotlin-language-server
 }
 
+installNeovimAppImage() {
+  prompt "Install Neovim AppImage? (In case you are using WSL Ubuntu or something)"
+  if [[ $? -eq 1 ]]; then
+    return
+  fi
+
+  # needed to run appimages
+  sudo apt install libfuse2
+
+  INSTALL_DIR=$HOME/.local/bin
+  ensureDirectory $INSTALL_DIR
+
+  TMP_DIR=/tmp/nvim-install
+  ensureDirectory $TMP_DIR
+  curl -L "https://github.com/neovim/neovim/releases/latest/download/nvim.appimage" --output $TMP_DIR/nvim.appimage
+
+  chmod u+x $TMP_DIR/nvim.appimage
+  mv $TMP_DIR/nvim.appimage $INSTALL_DIR/nvim
+}
+
 ensureDirectories "$HOME/.config" "$HOME/.config/nvim" "$HOME/.config/coc" "$HOME/.vim"
 
 linkFile ".vimrc" "$HOME/.vimrc"
@@ -70,6 +90,7 @@ linkDirectory "colors" "$HOME/.config/nvim/colors"
 
 installCocSettings
 
+installNeovimAppImage
 installKotlinLSP
 installPhpDebugger
 installWakatimeBin
