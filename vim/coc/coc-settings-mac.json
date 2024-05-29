@@ -4,9 +4,6 @@
   "codeLens.enable": true,
   "deno.enable": false,
   "colors.enable": true,
-  "vetur.enable": true,
-  "volar.enable": true,
-  "volar.disableFormatting": true,
   "prettier.enable": false,
   "prettier.disableLanguages": [],
   "prettier.semi": false,
@@ -24,8 +21,6 @@
   "markdownlint.config": {
     "no-inline-html": false
   },
-  "typescript.format.enable": false,
-  "javascript.format.enable": false,
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/17.0.3/clangd_17.0.3/bin/clangd",
   "emmet.excludeLanguages": [
     "php"
