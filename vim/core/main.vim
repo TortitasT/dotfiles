@@ -163,6 +163,7 @@ let g:coc_global_extensions = [
             \'coc-elixir',
             \'coc-solargraph',
             \'coc-biome',
+            \'coc-flutter',
             \'@yaegassy/coc-volar',
             \'@yaegassy/coc-volar-tools',
             \'@yaegassy/coc-laravel',
