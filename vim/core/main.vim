@@ -2,7 +2,9 @@
 "   Colors
 set termguicolors
 "   Transparency
+if has('nvim')
 au ColorScheme * hi Normal ctermbg=none guibg=none
+endif
 
 "	  Mouse
 set mouse+=a
@@ -31,11 +33,14 @@ set undofile
 
 "   statusline
 set laststatus=2
+if has('nvim')
 silent! lua << EOF
 vim.opt.statusline = " %f %m %= %l:%c"
 EOF
+endif
 
 "   Set Powershell
+if has('nvim')
 if has('win64') || has('win32')
   let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
   let &shellcmdflag = '-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';'
@@ -45,6 +50,7 @@ if has('win64') || has('win32')
 
   let g:floaterm_shell='powershell'
 endif
+endif
 
 "   Spell check
 "   NOTE: If you get an error on boot, run the line bellow this comment and it
@@ -52,6 +58,7 @@ endif
 set spell spelllang=es_es,en_us
 
 "   Treesitter
+if has('nvim')
 silent! lua << EOF
 "require 'nvim-treesitter.install'.compilers = {"clang"} -- Must use llvm `scoop install llvm` https://github.com/nvim-treesitter/nvim-treesitter/issues/1897
 
@@ -110,10 +117,13 @@ parser_config.blade = {
   filetype = "blade"
 }
 EOF
+endif
 
+if has('nvim')
 augroup BladeFiltypeRelated
   au BufNewFile,BufRead *.blade.php set ft=blade
 augroup END
+endif
 
 "   Neovide
 if exists("g:neovide")
@@ -259,7 +269,9 @@ if !has("nvim")
 endif
 
 "   DAP
+if has('nvim')
 silent! lua require 'tortitas/dap'
+endif
 
 "   DadBod UI
 let g:db_ui_auto_execute_table_helpers = 1

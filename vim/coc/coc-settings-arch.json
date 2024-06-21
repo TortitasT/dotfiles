@@ -1,14 +1,12 @@
 {
   "kotlin.languageServer.enabled": true,
-  "coc.preferences.formatOnSave": true,
+  "coc.preferences.formatOnSave": false,
   "diagnostic.checkCurrentLine": true,
   "codeLens.enable": true,
   "deno.enable": false,
   "colors.enable": true,
   "prettier.enable": true,
-  "prettier.disableLanguages": [
-    "vue"
-  ],
+  "prettier.disableLanguages": ["vue"],
   "prettier.semi": true,
   "prettier.singleQuote": true,
   "volar.disableFormatting": false,
@@ -30,9 +28,7 @@
   "javascript.format.semicolons": "insert",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "javascript.preferences.importModuleSpecifier": "relative",
-  "emmet.excludeLanguages": [
-    "php"
-  ],
+  "emmet.excludeLanguages": ["php"],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true,
   "snippets.ultisnips.pythonPrompt": false,
@@ -46,28 +42,13 @@
   "languageserver": {
     "ocaml-lsp": {
       "command": "opam",
-      "args": [
-        "config",
-        "exec",
-        "--",
-        "ocamllsp"
-      ],
-      "filetypes": [
-        "ocaml",
-        "reason"
-      ]
+      "args": ["config", "exec", "--", "ocamllsp"],
+      "filetypes": ["ocaml", "reason"]
     },
     "csharp-ls": {
       "command": "csharp-ls",
-      "filetypes": [
-        "cs"
-      ],
-      "rootPatterns": [
-        "*.csproj",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ]
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
     }
   },
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",

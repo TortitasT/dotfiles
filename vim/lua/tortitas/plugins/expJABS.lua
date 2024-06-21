@@ -6,7 +6,7 @@ return {
   config = function()
     require 'jabs'.setup {
       keymap = {
-        close = "q",     -- Close buffer. Default D
+        close = "D",     -- Close buffer. Default D
         jump = "l",      -- Jump to buffer. Default <cr>
         h_split = "h",   -- Horizontally split buffer. Default s
         v_split = "v",   -- Vertically split buffer. Default v

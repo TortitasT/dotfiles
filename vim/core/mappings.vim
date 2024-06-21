@@ -65,9 +65,17 @@ nnoremap <C-p> <cmd>Telescope commands<CR>
 nnoremap <leader>fr <cmd>Telescope oldfiles<CR>
 
 "   COC
-inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
-inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
-nnoremap <silent> K :call ShowDocumentation()<CR>
+" inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
+" inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
+" function! CheckBackspace() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+" inoremap <silent><expr> <Tab>
+"       \ coc#pum#visible() ? coc#pum#next(1) :
+"       \ CheckBackspace() ? "\<Tab>" :
+"       \ coc#refresh()
+inoremap <silent><expr> <tab> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -76,6 +84,7 @@ function! ShowDocumentation()
     call feedkeys('K', 'in')
   endif
 endfunction
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
 "   Intelisense lens
 nmap <silent> gl <Plug>(coc-codelens-action)
