@@ -181,6 +181,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     brew services $@
   }
+
+  alias poweroff="sudo shutdown -h now"
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then 

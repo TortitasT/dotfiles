@@ -88,6 +88,8 @@ linkDirectory "ultisnips" "$HOME/.config/coc/ultisnips"
 linkDirectory "colors" "$HOME/.vim/colors"
 linkDirectory "colors" "$HOME/.config/nvim/colors"
 
+linkDirectory "efm-langserver" "$HOME/.config/efm-langserver"
+
 installCocSettings
 
 installNeovimAppImage
