@@ -1,0 +1,19 @@
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# // ALIAS ////////////////////////////////
+#
+
+#
+# // ALIAS END ////////////////////////////
+
+# // MAIN ////////////////////////////
+#
+
+# Yo paso, no funciona nunca. Hasta tengo que agregar la clave manualmente porque no se guarda. Paso de Windows y lo pongo aquí total mas lento no puede ir.
+eval $(ssh-agent) > /dev/null
+ssh-add ~/.ssh/id_ed25519_victorgf2011 2> /dev/null
+
+#
+# // MAIN END ////////////////////////////

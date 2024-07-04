@@ -1,0 +1,41 @@
+# Compilation flags
+export ARCHFLAGS="-arch arm64"
+
+# Herd injected PHP binary.
+export PATH="/Users/vgf/Library/Application Support/Herd/bin/":$PATH
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/83/"
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/82/"
+
+# // ALIAS ////////////////////////////////
+#
+
+function systemctl() {
+  if [ "$1" == "status" ]; then
+    brew services info $2
+    return
+  fi
+
+  brew services $@
+}
+
+#
+# // ALIAS END ////////////////////////////
+
+# // MAIN ////////////////////////////
+#
+
+if [ -f $HOME/.config/neofetch/tux.png ]; then
+  fastfetch --kitty $HOME/.config/neofetch/tux.png
+else
+  fastfetch
+fi
+
+# Funny voice when starting the terminal in macos
+# (&>/dev/null say $(curl -s https://whatthecommit.com/index.txt) &)
+
+#
+# // MAIN END ////////////////////////////

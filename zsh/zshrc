@@ -31,26 +31,6 @@ export LANG=es_ES.UTF-8
 # If this is set, neovim on tmux will have weird background color in text
 # export TERM=xterm-256color
 
-# Preferred editor
-export EDITOR="nvim"
-
-# Compilation flags
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  export ARCHFLAGS="-arch arm64"
-else
-  export ARCHFLAGS="-arch x86_64"
-fi
-
-if [[ "$OSTYPE" == "freebsd"* ]]; then
-  export PATH="$PATH:$HOME/.local/bin"
-fi
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  export PATH="$PATH:$HOME/.local/bin"
-
-  bindkey -s ^f "tmux-sessionizer\n"
-fi
-
 # Emacs keymap for zsh, needs to be set because editor is nvim
 # thx https://catonmat.net/bash-emacs-editing-mode-cheat-sheet
 # C = Ctrl, M = Alt
@@ -172,111 +152,30 @@ function gpl() {
   git pull origin $(git branch --show-current)
 }
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  function systemctl() {
-    if [ "$1" == "status" ]; then
-      brew services info $2
-      return
-    fi
-
-    brew services $@
-  }
-fi
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then 
-  function copy() {
-    cat $1 | xclip -selection clipboard -i
-  } 
-
-  function install() {
-    is_on_repos=$(pacman -Ss $1 | grep $1 | wc -l)
-
-    echo "$1;" >> $HOME/.install.log
-
-    if [ $is_on_repos -eq 0 ]; then
-      echo "Installing $1 from AUR"
-      yay -S --noconfirm $1
-      return 
-    fi
-
-    echo "Installing $1"
-    sudo pacman -S --noconfirm $1
-  }
-
-  alias lock="swaylock --no-unlock-indicator --color 121212"
-
-  function schedule-poweroff() {
-    MINUTES=$1
-    if [ -z "$MINUTES" ]; then
-      echo "Usage: poweroff <minutes>"
-    else
-      echo "Powering off in $MINUTES minutes"
-      sleep $((MINUTES * 60))
-      sudo poweroff
-    fi
-  }
-
-  alias logoff="i3-msg exit"
-
-  function ast() {
-    if [ -z "$1" ]; then
-      echo "Usage: ast <project>"
-    else
-      android-studio $1 &>/dev/null &
-    fi
-  }
-
-  alias open="xdg-open"
-fi
-
-if [[ "$OSTYPE" == "freebsd"* ]]; then
-  alias poweroff="doas poweroff"
-  alias ii="nohup pcmanfm > /dev/null 2>&1&"
-fi
-
 #
 # // ALIAS END ////////////////////////////
 
 
 # // MAIN ////////////////////////////
 #
-if [[ "$OSTYPE" == "freebsd"* ]]; then
-  eval `ssh-agent`
-  neofetch
-fi
 
-if [[ "$OSTYPE" == "linux-android"* ]]; then
-  eval `ssh-agent`
-fi
+# Preferred editor
+export EDITOR="nvim"
 
-if [[ "$OSTYPE" == "linux-gnu"* ]] && ! [[ $(grep -i Microsoft /proc/version) ]]; then
-  fastfetch --kitty $HOME/.config/neofetch/tux.png
-fi
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  fastfetch --kitty $HOME/.config/neofetch/tux.png
-
-  export PATH="$HOME/bin:$PATH"
-  export PATH="$HOME/.local/bin:$PATH"
-
-  # Funny voice when starting the terminal in macos
-  # (&>/dev/null say $(curl -s https://whatthecommit.com/index.txt) &)
-fi
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-fi
+# Add local bin to path
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 #
 # // MAIN END ////////////////////////////
 
+# Custom rc file for each environment (OS) where we can set environment variables
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
 
-# Herd injected PHP binary.
-export PATH="/Users/vgf/Library/Application Support/Herd/bin/":$PATH
-
-
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/83/"
-
-
-# Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/82/"
+# Custom rc file for each environment (OS) where we can set environment variables that are secret
+# and should not be commited to the repository
+if [ -f ~/.zshrc.secret ]; then
+  source ~/.zshrc.secret
+fi

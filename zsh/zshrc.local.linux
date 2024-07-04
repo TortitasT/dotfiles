@@ -1,0 +1,61 @@
+# // ALIAS ////////////////////////////////
+#
+
+function copy() {
+  cat $1 | xclip -selection clipboard -i
+} 
+
+function install() {
+  is_on_repos=$(pacman -Ss $1 | grep $1 | wc -l)
+
+  echo "$1;" >> $HOME/.install.log
+
+  if [ $is_on_repos -eq 0 ]; then
+    echo "Installing $1 from AUR"
+    yay -S --noconfirm $1
+    return 
+  fi
+
+  echo "Installing $1"
+  sudo pacman -S --noconfirm $1
+}
+
+alias lock="swaylock --no-unlock-indicator --color 121212"
+
+function schedule-poweroff() {
+  MINUTES=$1
+  if [ -z "$MINUTES" ]; then
+    echo "Usage: poweroff <minutes>"
+  else
+    echo "Powering off in $MINUTES minutes"
+    sleep $((MINUTES * 60))
+    sudo poweroff
+  fi
+}
+
+alias logoff="i3-msg exit"
+
+function ast() {
+  if [ -z "$1" ]; then
+    echo "Usage: ast <project>"
+  else
+    android-studio $1 &>/dev/null &
+  fi
+}
+
+alias open="xdg-open"
+
+#
+# // ALIAS END ////////////////////////////
+
+# // MAIN ////////////////////////////
+#
+
+if [ -f $HOME/.config/neofetch/tux.png ]; then
+  fastfetch --kitty $HOME/.config/neofetch/tux.png
+else
+  fastfetch
+fi
+
+#
+# // MAIN END ////////////////////////////
