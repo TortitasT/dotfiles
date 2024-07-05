@@ -77,6 +77,26 @@ prompt () {
   return 0
 }
 
+whichOperatingSystem () {
+  local os="not_found"
+
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    os="mac"
+  elif [[ "$OSTYPE" == "linux-android"* ]]; then
+    os="android"
+  elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if [[ $(grep -i Microsoft /proc/version) ]]; then
+      os="wsl"
+    else
+      os="linux"
+    fi
+  elif [[ "$OSTYPE" == "freebsd"* ]]; then
+    os="freebsd"
+  fi
+
+  echo $os
+}
+
 archInstallPackage () {
   is_on_repos=$(pacman -Ss $1 | grep $1 | wc -l)
 

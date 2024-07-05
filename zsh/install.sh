@@ -60,6 +60,17 @@ function installSshAgentService() {
   systemctl --user enable ssh-agent.service
 }
 
+function installLocalRcFiles() {
+  local os=$(whichOperatingSystem)
+  local filename="zshrc.local.$os"
+
+  if [ -f $filename ]; then
+    linkFile $filename "$HOME/.zshrc.local"
+  else
+    print "warning" "No local rc file for $os, please create one with the name $filename and run this script again. Skipping..."
+  fi
+}
+
 installSshAgentService
 
 # Ensure dirs
@@ -75,4 +86,7 @@ installTheme "spaceship-prompt/spaceship-prompt"
 
 # Symlink files
 linkFile "zshrc" "$HOME/.zshrc"
+installLocalRcFiles
 
+print "info" "Done installing zsh configuration, please restart your terminal."
+print "warning" "Remember that if you have environment variables that are secret, you should create a ~/.zshrc.secret file."
