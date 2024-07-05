@@ -13,6 +13,7 @@
   "eslint.autoFixOnSave": true,
   "tsserver.enable": true,
   "tsserver.log": "verbose",
+  "html.format.templating": true,
   "html.filetypes": [
     "html",
     "handlebars",
@@ -51,18 +52,10 @@
       "filetypes": [
         "kotlin"
       ]
-    },
-    "efm": {
-      "command": "efm-langserver",
-      "args": [],
-      "filetypes": [
-        "vim",
-        "eruby",
-        "yaml"
-      ]
     }
   },
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "snippets.ultisnips.pythonPrompt": false,
   "intelephense.format.braces": "psr12",
+  "inlayHint.enable": false
 }

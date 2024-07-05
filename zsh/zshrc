@@ -282,3 +282,6 @@ export HERD_PHP_83_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/con
 
 # Herd injected PHP 8.2 configuration.
 export HERD_PHP_82_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/82/"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
