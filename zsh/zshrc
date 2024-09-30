@@ -179,3 +179,6 @@ fi
 if [ -f ~/.zshrc.secret ]; then
   source ~/.zshrc.secret
 fi
+
+# bun completions
+[ -s "/Users/vgf/.bun/_bun" ] && source "/Users/vgf/.bun/_bun"
