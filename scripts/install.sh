@@ -1,6 +1,10 @@
 #!/bin/bash
 
 INSTALL_PATH=/usr/local/bin
+if [ "$(uname)" == "Darwin" ]; then
+  INSTALL_PATH=~/.local/bin
+fi
+
 
 for script in $(ls -1 *.sh); do
     if [ $script == "install.sh" ]; then
