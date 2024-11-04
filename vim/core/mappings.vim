@@ -163,3 +163,15 @@ endfunction
 command! -nargs=0 SearchAndReplace :call SearchAndReplace()
 
 nmap <leader><leader>te /<template><CR>:nohlsearch<CR>j
+
+"   Vue setup api navigation
+"   data
+nmap <leader>vd /data.() {<CR>:nohlsearch<CR>j
+"   methods
+nmap <leader>vm /methods: {<CR>:nohlsearch<CR>j
+"   watch
+nmap <leader>vw /watch: {<CR>:nohlsearch<CR>j
+"   computed
+nmap <leader>vc /computed: {<CR>:nohlsearch<CR>j
+"   props
+nmap <leader>vp /props: {<CR>:nohlsearch<CR>j
