@@ -18,10 +18,12 @@
     "html",
     "handlebars",
     "htmldjango",
-    "eruby"
+    "eruby",
+    "blade"
   ],
   "emmet.includeLanguages": {
-    "eruby": "html"
+    "eruby": "html",
+    "blade": "html"
   },
   "solargraph.formatting": true,
   "markdownlint.config": {
@@ -33,6 +35,7 @@
   ],
   "intelephense.phpunit.colors": true,
   "intelephense.phpunit.enableSplitRight": true,
+  "intelephense.diagnostics.undefinedMethods": false,
   "languageserver": {
     "ocaml-lsp": {
       "command": "opam",

@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+name = Victor García Fernández
+email = victorgf2011@gmail.com
+
+[alias]
+gui = !sh -c '/usr/local/opt/git/bin/git gui'

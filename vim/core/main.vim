@@ -71,6 +71,8 @@ require'nvim-treesitter.configs'.setup {
     "query",
     "javascript",
     "typescript",
+    "tsx",
+    "jsx",
     "vue",
     "java",
     "php",
@@ -177,6 +179,7 @@ let g:coc_global_extensions = [
             \'@yaegassy/coc-volar',
             \'@yaegassy/coc-volar-tools',
             \'@yaegassy/coc-laravel',
+            \'coc-blade',
             \'@yaegassy/coc-tailwindcss3',
             \]
 
