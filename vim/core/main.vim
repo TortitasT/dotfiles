@@ -89,6 +89,8 @@ require'nvim-treesitter.configs'.setup {
     "dockerfile",
     "latex",
     "blade",
+    "markdown",
+    "markdown_inline",
   },
 
   auto_install = true,
