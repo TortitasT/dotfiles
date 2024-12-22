@@ -19,7 +19,8 @@
     "handlebars",
     "htmldjango",
     "eruby",
-    "blade"
+    "blade",
+    "heex"
   ],
   "emmet.includeLanguages": {
     "eruby": "html",
@@ -57,7 +58,6 @@
       ]
     }
   },
-  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "snippets.ultisnips.pythonPrompt": false,
   "intelephense.format.braces": "psr12",
   "inlayHint.enable": false
