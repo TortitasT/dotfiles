@@ -91,13 +91,14 @@ require'nvim-treesitter.configs'.setup {
     "blade",
     "markdown",
     "markdown_inline",
+    "elixir",
   },
 
   auto_install = true,
 
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = { "elixir" },
     disable = {
       "latex", -- Vimtex already does this
     },

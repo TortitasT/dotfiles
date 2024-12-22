@@ -75,6 +75,7 @@ SPACESHIP_PROMPT_ORDER=(
 # // ALIAS ////////////////////////////////
 #
 # Misc
+alias notes="nvim ~/notes.md"
 alias cls="clear"
 alias ls="ls --color=auto"
 alias ll="ls -l"
