@@ -1,0 +1,13 @@
+theme = vesper
+# font-family = GoMono Nerd Font Mono
+font-family = Berkeley Mono
+font-size = 26
+font-thicken = true
+
+cursor-invert-fg-bg = false
+background-opacity = 0.9
+window-padding-y = 25
+window-padding-x = 25
+
+window-padding-balance = true
+window-decoration = true
