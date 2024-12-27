@@ -3,7 +3,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   config = function()
-    require 'nvim-treesitter.install'.compilers = { "clang" } -- Must use llvm `scoop install llvm` https://github.com/nvim-treesitter/nvim-treesitter/issues/1897
+    -- require 'nvim-treesitter.install'.compilers = { "clang" } -- Must use llvm `scoop install llvm` https://github.com/nvim-treesitter/nvim-treesitter/issues/1897
 
     local configs = require("nvim-treesitter.configs")
     configs.setup({

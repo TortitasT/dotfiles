@@ -71,6 +71,43 @@ function installLocalRcFiles() {
   fi
 }
 
+function installElixir() {
+  local has_elixir=$(command -v elixir)
+
+  if [ -z "$has_elixir" ]; then
+    prompt "Elixir not found, install it?"
+    if [[ $? -eq 1 ]]; then
+      return
+    fi
+
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
+    asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+    asdf install elixir latest
+    asdf global elixir latest
+    
+    asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+    export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
+    asdf install erlang latest
+    asdf global erlang latest
+
+    git clone https://github.com/elixir-lsp/elixir-ls.git ~/.elixir-ls
+    cd ~/.elixir-ls
+    mix deps.get && mix compile && mix elixir_ls.release -o release
+    cd -
+ fi
+}
+
+function osStuff() {
+  local os=$(whichOperatingSystem)
+
+  if [ "$os" == "wsl" ]; then
+    print "info" "WSL detected, installing WSL specific stuff"
+    sudo locale-gen "en_US.UTF-8"
+    sudo locale-gen "es_ES.UTF-8"
+    sudo dpkg-reconfigure locales
+  fi
+}
+
 installSshAgentService
 
 # Ensure dirs
@@ -87,6 +124,9 @@ installTheme "spaceship-prompt/spaceship-prompt"
 # Symlink files
 linkFile "zshrc" "$HOME/.zshrc"
 installLocalRcFiles
+installElixir
+
+osStuff
 
 print "info" "Done installing zsh configuration, please restart your terminal."
 print "warning" "Remember that if you have environment variables that are secret, you should create a ~/.zshrc.secret file."
