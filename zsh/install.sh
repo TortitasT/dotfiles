@@ -97,6 +97,17 @@ function installElixir() {
  fi
 }
 
+function osStuff() {
+  local os=$(whichOperatingSystem)
+
+  if [ "$os" == "wsl" ]; then
+    print "info" "WSL detected, installing WSL specific stuff"
+    sudo locale-gen "en_US.UTF-8"
+    sudo locale-gen "es_ES.UTF-8"
+    sudo dpkg-reconfigure locales
+  fi
+}
+
 installSshAgentService
 
 # Ensure dirs
@@ -114,6 +125,8 @@ installTheme "spaceship-prompt/spaceship-prompt"
 linkFile "zshrc" "$HOME/.zshrc"
 installLocalRcFiles
 installElixir
+
+osStuff
 
 print "info" "Done installing zsh configuration, please restart your terminal."
 print "warning" "Remember that if you have environment variables that are secret, you should create a ~/.zshrc.secret file."
