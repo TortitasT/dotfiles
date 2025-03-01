@@ -1,7 +1,9 @@
 theme = vesper
+
 # font-family = GoMono Nerd Font Mono
 font-family = Berkeley Mono
-font-size = 26
+
+font-size = 24
 font-thicken = true
 
 cursor-invert-fg-bg = false
