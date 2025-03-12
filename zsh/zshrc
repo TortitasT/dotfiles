@@ -173,28 +173,13 @@ export PATH="$HOME/bin:$PATH"
 #
 # // MAIN END ////////////////////////////
 
-# Custom rc file for each environment (OS) where we can set environment variables
-if [ -f ~/.zshrc.local ]; then
-  source ~/.zshrc.local
-fi
-
 # Custom rc file for each environment (OS) where we can set environment variables that are secret
 # and should not be commited to the repository
 if [ -f ~/.zshrc.secret ]; then
   source ~/.zshrc.secret
 fi
 
-# bun completions
-[ -s "/Users/vgf/.bun/_bun" ] && source "/Users/vgf/.bun/_bun"
-
-
-# Herd injected PHP binary.
-export PATH="/Users/vgf/Library/Application Support/Herd/bin/":$PATH
-
-
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/83/"
-
-
-# Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/82/"
+# Custom rc file for each environment (OS) where we can set environment variables
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi

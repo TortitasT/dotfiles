@@ -4,6 +4,7 @@
   "codeLens.enable": true,
   "deno.enable": false,
   "colors.enable": true,
+  "volar.disableFormatting": true,
   "prettier.enable": false,
   "prettier.disableLanguages": [],
   "prettier.semi": false,

@@ -89,6 +89,21 @@ else
   fastfetch
 fi
 
+# Login to vault if not logged in
+function loginToVaultIfNotLoggedIn() {
+  logged_in=$(vault token lookup 2>/dev/null)
+
+  if [ -z "$logged_in" ]; then
+    if [ -z "$VAULT_AUTH_GITHUB_TOKEN" ]; then
+      echo "VAULT_AUTH_GITHUB_TOKEN is not set. Please set it to login to vault."
+      return
+    fi
+
+    vault login -method=github token=${VAULT_AUTH_GITHUB_TOKEN}
+  fi
+}
+loginToVaultIfNotLoggedIn
+
 # Funny voice when starting the terminal in macos
 # (&>/dev/null say $(curl -s https://whatthecommit.com/index.txt) &)
 
