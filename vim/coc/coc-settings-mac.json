@@ -1,11 +1,11 @@
 {
-  "coc.preferences.formatOnSave": true,
+  "coc.preferences.formatOnSave": false,
   "diagnostic.checkCurrentLine": true,
   "codeLens.enable": true,
   "deno.enable": false,
   "colors.enable": true,
   "volar.disableFormatting": true,
-  "prettier.enable": false,
+  "prettier.enable": true,
   "prettier.disableLanguages": [],
   "prettier.semi": false,
   "prettier.singleQuote": true,

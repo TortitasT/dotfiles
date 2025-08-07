@@ -90,8 +90,8 @@ nnoremap <silent> K :call ShowDocumentation()<CR>
 nmap <silent> gl <Plug>(coc-codelens-action)
 
 "   Copilot map C-e to accept
-imap <silent><script><expr> <C-e> copilot#Accept('\<CR>')
-let g:copilot_no_tab_map = v:true
+" imap <silent><script><expr> <C-e> copilot#Accept('\<CR>')
+" let g:copilot_no_tab_map = v:true
 
 "   :Q to quit too since I can't stop pressing shift
 :command Q q

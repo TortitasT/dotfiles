@@ -139,7 +139,7 @@ function gco() {
   if [ -z "$1" ]; then
     if command -v fzf &> /dev/null
     then
-      git checkout $(git branch -r --sort=-committerdate | sed 's/origin\///g' | fzf)
+      git checkout $(git branch -a --sort=-committerdate | sed 's/origin\///g' | fzf)
     else
       echo "fzf not found, install it to use this feature"
     fi
