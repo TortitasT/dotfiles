@@ -156,6 +156,39 @@ function gpl() {
   git pull origin $(git branch --show-current)
 }
 
+function nt() {
+  filenameWithLine=$1
+  filename=$(echo $filenameWithLine | cut -d ":" -f 1)
+  line=$(echo $filenameWithLine | cut -d ":" -f 2)
+
+  if [[ "$line" == "$filename" ]]; then
+    line=""
+  else
+    line=":$line"
+  fi
+
+  fullPath=$(find . -name "*$filename*")
+  if [ -z "$fullPath" ]; then
+    echo "File not found"
+    return
+  fi
+
+  fullPaths=()
+  sep=$'\n'
+  fullPaths=(${(ps.$sep.)fullPath})
+  for pth in "${fullPaths[@]}"; do
+    if [[ "$pth" == *"spec"* ]]; then
+      fullPath=$pth
+      break
+    fi
+  done
+
+  finalPath="${fullPath}${line}"
+  command="npx vitest run --coverage --disableConsoleIntercept --hideSkippedTests --retry 0 --exclude './.claude/**' $finalPath"
+  echo $command
+  eval $command
+}
+
 #
 # // ALIAS END ////////////////////////////
 

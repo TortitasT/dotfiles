@@ -230,7 +230,7 @@ let g:netrw_localcopydircmd = 'cp -r'
 hi! link netrwMarkFile Search
 
 "   Markdown
-au BufRead,BufNewFile *.md setlocal textwidth=80
+" au BufRead,BufNewFile *.md setlocal textwidth=80
 "   Paste images
 autocmd FileType markdown nmap <buffer><silent> <leader><leader><leader>p :call mdip#MarkdownClipboardImage()<CR>
 

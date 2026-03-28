@@ -6,12 +6,13 @@ export PATH="/Users/vgf/Library/Application Support/Herd/bin/":$PATH
 
 # Herd injected PHP 8.3 configuration.
 export HERD_PHP_83_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/83/"
-
 # Herd injected PHP 8.2 configuration.
 export HERD_PHP_82_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/82/"
-
 # Herd injected PHP 8.4 configuration.
 export HERD_PHP_84_INI_SCAN_DIR="/Users/vgf/Library/Application Support/Herd/config/php/84/"
+
+# Composer injected PHP binary.
+export PATH="$HOME/.composer/vendor/bin":$PATH
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
@@ -32,6 +33,8 @@ source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nvm use 24 >/dev/null 2>&1
 
 [ -s "/home/tortitas/.bun/_bun" ] && source "/home/tortitas/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
@@ -64,10 +67,15 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 
 export ANDROID_HOME=$HOME/Library/Android/sdk && export PATH=$PATH:$ANDROID_HOME/emulator && export PATH=$PATH:$ANDROID_HOME/platform-tools
-export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+export NDK_HOME=$(ls -d $ANDROID_HOME/ndk/*/ | sort -r | head -n 1)
 
 export DENO_INSTALL="/Users/vgf/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# export ANTHROPIC_BASE_URL="http://localhost:4000"
+# export ANTHROPIC_MODEL="openai/qwen3-coder-30b"
+# export ANTHROPIC_SMALL_FAST_MODEL="openai/qwen3-coder-30b"
+# export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 # // ALIAS ////////////////////////////////
 #
