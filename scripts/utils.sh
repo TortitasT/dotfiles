@@ -40,7 +40,7 @@ MASCOT
   printf "${reset}"
   printf "${yellow}  ~ SSH Utils ~${reset}\n\n"
 
-  choice=$(printf "SSH Connect\nSSH Tunnel\nExit" | fzf --prompt="Utils> " --height=10 --reverse --no-info)
+  choice=$(printf "SSH Connect\nSSH Tunnel\nSCP Transfer\nExit" | fzf --prompt="Utils> " --height=10 --reverse --no-info)
 }
 
 select_server() {
@@ -123,10 +123,34 @@ ssh_connect() {
   eval "$cmd"
 }
 
+scp_transfer() {
+  select_server
+
+  direction=$(printf "Upload (local → remote)\nDownload (remote → local)" | fzf --prompt="Direction> " --height=5 --reverse --no-info || true)
+  [[ -z "$direction" ]] && return
+
+  local_path=$(find . -maxdepth 3 2>/dev/null | fzf --prompt="Local path> " --height=15 --reverse || true)
+  [[ -z "$local_path" ]] && return
+
+  read -rp "Remote path: " remote_path
+
+  cmd="scp -r"
+  [[ -n "$ssh_key" ]] && cmd+=" -i ${ssh_key}"
+
+  case "$direction" in
+    "Upload"*)  cmd+=" ${local_path} ${ssh_user}@${server_ip}:${remote_path}" ;;
+    "Download"*) cmd+=" ${ssh_user}@${server_ip}:${remote_path} ${local_path}" ;;
+  esac
+
+  echo "Running: $cmd"
+  eval "$cmd"
+}
+
 show_menu
 
 case $choice in
   "SSH Connect") ssh_connect ;;
   "SSH Tunnel") ssh_tunnel ;;
+  "SCP Transfer") scp_transfer ;;
   "Exit"|"") exit 0 ;;
 esac
