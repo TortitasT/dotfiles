@@ -1,22 +1,16 @@
 controls{
   version:i=5
+  appliedFallbacksVer:i=3
 
   basePresetPaths{
     default:t="config/hotkeys/hotkey.keyboard_ver1.blk"
   }
 
   hotkeys{
-    ID_AAM{
-      keyboardKey:i=29
+    ID_AAM{}
+    ID_AGM_LOCK{
       keyboardKey:i=56
-    }
-
-    ID_AAM{
-      mouseButton:i=4
-    }
-
-    ID_AIR_BRAKE{
-      keyboardKey:i=35
+      keyboardKey:i=53
     }
 
     ID_AIR_BRAKE{
@@ -27,16 +21,24 @@ controls{
       keyboardKey:i=19
     }
 
-    ID_BOMBS{}
-    ID_CAMERA_BINOCULARS{
-      keyboardKey:i=48
+    ID_BAY_DOOR{
+      keyboardKey:i=35
     }
 
+    ID_BAY_DOOR{
+      keyboardKey:i=86
+    }
+
+    ID_BOMBS{}
     ID_CAMERA_BINOCULARS{
       keyboardKey:i=37
     }
 
     ID_CAMERA_FOLLOW_OBJECT{}
+    ID_CAMERA_FOLLOW_OBJECT{
+      keyboardKey:i=46
+    }
+
     ID_CAMERA_NEUTRAL{
       keyboardKey:i=201
     }
@@ -53,12 +55,16 @@ controls{
       keyboardKey:i=57
     }
 
-    ID_COUNTERMEASURES_CHAFF{
-      mouseButton:i=3
+    ID_CONTINUE_SETUP{
+      keyboardKey:i=57
     }
 
-    ID_COUNTERMEASURES_FLARES{
-      mouseButton:i=3
+    ID_CONTINUE_SETUP{
+      joyButton:i=140
+    }
+
+    ID_CONTROL_MODE_HUMAN_UAV{
+      keyboardKey:i=35
     }
 
     ID_FIRE_ADDITIONAL_GUNS{
@@ -77,6 +83,10 @@ controls{
       mouseButton:i=0
     }
 
+    ID_FIRE_SECONDARY{
+      mouseButton:i=4
+    }
+
     ID_FLAPS{}
     ID_FLAPS{
       keyboardKey:i=22
@@ -85,8 +95,16 @@ controls{
     ID_FLAPS_DOWN{}
     ID_FLAPS_UP{}
     ID_FLARES{}
+    ID_FLARES{
+      mouseButton:i=3
+    }
+
     ID_FLIGHTMENU{
       keyboardKey:i=1
+    }
+
+    ID_FLIGHTMENU_SETUP{
+      joyButton:i=132
     }
 
     ID_FUEL_TANKS{
@@ -99,6 +117,20 @@ controls{
     }
 
     ID_GUIDED_BOMBS{}
+    ID_GUIDED_BOMBS{
+      keyboardKey:i=57
+    }
+
+    ID_GUIDED_BOMBS_LOCK{
+      keyboardKey:i=56
+      keyboardKey:i=47
+    }
+
+    ID_GUIDED_BOMBS_LOCK{
+      keyboardKey:i=56
+      keyboardKey:i=36
+    }
+
     ID_HIDE_HUD{}
     ID_LOCK_TARGET{
       mouseButton:i=2
@@ -138,6 +170,14 @@ controls{
       keyboardKey:i=183
     }
 
+    ID_SCREENSHOT{
+      keyboardKey:i=183
+    }
+
+    ID_SCREENSHOT{
+      keyboardKey:i=183
+    }
+
     ID_SENSOR_ACM_SWITCH{
       keyboardKey:i=56
       keyboardKey:i=45
@@ -166,20 +206,10 @@ controls{
 
     ID_SENSOR_SWITCH_SHIP{}
     ID_SENSOR_TARGET_LOCK{
-      keyboardKey:i=56
-      keyboardKey:i=22
-    }
-
-    ID_SENSOR_TARGET_LOCK{
       keyboardKey:i=16
     }
 
     ID_SENSOR_TARGET_LOCK_SHIP{}
-    ID_SENSOR_TARGET_SWITCH{
-      keyboardKey:i=56
-      keyboardKey:i=25
-    }
-
     ID_SENSOR_TARGET_SWITCH{
       keyboardKey:i=56
       keyboardKey:i=16
@@ -266,11 +296,15 @@ controls{
     }
 
     ID_SMOKE_SCREEN_GENERATOR{
-      keyboardKey:i=37
+      mouseButton:i=3
     }
 
     ID_SQUAD_TARGET_DESIGNATION{
       keyboardKey:i=25
+    }
+
+    ID_SQUAD_TARGET_DESIGNATION{
+      mouseButton:i=2
     }
 
     ID_SWITCH_REGISTERED_BOMB_TARGETING_POINT{
@@ -278,17 +312,7 @@ controls{
     }
 
     ID_SWITCH_SHOOTING_CYCLE_PRIMARY{
-      keyboardKey:i=42
-      keyboardKey:i=17
-    }
-
-    ID_SWITCH_SHOOTING_CYCLE_PRIMARY{
       keyboardKey:i=2
-    }
-
-    ID_SWITCH_SHOOTING_CYCLE_SECONDARY{
-      keyboardKey:i=42
-      keyboardKey:i=31
     }
 
     ID_SWITCH_SHOOTING_CYCLE_SECONDARY{
@@ -312,6 +336,11 @@ controls{
     }
 
     ID_TOGGLE_GM_ENGINE{}
+    ID_TOGGLE_PERIODIC_FLARES{
+      keyboardKey:i=56
+      mouseButton:i=3
+    }
+
     ID_TOGGLE_VIEW{
       keyboardKey:i=36
     }
@@ -409,6 +438,70 @@ controls{
       keyboardKey:i=52
     }
 
+    human_uav_climb_rangeMax{
+      keyboardKey:i=42
+    }
+
+    human_uav_climb_rangeMin{
+      keyboardKey:i=29
+    }
+
+    human_uav_pitch_rangeMax{
+      keyboardKey:i=24
+    }
+
+    human_uav_pitch_rangeMin{
+      keyboardKey:i=51
+    }
+
+    human_uav_roll_rangeMax{
+      keyboardKey:i=18
+    }
+
+    human_uav_roll_rangeMax{
+      keyboardKey:i=205
+    }
+
+    human_uav_roll_rangeMin{
+      keyboardKey:i=30
+    }
+
+    human_uav_roll_rangeMin{
+      keyboardKey:i=203
+    }
+
+    human_uav_throttle_rangeMax{
+      keyboardKey:i=42
+    }
+
+    human_uav_throttle_rangeMax{
+      keyboardKey:i=78
+    }
+
+    human_uav_throttle_rangeMax{
+      keyboardKey:i=13
+    }
+
+    human_uav_throttle_rangeMin{
+      keyboardKey:i=29
+    }
+
+    human_uav_throttle_rangeMin{
+      keyboardKey:i=74
+    }
+
+    human_uav_throttle_rangeMin{
+      keyboardKey:i=12
+    }
+
+    human_uav_yaw_rangeMax{
+      keyboardKey:i=39
+    }
+
+    human_uav_yaw_rangeMin{
+      keyboardKey:i=52
+    }
+
     rudder_rangeMax{
       keyboardKey:i=39
     }
@@ -425,6 +518,16 @@ controls{
     sensor_cue_x_rangeMin{
       keyboardKey:i=56
       keyboardKey:i=39
+    }
+
+    sensor_cue_z_rangeMax{
+      keyboardKey:i=56
+      keyboardKey:i=25
+    }
+
+    sensor_cue_z_rangeMin{
+      keyboardKey:i=56
+      keyboardKey:i=22
     }
 
     ship_main_engine_rangeMax{
@@ -484,6 +587,21 @@ controls{
       mouseAxisId:i=-1
     }
 
+    human_uav_pitch{
+      innerDeadzone:r=0
+      nonlinearity:r=1
+    }
+
+    human_uav_roll{
+      innerDeadzone:r=0
+      nonlinearity:r=1
+    }
+
+    human_uav_throttle{
+      mouseAxisId:i=7
+      innerDeadzone:r=0.02
+    }
+
     zoom{
       innerDeadzone:r=0.05
       relative:b=no
@@ -495,9 +613,11 @@ controls{
     USEROPT_ATGM_AIM_ZOOM_SENS_HELICOPTER:i=100
     USEROPT_FIX_GUN_IN_MOUSE_LOOK:b=no
     USEROPT_FREE_CAMERA_ZOOM_SPEED:i=50
-    USEROPT_GUNNER_VIEW_SENSE:i=100
     USEROPT_GUNNER_VIEW_ZOOM_SENS:i=100
     USEROPT_HOLD_BUTTON_FOR_TACTICAL_MAP:b=yes
+    USEROPT_INSTRUCTOR_ENGINE_CONTROL:b=no
+    USEROPT_INSTRUCTOR_FLAPS_CONTROL:b=no
+    USEROPT_INSTRUCTOR_GEAR_CONTROL:b=no
     USEROPT_INSTRUCTOR_GROUND_AVOIDANCE:b=no
     USEROPT_INVERTCAMERAY:i=0
     USEROPT_INVERTY_HELICOPTER:b=no
@@ -506,19 +626,29 @@ controls{
     USEROPT_INVERTY_SPECTATOR:b=no
     USEROPT_INVERTY_SUBMARINE:b=no
     USEROPT_JOYFX:b=yes
-    USEROPT_MOUSE_USAGE_NO_AIM:i=1
     USEROPT_SHIP_COMBINE_PRI_SEC_TRIGGERS:b=yes
     USEROPT_SINGLE_SHOT_BY_TURRET:b=yes
     USEROPT_WHEEL_CONTROL_SHIP:b=no
+    mouseJoystick:b=no
   }
 
   deviceMapping{
     joystick{
       connected:b=yes
-      devId:t="044F:B10A"
+      devId:t="4098:BD64"
       axesOffset:i=0
-      name:t="T.16000M"
+      name:t="WINCTRL Orion Throttle Base II + F15EX HANDLE L + F15EX HANDLE R"
       buttonsOffset:i=0
+      buttonsCount:i=128
+      axesCount:i=8
+    }
+
+    joystick{
+      connected:b=yes
+      devId:t="044F:B10A"
+      axesOffset:i=8
+      name:t="T.16000M"
+      buttonsOffset:i=128
       buttonsCount:i=20
       axesCount:i=6
     }
@@ -526,11 +656,21 @@ controls{
     joystick{
       connected:b=no
       devId:t="x360"
-      axesOffset:i=6
+      axesOffset:i=14
       name:t="Controller 1"
-      buttonsOffset:i=20
+      buttonsOffset:i=148
       buttonsCount:i=28
       axesCount:i=7
+    }
+
+    joystick{
+      connected:b=no
+      devId:t="346E:0005"
+      axesOffset:i=21
+      name:t="R3 Racing Wheel and Pedalsê"
+      buttonsOffset:i=176
+      buttonsCount:i=132
+      axesCount:i=10
     }
   }
 }
@@ -546,8 +686,9 @@ settings{
   replayCameraWiggle:r=1
   zoomSens:r=0
   mouseSens:r=0.5
+  humanMouseSens:r=0.5
   mouseAimSens:r=0.5
-  gunnerViewSens:r=1
+  gunnerViewSens:r=0.5
   gunnerViewZoomSens:r=1
   atgmAimSensHelicopter:r=1
   atgmAimZoomSensHelicopter:r=1
@@ -574,12 +715,14 @@ settings{
   aimTimeNonlinearityWalker:r=0
   aimTimeNonlinearityShip:r=0
   aimTimeNonlinearitySubmarine:r=0
+  aimTimeNonlinearityHuman:r=0
   aimAccelerationDelayAir:r=0.5
   aimAccelerationDelayHelicopter:r=0.5
   aimAccelerationDelayTank:r=0.5
   aimAccelerationDelayWalker:r=0.5
   aimAccelerationDelayShip:r=0.5
   aimAccelerationDelaySubmarine:r=0.5
+  aimAccelerationDelayHuman:r=0.5
   mouseZMultAir:r=0.5
   mouseZMultHelicopter:r=0.5
   mouseZMultTank:r=0.5
@@ -589,12 +732,13 @@ settings{
   cameraSmooth:r=0
   cameraSpeed:r=1.325
   cameraMouseSpeed:r=3.95
-  cameraFpsPhysMult:r=0
+  cameraFpsPhysMult:r=0.5
   vrCameraFpsPhysMult:r=0
   invertY:b=no
   invertX:b=no
   invertT:b=no
   invertYTank:b=no
+  invertYHuman:b=no
   invertYShip:b=no
   invertYHelicopter:b=no
   invertYHelicopterGunner:b=no
@@ -610,4 +754,5 @@ settings{
   forceGain:r=1
   cameraShakeMultiplier:r=0
   vrCameraShakeMultiplier:r=1
+  holdBtnToGrabHotas:b=no
 }

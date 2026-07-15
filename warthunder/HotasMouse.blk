@@ -15,6 +15,14 @@ controls{
       mouseButton:i=4
     }
 
+    ID_AIR_BRAKE{
+      keyboardKey:i=35
+    }
+
+    ID_AIR_BRAKE{
+      keyboardKey:i=37
+    }
+
     ID_BAILOUT{
       keyboardKey:i=19
     }
@@ -337,6 +345,14 @@ controls{
 
     ID_TOGGLE_VIEW_HELICOPTER{
       keyboardKey:i=36
+    }
+
+    ID_TRACKER_RESET_POSITION{
+      keyboardKey:i=83
+    }
+
+    ID_TRACKER_RESET_POSITION{
+      joyButton:i=9
     }
 
     ID_TRANS_GEAR_UP{}
